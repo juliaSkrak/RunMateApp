@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC13D0511C4F39800051144D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0501C4F39800051144D /* AppDelegate.swift */; };
+		CC13D0531C4F39800051144D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0521C4F39800051144D /* ViewController.swift */; };
+		CC13D0561C4F39800051144D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC13D0541C4F39800051144D /* Main.storyboard */; };
+		CC13D0591C4F39800051144D /* RunMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0571C4F39800051144D /* RunMate.xcdatamodeld */; };
+		CC13D05B1C4F39800051144D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC13D05A1C4F39800051144D /* Assets.xcassets */; };
+		CC13D05E1C4F39800051144D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */; };
+		CC13D0691C4F39800051144D /* RunMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0681C4F39800051144D /* RunMateTests.swift */; };
+		CC13D0741C4F39800051144D /* RunMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0731C4F39800051144D /* RunMateUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC13D0651C4F39800051144D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC13D0451C4F39800051144D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC13D04C1C4F39800051144D;
+			remoteInfo = RunMate;
+		};
+		CC13D0701C4F39800051144D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC13D0451C4F39800051144D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC13D04C1C4F39800051144D;
+			remoteInfo = RunMate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC13D04D1C4F39800051144D /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC13D0501C4F39800051144D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC13D0521C4F39800051144D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC13D0551C4F39800051144D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC13D0581C4F39800051144D /* RunMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMate.xcdatamodel; sourceTree = "<group>"; };
+		CC13D05A1C4F39800051144D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC13D05D1C4F39800051144D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC13D05F1C4F39800051144D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC13D0641C4F39800051144D /* RunMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC13D0681C4F39800051144D /* RunMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateTests.swift; sourceTree = "<group>"; };
+		CC13D06A1C4F39800051144D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC13D06F1C4F39800051144D /* RunMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC13D0731C4F39800051144D /* RunMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITests.swift; sourceTree = "<group>"; };
+		CC13D0751C4F39800051144D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC13D04A1C4F39800051144D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D0611C4F39800051144D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D06C1C4F39800051144D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC13D0441C4F39800051144D = {
+			isa = PBXGroup;
+			children = (
+				CC13D04F1C4F39800051144D /* RunMate */,
+				CC13D0671C4F39800051144D /* RunMateTests */,
+				CC13D0721C4F39800051144D /* RunMateUITests */,
+				CC13D04E1C4F39800051144D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC13D04E1C4F39800051144D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC13D04D1C4F39800051144D /* RunMate.app */,
+				CC13D0641C4F39800051144D /* RunMateTests.xctest */,
+				CC13D06F1C4F39800051144D /* RunMateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC13D04F1C4F39800051144D /* RunMate */ = {
+			isa = PBXGroup;
+			children = (
+				CC13D0501C4F39800051144D /* AppDelegate.swift */,
+				CC13D0521C4F39800051144D /* ViewController.swift */,
+				CC13D0541C4F39800051144D /* Main.storyboard */,
+				CC13D05A1C4F39800051144D /* Assets.xcassets */,
+				CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */,
+				CC13D05F1C4F39800051144D /* Info.plist */,
+				CC13D0571C4F39800051144D /* RunMate.xcdatamodeld */,
+			);
+			path = RunMate;
+			sourceTree = "<group>";
+		};
+		CC13D0671C4F39800051144D /* RunMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC13D0681C4F39800051144D /* RunMateTests.swift */,
+				CC13D06A1C4F39800051144D /* Info.plist */,
+			);
+			path = RunMateTests;
+			sourceTree = "<group>";
+		};
+		CC13D0721C4F39800051144D /* RunMateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC13D0731C4F39800051144D /* RunMateUITests.swift */,
+				CC13D0751C4F39800051144D /* Info.plist */,
+			);
+			path = RunMateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC13D04C1C4F39800051144D /* RunMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC13D0781C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMate" */;
+			buildPhases = (
+				CC13D0491C4F39800051144D /* Sources */,
+				CC13D04A1C4F39800051144D /* Frameworks */,
+				CC13D04B1C4F39800051144D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RunMate;
+			productName = RunMate;
+			productReference = CC13D04D1C4F39800051144D /* RunMate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC13D0631C4F39800051144D /* RunMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC13D07B1C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMateTests" */;
+			buildPhases = (
+				CC13D0601C4F39800051144D /* Sources */,
+				CC13D0611C4F39800051144D /* Frameworks */,
+				CC13D0621C4F39800051144D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC13D0661C4F39800051144D /* PBXTargetDependency */,
+			);
+			name = RunMateTests;
+			productName = RunMateTests;
+			productReference = CC13D0641C4F39800051144D /* RunMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC13D06E1C4F39800051144D /* RunMateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC13D07E1C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMateUITests" */;
+			buildPhases = (
+				CC13D06B1C4F39800051144D /* Sources */,
+				CC13D06C1C4F39800051144D /* Frameworks */,
+				CC13D06D1C4F39800051144D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC13D0711C4F39800051144D /* PBXTargetDependency */,
+			);
+			name = RunMateUITests;
+			productName = RunMateUITests;
+			productReference = CC13D06F1C4F39800051144D /* RunMateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC13D0451C4F39800051144D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = skrakattack;
+				TargetAttributes = {
+					CC13D04C1C4F39800051144D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CC13D0631C4F39800051144D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CC13D04C1C4F39800051144D;
+					};
+					CC13D06E1C4F39800051144D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CC13D04C1C4F39800051144D;
+					};
+				};
+			};
+			buildConfigurationList = CC13D0481C4F39800051144D /* Build configuration list for PBXProject "RunMate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC13D0441C4F39800051144D;
+			productRefGroup = CC13D04E1C4F39800051144D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC13D04C1C4F39800051144D /* RunMate */,
+				CC13D0631C4F39800051144D /* RunMateTests */,
+				CC13D06E1C4F39800051144D /* RunMateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC13D04B1C4F39800051144D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC13D05E1C4F39800051144D /* LaunchScreen.storyboard in Resources */,
+				CC13D05B1C4F39800051144D /* Assets.xcassets in Resources */,
+				CC13D0561C4F39800051144D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D0621C4F39800051144D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D06D1C4F39800051144D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC13D0491C4F39800051144D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC13D0531C4F39800051144D /* ViewController.swift in Sources */,
+				CC13D0591C4F39800051144D /* RunMate.xcdatamodeld in Sources */,
+				CC13D0511C4F39800051144D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D0601C4F39800051144D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC13D0691C4F39800051144D /* RunMateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC13D06B1C4F39800051144D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC13D0741C4F39800051144D /* RunMateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC13D0661C4F39800051144D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC13D04C1C4F39800051144D /* RunMate */;
+			targetProxy = CC13D0651C4F39800051144D /* PBXContainerItemProxy */;
+		};
+		CC13D0711C4F39800051144D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC13D04C1C4F39800051144D /* RunMate */;
+			targetProxy = CC13D0701C4F39800051144D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC13D0541C4F39800051144D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC13D0551C4F39800051144D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC13D05D1C4F39800051144D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC13D0761C4F39800051144D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC13D0771C4F39800051144D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC13D0791C4F39800051144D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RunMate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC13D07A1C4F39800051144D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RunMate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CC13D07C1C4F39800051144D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RunMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunMate.app/RunMate";
+			};
+			name = Debug;
+		};
+		CC13D07D1C4F39800051144D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RunMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunMate.app/RunMate";
+			};
+			name = Release;
+		};
+		CC13D07F1C4F39800051144D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RunMateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RunMate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CC13D0801C4F39800051144D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RunMateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RunMate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC13D0481C4F39800051144D /* Build configuration list for PBXProject "RunMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC13D0761C4F39800051144D /* Debug */,
+				CC13D0771C4F39800051144D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC13D0781C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC13D0791C4F39800051144D /* Debug */,
+				CC13D07A1C4F39800051144D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CC13D07B1C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC13D07C1C4F39800051144D /* Debug */,
+				CC13D07D1C4F39800051144D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CC13D07E1C4F39800051144D /* Build configuration list for PBXNativeTarget "RunMateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC13D07F1C4F39800051144D /* Debug */,
+				CC13D0801C4F39800051144D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CC13D0571C4F39800051144D /* RunMate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC13D0581C4F39800051144D /* RunMate.xcdatamodel */,
+			);
+			currentVersion = CC13D0581C4F39800051144D /* RunMate.xcdatamodel */;
+			path = RunMate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CC13D0451C4F39800051144D /* Project object */;
+}
