@@ -30,8 +30,42 @@
 		CC2D36231C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
 		CC2D36241C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
 		CC2D36251C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
+		CC5E45AE1C69480E00EF6C1C /* RunMateUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */; };
+		CC5E45B01C6A4F6000EF6C1C /* TrophyCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */; };
+		CC5E45B21C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */; };
+		CC5E45B41C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */; };
+		CC5E45B61C6CEAF400EF6C1C /* TrophyInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */; };
+		CC5E45B81C7233D800EF6C1C /* goalAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */; };
+		CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */; };
 		CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85327C1C5B08B800895F6B /* popupLoginViewController.swift */; };
 		CC85327F1C5B09F900895F6B /* popupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85327E1C5B09F900895F6B /* popupView.swift */; };
+		CC8532851C64DFD600895F6B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532841C64DFD600895F6B /* HomeScreenView.swift */; };
+		CC8532861C64DFD600895F6B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532841C64DFD600895F6B /* HomeScreenView.swift */; };
+		CC8532871C64DFD600895F6B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532841C64DFD600895F6B /* HomeScreenView.swift */; };
+		CC8532891C64F60100895F6B /* RunScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532881C64F60000895F6B /* RunScreenView.swift */; };
+		CC85328A1C64F60100895F6B /* RunScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532881C64F60000895F6B /* RunScreenView.swift */; };
+		CC85328B1C64F60100895F6B /* RunScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532881C64F60000895F6B /* RunScreenView.swift */; };
+		CC85328D1C64F61200895F6B /* RunScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85328C1C64F61200895F6B /* RunScreenViewController.swift */; };
+		CC85328E1C64F61200895F6B /* RunScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85328C1C64F61200895F6B /* RunScreenViewController.swift */; };
+		CC85328F1C64F61200895F6B /* RunScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85328C1C64F61200895F6B /* RunScreenViewController.swift */; };
+		CC8532911C65091000895F6B /* RunLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532901C65091000895F6B /* RunLocation.swift */; };
+		CC8532921C65091000895F6B /* RunLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532901C65091000895F6B /* RunLocation.swift */; };
+		CC8532931C65091000895F6B /* RunLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532901C65091000895F6B /* RunLocation.swift */; };
+		CC8532951C65195000895F6B /* RunStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532941C65195000895F6B /* RunStatsView.swift */; };
+		CC8532961C65195000895F6B /* RunStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532941C65195000895F6B /* RunStatsView.swift */; };
+		CC8532971C65195000895F6B /* RunStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532941C65195000895F6B /* RunStatsView.swift */; };
+		CC8532991C66C55400895F6B /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532981C66C55400895F6B /* CommunityView.swift */; };
+		CC85329A1C66C55400895F6B /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532981C66C55400895F6B /* CommunityView.swift */; };
+		CC85329B1C66C55400895F6B /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532981C66C55400895F6B /* CommunityView.swift */; };
+		CC85329D1C66C56400895F6B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85329C1C66C56400895F6B /* CommunityViewController.swift */; };
+		CC85329E1C66C56400895F6B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85329C1C66C56400895F6B /* CommunityViewController.swift */; };
+		CC85329F1C66C56400895F6B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85329C1C66C56400895F6B /* CommunityViewController.swift */; };
+		CC8532A11C679A7100895F6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A01C679A7100895F6B /* ProfileViewController.swift */; };
+		CC8532A21C679A7100895F6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A01C679A7100895F6B /* ProfileViewController.swift */; };
+		CC8532A31C679A7100895F6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A01C679A7100895F6B /* ProfileViewController.swift */; };
+		CC8532A51C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
+		CC8532A61C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
+		CC8532A71C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
 		CCA8185A1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185B1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185C1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
@@ -41,6 +75,8 @@
 		CCA818621C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818631C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818641C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
+		CCF945101C82313900F3E470 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */; };
+		CCF945111C82313900F3E470 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,11 +123,29 @@
 		CC2D361E1C55D4D1008AA375 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CC2D36221C55D4DF008AA375 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		CC2D363E1C56B7F1008AA375 /* RunMate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunMate-Bridging-Header.h"; sourceTree = "<group>"; };
+		CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunMateUserInformation.swift; sourceTree = "<group>"; };
+		CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCaseViewController.swift; sourceTree = "<group>"; };
+		CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCaseCollectionViewLayout.swift; sourceTree = "<group>"; };
+		CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyInformation.swift; sourceTree = "<group>"; };
+		CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalAdditionView.swift; sourceTree = "<group>"; };
+		CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalAdditionViewController.swift; sourceTree = "<group>"; };
 		CC85327C1C5B08B800895F6B /* popupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupLoginViewController.swift; sourceTree = "<group>"; };
 		CC85327E1C5B09F900895F6B /* popupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupView.swift; sourceTree = "<group>"; };
+		CC8532841C64DFD600895F6B /* HomeScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		CC8532881C64F60000895F6B /* RunScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunScreenView.swift; sourceTree = "<group>"; };
+		CC85328C1C64F61200895F6B /* RunScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunScreenViewController.swift; sourceTree = "<group>"; };
+		CC8532901C65091000895F6B /* RunLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunLocation.swift; sourceTree = "<group>"; };
+		CC8532941C65195000895F6B /* RunStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunStatsView.swift; sourceTree = "<group>"; };
+		CC8532981C66C55400895F6B /* CommunityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		CC85329C1C66C56400895F6B /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		CC8532A01C679A7100895F6B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CC8532A41C679A7E00895F6B /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CCA8185D1C56C8D6005CD90A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +226,25 @@
 				CC85327C1C5B08B800895F6B /* popupLoginViewController.swift */,
 				CC85327E1C5B09F900895F6B /* popupView.swift */,
 				CC2D363E1C56B7F1008AA375 /* RunMate-Bridging-Header.h */,
+				CC8532841C64DFD600895F6B /* HomeScreenView.swift */,
 				CC13D0541C4F39800051144D /* Main.storyboard */,
+				CC8532A01C679A7100895F6B /* ProfileViewController.swift */,
+				CC8532A41C679A7E00895F6B /* ProfileView.swift */,
+				CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */,
+				CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */,
+				CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */,
+				CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */,
+				CC85329C1C66C56400895F6B /* CommunityViewController.swift */,
+				CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */,
+				CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */,
+				CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */,
+				CC8532901C65091000895F6B /* RunLocation.swift */,
+				CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */,
+				CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */,
+				CC85328C1C64F61200895F6B /* RunScreenViewController.swift */,
+				CC8532881C64F60000895F6B /* RunScreenView.swift */,
+				CC8532981C66C55400895F6B /* CommunityView.swift */,
+				CC8532941C65195000895F6B /* RunStatsView.swift */,
 				CC13D05A1C4F39800051144D /* Assets.xcassets */,
 				CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */,
 				CC13D05F1C4F39800051144D /* Info.plist */,
@@ -331,6 +403,7 @@
 				CC13D05E1C4F39800051144D /* LaunchScreen.storyboard in Resources */,
 				CC13D05B1C4F39800051144D /* Assets.xcassets in Resources */,
 				CC13D0561C4F39800051144D /* Main.storyboard in Resources */,
+				CCF945111C82313900F3E470 /* FriendTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +430,26 @@
 			files = (
 				CC13D0531C4F39800051144D /* ViewController.swift in Sources */,
 				CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */,
+				CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */,
+				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC85327F1C5B09F900895F6B /* popupView.swift in Sources */,
+				CC8532891C64F60100895F6B /* RunScreenView.swift in Sources */,
+				CC8532991C66C55400895F6B /* CommunityView.swift in Sources */,
+				CC85328D1C64F61200895F6B /* RunScreenViewController.swift in Sources */,
+				CC5E45AE1C69480E00EF6C1C /* RunMateUserInformation.swift in Sources */,
 				CC13D0591C4F39800051144D /* RunMate.xcdatamodeld in Sources */,
+				CC85329D1C66C56400895F6B /* CommunityViewController.swift in Sources */,
+				CC5E45B01C6A4F6000EF6C1C /* TrophyCaseViewController.swift in Sources */,
+				CC5E45B81C7233D800EF6C1C /* goalAdditionView.swift in Sources */,
+				CC8532851C64DFD600895F6B /* HomeScreenView.swift in Sources */,
+				CC8532A11C679A7100895F6B /* ProfileViewController.swift in Sources */,
+				CCF945101C82313900F3E470 /* FriendTableViewCell.swift in Sources */,
 				CC13D0511C4F39800051144D /* AppDelegate.swift in Sources */,
+				CC5E45B21C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift in Sources */,
+				CC8532A51C679A7E00895F6B /* ProfileView.swift in Sources */,
+				CC5E45B41C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift in Sources */,
+				CC5E45B61C6CEAF400EF6C1C /* TrophyInformation.swift in Sources */,
+				CC8532911C65091000895F6B /* RunLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +457,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC85329A1C66C55400895F6B /* CommunityView.swift in Sources */,
+				CC8532961C65195000895F6B /* RunStatsView.swift in Sources */,
+				CC8532A61C679A7E00895F6B /* ProfileView.swift in Sources */,
+				CC8532921C65091000895F6B /* RunLocation.swift in Sources */,
+				CC85328E1C64F61200895F6B /* RunScreenViewController.swift in Sources */,
+				CC85329E1C66C56400895F6B /* CommunityViewController.swift in Sources */,
+				CC8532861C64DFD600895F6B /* HomeScreenView.swift in Sources */,
+				CC8532A21C679A7100895F6B /* ProfileViewController.swift in Sources */,
 				CC13D0691C4F39800051144D /* RunMateTests.swift in Sources */,
+				CC85328A1C64F60100895F6B /* RunScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +474,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC85329B1C66C55400895F6B /* CommunityView.swift in Sources */,
+				CC8532971C65195000895F6B /* RunStatsView.swift in Sources */,
+				CC8532A71C679A7E00895F6B /* ProfileView.swift in Sources */,
+				CC8532931C65091000895F6B /* RunLocation.swift in Sources */,
+				CC85328F1C64F61200895F6B /* RunScreenViewController.swift in Sources */,
+				CC85329F1C66C56400895F6B /* CommunityViewController.swift in Sources */,
+				CC8532871C64DFD600895F6B /* HomeScreenView.swift in Sources */,
+				CC8532A31C679A7100895F6B /* ProfileViewController.swift in Sources */,
 				CC13D0741C4F39800051144D /* RunMateUITests.swift in Sources */,
+				CC85328B1C64F60100895F6B /* RunScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

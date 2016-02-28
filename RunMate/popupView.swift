@@ -17,6 +17,9 @@ protocol testDelegate {
 
 class popupView: UIView {
     
+    var facebookLogin: UIButton
+    
+    var title: UILabel
     var heightLabel: UILabel
     var feetTextField: UITextField
     var inchTextField: UITextField
@@ -35,14 +38,26 @@ class popupView: UIView {
     
     override init(frame: CGRect) {
         
+        var buttonFrame = CGRect(x:20, y:frame.height/2, width: 300, height: 30)
+        facebookLogin = UIButton.init(type: UIButtonType.RoundedRect) as UIButton
+        facebookLogin.frame = buttonFrame
+        facebookLogin.setTitle("login with facebook", forState: UIControlState.Normal)
         
-        var labelEdges = CGRect(x:20, y:20, width: 100, height: 30)
+        var titleHeight = 100.0 as CGFloat
+        
+        var labelEdges = CGRect(x:20, y:20, width: 300, height: 30)
+        title = UILabel.init(frame: labelEdges)
+        title.text = "Join Us!!"
+        title.font = title.font?.fontWithSize(40)
+        
+        
+        labelEdges = CGRect(x:20, y:labelEdges.origin.y + titleHeight, width: 100, height: 30)
         heightLabel = UILabel.init(frame: labelEdges)
         heightLabel.text = "Height : "
         heightLabel.font = heightLabel.font?.fontWithSize(28)
         heightLabel.textColor = UIColor.redColor()
         
-        labelEdges = CGRect(x: labelEdges.origin.x + 110, y: labelEdges.origin.y, width: 60 , height: labelEdges.size.height)
+        labelEdges = CGRect(x: labelEdges.origin.x + 110, y: labelEdges.origin.y , width: 60 , height: labelEdges.size.height)
         feetTextField = UITextField.init(frame: labelEdges)
         feetTextField.backgroundColor = UIColor.whiteColor()
         feetTextField.placeholder = "feet"
@@ -57,39 +72,37 @@ class popupView: UIView {
         inchTextField.font = inchTextField.font?.fontWithSize(28)
         
         
-        labelEdges = CGRect(x: 20, y: 70, width: 120, height: 30)
+        labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 120, height: 30)
         weightLabel = UILabel(frame: labelEdges)
         weightLabel.textColor = UIColor.redColor()
         weightLabel.text = "Weight : "
         weightLabel.font = weightLabel.font?.fontWithSize(28)
         
         
-        labelEdges = CGRect(x: 140, y: 70, width: 120, height: 30)
+        labelEdges = CGRect(x: 140, y: labelEdges.origin.y, width: 120, height: 30)
         wightTextField = UITextField(frame: labelEdges)
         wightTextField.placeholder = "pounds"
         wightTextField.backgroundColor = UIColor.whiteColor()
         wightTextField.layer.cornerRadius = 5
         wightTextField.font = wightTextField.font?.fontWithSize(28)
         
-        labelEdges = CGRect(x: 20, y: 120, width: 170, height: 30)
+        labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 170, height: 30)
         goalWeightLabel = UILabel.init(frame: labelEdges)
         goalWeightLabel.text = "Goal weight : "
         goalWeightLabel.font = goalWeightLabel.font?.fontWithSize(28)
         goalWeightLabel.textColor = UIColor.redColor()
         
-        labelEdges = CGRect(x: 200, y: 120, width: 100, height: 30)
+        labelEdges = CGRect(x: 200, y: labelEdges.origin.y, width: 100, height: 30)
         goalWeightTextField = UITextField.init(frame: labelEdges)
         goalWeightTextField.backgroundColor = UIColor.whiteColor()
         goalWeightTextField.placeholder = "pounds"
         goalWeightTextField.layer.cornerRadius = 5
         goalWeightTextField.font = goalWeightTextField.font?.fontWithSize(28)
         
-        labelEdges = CGRect(x: 20, y: 170, width: 100, height: 30)
+        labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 100, height: 30)
         acceptButton = UIButton(frame: labelEdges)
         acceptButton.setTitle("hello world", forState: UIControlState.Normal)
 
-        
-        
         
         super.init(frame: frame)
         self.backgroundColor = UIColor.orangeColor()
@@ -104,16 +117,18 @@ class popupView: UIView {
         self.addSubview(goalWeightLabel)
         self.addSubview(goalWeightTextField)
         self.addSubview(acceptButton)
+        self.addSubview(title)
+        self.addSubview(facebookLogin)
         
+        self.setAppearance()
         
         acceptButton.addTarget(self, action: "eatMe:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+        facebookLogin.addTarget(self, action: "biteMe:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 
     /*
@@ -128,7 +143,35 @@ class popupView: UIView {
         let string:NSString = "hello world"
         self.delegate?.testMethodA(string)
     }
+    
+    
+    func biteMe(sender: AnyObject){
+        let string:NSString = "hello world"
+        self.delegate?.testMethodB(string, testInt: 18)
+    }
 
+
+    func setAppearance(){
+        var isInputHidden = true
+        var isFacebookHidden = false
+        if(heightLabel.hidden){
+            isInputHidden = false
+            isFacebookHidden = true
+        }
+        heightLabel.hidden = isInputHidden
+        feetTextField.hidden = isInputHidden
+        inchTextField.hidden = isInputHidden
+        weightLabel.hidden = isInputHidden
+        wightTextField.hidden = isInputHidden
+        goalWeightLabel.hidden = isInputHidden
+        goalWeightTextField.hidden = isInputHidden
+        acceptButton.hidden = isInputHidden
+        title.hidden = isInputHidden
+        facebookLogin.hidden = isFacebookHidden
+        
+    }
+    
+    
 }
 
 

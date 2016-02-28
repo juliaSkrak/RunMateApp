@@ -15,42 +15,41 @@ import FBSDKLoginKit
 
 class popupLoginViewController: UIViewController, testDelegate {
     
+    var popView : popupView
+    
+    required init(coder aDecoder: NSCoder!) {
+        popView = popupView()
+        super.init(coder: aDecoder)!
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        popView = popupView()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let screenRect = UIScreen.mainScreen().bounds
+   /*     let screenRect = UIScreen.mainScreen().bounds
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
+        if(popView.frame.size == CGSize(width: 0, height: 0)){
+            popView = popupView.init(frame:  CGRect(x: 30, y: 30, width: screenWidth-60, height: screenHeight-60))
+
+            self.view.addSubview(popView)
+            //popView.test()
+            print(self.view.subviews)
+        } */
         
-        let popView : popupView = popupView.init(frame:  CGRect(x: 30, y: 30, width: screenWidth-60, height: screenHeight-60))
-        popView.opaque = false
-        popView.layer.cornerRadius = 15;
-        self.view.backgroundColor = UIColor.whiteColor()
-        //popView.alpha = 0.5
-        popView.delegate = self
-        self.view.addSubview(popView)
-        //popView.test()
-        print("hahi")
     }
     
     func testMethodA(testString: NSString){
         print("in test method a ")
         if let currentUser = PFUser.currentUser() {
-       /*     var query = PFQuery(className:"User")
-            query.getObjectInBackgroundWithId(currentUser.objectId!){
-                (user: PFObject?, error: NSError?) -> Void in
-                if error != nil {
-                    print(error)
-                } else if let user = user {
-                    
-                } */
             currentUser["weight"] = 100
             currentUser["facebookIdPublic"] = FBSDKAccessToken.currentAccessToken().userID
             currentUser.saveInBackground()
            // self.navigationController!.popViewControllerAnimated(true)
             self.dismissViewControllerAnimated(true, completion: nil)
-
             }
     /*    } else {
             print("error, no user is available")
@@ -63,6 +62,36 @@ class popupLoginViewController: UIViewController, testDelegate {
         print(testString)
         print("with a number ")
         print(testInt)
+        
+        let permissions = ["email","user_birthday", "public_profile", "user_friends", "user_birthday", ]
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                   // let popupLogin:popupLoginViewController = popupLoginViewController()
+                    //self.presentViewController(popupLogin, animated: true, completion: nil)
+                    //var myView = self.view.subviews[0] as! popupView
+                    //print(myView)
+                    self.popView.setAppearance()
+                    
+                } else {
+                    print("User logged in through Facebook! \(user)")
+                    var myView = self.view.subviews[0] as! popupView
+                   // print(myView)
+                    self.dismissViewControllerAnimated(true, completion: nil)
+        
+                }
+
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+                
+            }
+        }
+        
+        
+        
     }
 
     

@@ -34,6 +34,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
       FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
           PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        var testImage = UIImage.init(named: "imagetest2")
+        var homeViewTabBarItem = UITabBarItem.init(title: "Home", image: testImage, tag: 0)
+        
+
+        var testImage2 = UIImage.init(named: "imagetest2")
+        var profileViewTabBarItem = UITabBarItem.init(title: "Profile", image: testImage2, tag: 0)
+        
+        var testImage3 = UIImage.init(named: "imagetest2")
+        var communityViewTabBarItem = UITabBarItem.init(title: "Community", image: testImage3, tag: 0)
+        
+        var tabBarController = UITabBarController.init()
+        
+        var homeViewController = ViewController.init()
+        homeViewController.tabBarItem = homeViewTabBarItem
+        
+        var profileViewController = ProfileViewController.init()
+        profileViewController.tabBarItem = profileViewTabBarItem
+        
+        var communityViewController = CommunityViewController.init()
+        communityViewController.tabBarItem = communityViewTabBarItem
+        
+        
+        
+        var community = ProfileViewController.init()
+        profileViewController.tabBarItem = profileViewTabBarItem
+        
+
+       // MyOtherViewController* vc2 = [[MyOtherViewController alloc] init];
+        
+        var controllers = [homeViewController, profileViewController, communityViewController] as NSArray
+        tabBarController.viewControllers = controllers as! [UIViewController]
+        
+        window!.rootViewController = tabBarController
+        
+
+       // var homeViewTabBarItem = UITabBarItem.init
+        
+        //UIImage* anImage = [UIImage imageNamed:@"MyViewControllerImage.png"];
+//        UITabBarItem* theItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:anImage tag:0];
+
+        
+        
         return true
     }
     
