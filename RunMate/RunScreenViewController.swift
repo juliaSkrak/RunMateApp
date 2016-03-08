@@ -158,6 +158,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         runStatsView.layer.cornerRadius = 15;
         self.view.backgroundColor = UIColor.whiteColor()
         runStatsView.delegate = self
+        runStatsView.setStats(locationArray, runNum: runHash, distance: distance)
         self.view.addSubview(runStatsView)
     }
     

@@ -66,6 +66,8 @@
 		CC8532A51C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
 		CC8532A61C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
 		CC8532A71C679A7E00895F6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532A41C679A7E00895F6B /* ProfileView.swift */; };
+		CC889CD01C8C76A500B2D24C /* CommunityRelationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */; };
+		CC889CD21C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */; };
 		CCA8185A1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185B1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185C1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
@@ -141,6 +143,8 @@
 		CC85329C1C66C56400895F6B /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		CC8532A01C679A7100895F6B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CC8532A41C679A7E00895F6B /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityRelationships.swift; sourceTree = "<group>"; };
+		CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CCA8185D1C56C8D6005CD90A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -232,11 +236,13 @@
 				CC8532A41C679A7E00895F6B /* ProfileView.swift */,
 				CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */,
 				CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */,
+				CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */,
 				CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */,
 				CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */,
 				CC85329C1C66C56400895F6B /* CommunityViewController.swift */,
 				CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */,
 				CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */,
+				CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */,
 				CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */,
 				CC8532901C65091000895F6B /* RunLocation.swift */,
 				CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */,
@@ -434,9 +440,11 @@
 				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC85327F1C5B09F900895F6B /* popupView.swift in Sources */,
 				CC8532891C64F60100895F6B /* RunScreenView.swift in Sources */,
+				CC889CD01C8C76A500B2D24C /* CommunityRelationships.swift in Sources */,
 				CC8532991C66C55400895F6B /* CommunityView.swift in Sources */,
 				CC85328D1C64F61200895F6B /* RunScreenViewController.swift in Sources */,
 				CC5E45AE1C69480E00EF6C1C /* RunMateUserInformation.swift in Sources */,
+				CC889CD21C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift in Sources */,
 				CC13D0591C4F39800051144D /* RunMate.xcdatamodeld in Sources */,
 				CC85329D1C66C56400895F6B /* CommunityViewController.swift in Sources */,
 				CC5E45B01C6A4F6000EF6C1C /* TrophyCaseViewController.swift in Sources */,

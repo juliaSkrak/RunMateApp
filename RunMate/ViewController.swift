@@ -106,6 +106,8 @@ class ViewController: UIViewController {
             //btn.hidden = true
             //self.view.addSubview(btn)
         }
+       // let runStatsView = RunStatsView.init(frame: self.view.frame, setButton: true)
+       // self.view.addSubview(runStatsView)
     }
     
     
