@@ -21,6 +21,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
 
         communityTableView = UITableView.init(frame:self.view.frame)
         self.communityTableView.registerClass(FriendTableViewCell.self, forCellReuseIdentifier: "communityCell")
+        self.communityTableView.registerClass(GenericTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerView")//move to own method so there arnt two of all this
         communityTableView.delegate = self
         communityTableView.dataSource = self
        // communityTableView.reloadData()
@@ -34,6 +35,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
       
         communityTableView = UITableView.init(frame:self.view.frame)
            self.communityTableView.registerClass(FriendTableViewCell.self, forCellReuseIdentifier: "communityCell")
+        self.communityTableView.registerClass(GenericTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerView")
         communityTableView.delegate = self
         communityTableView.dataSource = self
         //communityTableView.reloadData()
@@ -123,6 +125,18 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100.0
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = self.communityTableView.dequeueReusableHeaderFooterViewWithIdentifier("headerView")
+        var header = cell as! GenericTableViewHeaderFooterView
+       // header!.contentView.backgroundColor = UIColor.whiteColor()
+        header.setNeedsLayout()
+        return header
     }
     
     func loadFriends(currentUser: PFUser){

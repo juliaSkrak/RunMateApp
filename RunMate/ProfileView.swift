@@ -17,6 +17,7 @@ class ProfileView: UIScrollView {
     var createTrophyButton: UIButton
     var trophyLabel: UILabel
     var trophyCaseContainerView: UIView
+    var seeRunHistory:UIButton
 
     
     
@@ -54,7 +55,9 @@ class ProfileView: UIScrollView {
         createTrophyButton.backgroundColor = UIColor.blueColor()
         createTrophyButton.setTitle("make your own goal", forState: UIControlState.Normal)
         
-        
+        seeRunHistory = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight + 60, width: (frame.width - 25)/2, height: 40))
+        seeRunHistory.setTitle("see your own run history", forState: UIControlState.Normal)//this should only be viewable from the current user's profile
+        seeRunHistory.backgroundColor = UIColor.purpleColor()
         
         super.init(frame: frame)
         
@@ -67,6 +70,7 @@ class ProfileView: UIScrollView {
         self.addSubview(suggestTrophyButton)
         self.addSubview(createTrophyButton)
         self.addSubview(trophyLabel)
+        self.addSubview(seeRunHistory)
         
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(UIViewAutoresizing.FlexibleHeight)

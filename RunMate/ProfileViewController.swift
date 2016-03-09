@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
         
         self.profileView.suggestTrophyButton.addTarget(self, action: "suggestTrophy:", forControlEvents: UIControlEvents.TouchUpInside)
         self.profileView.createTrophyButton.addTarget(self, action: "addTrophyManually:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.profileView.seeRunHistory.addTarget(self, action: "goToHistory:", forControlEvents: UIControlEvents.TouchUpInside)
 
      
     }
@@ -63,6 +64,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
         
         self.profileView.suggestTrophyButton.addTarget(self, action: "suggestTrophy:", forControlEvents: UIControlEvents.TouchUpInside)
         self.profileView.createTrophyButton.addTarget(self, action: "addTrophyManually:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.profileView.seeRunHistory.addTarget(self, action: "goToHistory:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
 
@@ -168,5 +170,10 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
                 self.profileView.trophyLabel.font.fontWithSize(24)
             }
         }
+    }
+    
+    func goToHistory(sender: AnyObject){
+        var runHistoryViewController = RunHistoryViewController.init()
+        self.presentViewController(runHistoryViewController, animated: true, completion: nil)
     }
 }
