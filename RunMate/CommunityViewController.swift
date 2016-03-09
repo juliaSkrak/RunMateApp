@@ -34,7 +34,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
       
         communityTableView = UITableView.init(frame:self.view.frame)
-           self.communityTableView.registerClass(FriendTableViewCell.self, forCellReuseIdentifier: "communityCell")
+           self.communityTableView.registerClass(FriendTableViewCell.self, forCellReuseIdentifier: "communityCell")  // I THINK THIS WILL BREAK TODO: FIX THIS/MOVE TO VIEWWILLAPPEAR
         self.communityTableView.registerClass(GenericTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerView")
         communityTableView.delegate = self
         communityTableView.dataSource = self

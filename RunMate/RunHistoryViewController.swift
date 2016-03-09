@@ -27,7 +27,6 @@ class RunHistoryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setUpTableView(){
-        self.tableView.registerClass(GenericTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerView")
         tableView = UITableView.init(frame: self.view.frame)
         self.view.backgroundColor = UIColor.purpleColor()
         self.view.addSubview(tableView)
@@ -35,15 +34,18 @@ class RunHistoryViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.reloadData() 
+        self.tableView.reloadData()
+        self.tableView.registerClass(GenericTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "headerView")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +80,9 @@ class RunHistoryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("headerView") as! GenericTableViewHeaderFooterView
+        let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("headerView")
+        print(cell)
+        let header = cell as! GenericTableViewHeaderFooterView
         header.setNeedsLayout()
         return header
     }

@@ -51,20 +51,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeViewController.tabBarItem = homeViewTabBarItem
         
         var profileViewController = ProfileViewController.init()
-        profileViewController.tabBarItem = profileViewTabBarItem
+        //profileViewController.tabBarItem = profileViewTabBarItem
+        
+        var profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        profileNavigationController.tabBarItem = profileViewTabBarItem
         
         var communityViewController = CommunityViewController.init()
         communityViewController.tabBarItem = communityViewTabBarItem
         
-        
-        
-        var community = ProfileViewController.init()
+        //var community = ProfileViewController.init()
         profileViewController.tabBarItem = profileViewTabBarItem
         
 
        // MyOtherViewController* vc2 = [[MyOtherViewController alloc] init];
         
-        var controllers = [homeViewController, profileViewController, communityViewController] as NSArray
+        var controllers = [homeViewController, profileNavigationController, communityViewController] as NSArray
         tabBarController.viewControllers = controllers as! [UIViewController]
         
         window!.rootViewController = tabBarController

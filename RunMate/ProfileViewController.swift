@@ -20,24 +20,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
         profileView = ProfileView()
         trophyCaseViewController = TrophyCaseViewController.init()
         super.init(coder: aDecoder)!
-  
-        scrollView = UIScrollView(frame: view.bounds)
-        profileView = ProfileView.init(frame: CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width, height: self.view.frame.height + 3000)))
-        trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame)
-        scrollView.contentSize = profileView.bounds.size
-      
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(profileView)
-        
-       self.profileView.trophyCaseContainerView.addSubview(self.trophyCaseViewController.view)
-        self.addChildViewController(self.trophyCaseViewController)
-        trophyCaseViewController.didMoveToParentViewController(self)
-        
-        self.profileView.suggestTrophyButton.addTarget(self, action: "suggestTrophy:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.profileView.createTrophyButton.addTarget(self, action: "addTrophyManually:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.profileView.seeRunHistory.addTarget(self, action: "goToHistory:", forControlEvents: UIControlEvents.TouchUpInside)
-
-     
+        self.setUpView()
     }
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
@@ -46,7 +29,11 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
         trophyCaseViewController = TrophyCaseViewController.init()
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.setUpView()
+    }
+    
 
+    func setUpView(){ //must be called after super.init
         profileView = ProfileView.init(frame: CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width, height: self.view.frame.height + 3000)))
         profileView.nameLabel.textColor = UIColor.blackColor()
         
@@ -67,14 +54,9 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate {
         self.profileView.seeRunHistory.addTarget(self, action: "goToHistory:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
-        
-        print(self.trophyCaseViewController.trophyCaseCollectionView.frame)
-        
         
       /*   var query = PFQuery(className: "TrophyInformation")
         query.whereKey("userId", equalTo:PFUser.currentUser()!.objectId!)
