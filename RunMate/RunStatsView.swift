@@ -24,6 +24,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     var mapView: MKMapView
     var lineSegments: [MKPolyline]
     var coordinateArray: [CLLocationCoordinate2D]
+
     
     var delegate: runStatsDelegate?
     
@@ -46,6 +47,8 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         lineSegments = [MKPolyline]()
         
         coordinateArray = [CLLocationCoordinate2D]()
+        
+    
         
         super.init(frame: frame)
         
@@ -75,7 +78,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         delegate?.closeWindow("heyooo")
     }
     
-    func setStats(locations:[RunLocation], runNum: NSNumber, distance:NSNumber){
+    func setStats(var locations:[RunLocation], runNum: NSNumber, distance:NSNumber){
         self.mapView.removeOverlays(lineSegments)
         let onesPlace = runNum.integerValue % 10
         switch(onesPlace){
@@ -88,7 +91,13 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
             default:
                 runCongratutationsLabel.text = "Congratulations on your \(runNum)th run!!!"
         }
-        runStatsLabel.text = "You ran \(distance) miles!"
+        runStatsLabel.text = "You ran \(distance) meters!"
+        
+        locations = locations.sort({Double($0.timestamp) < Double($1.timestamp)})
+        
+        for location in locations {
+            print(location.timestamp)
+        }
         
         if let initialLoc = locations.first{
             var minLat = initialLoc.latitude.doubleValue

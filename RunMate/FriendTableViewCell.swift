@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol FriendTableViewCellDelegate{
+    func requestRun(userObjectId : String)
+    func acceptFriendRequest(communityRelationship: CommunityRelationships)
+    func segueToUserProfile(communityRelationship: CommunityRelationships)
+}
+
 class FriendTableViewCell: UITableViewCell {
 
-    var nameLabel:UIButton
-    var buttonTwo:UIButton
+    var nameLabel:UIButton?
+    var rightButton:UIButton?
+    var leftButton:UIButton?
+    var delegate: FriendTableViewCellDelegate?
+    var relationship: CommunityRelationships?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,32 +33,33 @@ class FriendTableViewCell: UITableViewCell {
     }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        nameLabel = UIButton.init()
-        buttonTwo = UIButton.init()
+      //  nameLabel = nil//UIButton.init()
+      //  rightButton = nil//UIButton.init()
+      //  leftButton = nil//UIButton.init()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
+        nameLabel = UIButton.init(frame: CGRect(x: 0,y: 0,width: screenWidth - 120, height: 60))
+
         
-        nameLabel.frame = CGRect(x: 0,y: 0,width: screenWidth - 120, height: 60)
-        buttonTwo.frame = CGRect(x: screenWidth - 120 , y: 0, width: 120, height: 60)
+        rightButton = UIButton.init(frame : CGRect(x: screenWidth - 60 , y: 0, width: 60, height: 60))
+        rightButton?.titleLabel?.numberOfLines = 0
         
-        self.nameLabel.setTitleColor(UIColor.redColor(), forState: .Normal)
+        leftButton = UIButton.init(frame: CGRect(x: screenWidth - 120 , y: 0, width: 60, height: 60))
+        leftButton?.titleLabel?.numberOfLines = 0
+        
         
      //   nameLabel.textColor = UIColor.blueColor()
-        nameLabel.backgroundColor = UIColor.whiteColor()
-        self.backgroundColor = UIColor.redColor()
-        nameLabel.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center//NSTextAlignment.Center
-        buttonTwo.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.whiteColor()
+
+        nameLabel!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center//NSTextAlignment.Center
+        rightButton!.backgroundColor = UIColor.blackColor()
+        nameLabel?.setTitleColor(UIColor.blackColor(), forState: .Normal)
         
-       // self.opaque =  true
-        
-        print(nameLabel.frame.width)
-        print(self.frame.width)
-        
-        
-        self.addSubview(nameLabel)
-        self.addSubview(buttonTwo)
+        self.addSubview(nameLabel!)
+        self.addSubview(rightButton!)
+        self.addSubview(leftButton!)
        
     }
 
@@ -58,6 +68,7 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     func setCellFriendship(communityRelationship: CommunityRelationships){
+        relationship = communityRelationship
         //var request = FBSDKGraphRequest.init(graphPath: "/me", parameters: nil
         let pictureRequest = FBSDKGraphRequest(graphPath: "102142236840216", parameters: nil)
         pictureRequest.startWithCompletionHandler({
@@ -66,25 +77,28 @@ class FriendTableViewCell: UITableViewCell {
                 print("result is: \(result)")
                 var resultdict = result as? NSDictionary
                 let resultText = resultdict?.valueForKey("name") as! String
-                print("my result isss")
-                print(resultText)
-                print("this")
-                self.nameLabel.setTitle(resultText, forState: .Normal)
-                //self.nameLabel.setNeedsDisplay()
+                self.nameLabel?.setTitle(resultText, forState: .Normal)
+                self.nameLabel?.addTarget(self, action: "segueToUserProfile:", forControlEvents: .TouchUpInside)
                 
                 print(communityRelationship.accepted)
                 if(communityRelationship.accepted == true){
-                    self.buttonTwo.setTitle("request run", forState: .Normal)
+                    self.rightButton?.setTitle("request run", forState: .Normal)
+                    self.leftButton?.removeFromSuperview()
+                    
 
                 } else {
-                    self.buttonTwo.setTitle("accept friend", forState: .Normal)
-                 
+                    self.rightButton?.setTitle("accept friend", forState: .Normal)
+                    self.leftButton?.setTitle("deny friend", forState: .Normal)
                 }
                 
             } else {
                 print("\(error)")
             }
         })
+    }
+    
+    func segueToUserProfile(sender: AnyObject?){
+        delegate?.segueToUserProfile(relationship!)
     }
 
 }

@@ -50,7 +50,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setApperance()
-   
         //var username = username from UI or key store
         if let currentUser = PFUser.currentUser() {
             print("current user is \(currentUser.username)")
@@ -249,13 +248,13 @@ class ViewController: UIViewController {
     
     func createSomeTrophies(){//this is a test method, im adding to create some trophies so i can display them.  DO NOT KEEP
         var trophyInformation = TrophyInformation()
-        trophyInformation.userObjectId = PFUser.currentUser()!.objectId!
+        trophyInformation.userObjectID = PFUser.currentUser()!.objectId!
         trophyInformation.completed = true
         trophyInformation.runNum = 4
-        trophyInformation.timestamp = 1454962000.155431
+        //trophyInformation.timestamp = 1454962000.155431
         trophyInformation.definitionOfTrophy = "test 6"
         trophyInformation.distance = 4
-        trophyInformation.totalTime = 16
+        trophyInformation.minutes = 16
         
        // trophyInformation.saveInBackground()
         

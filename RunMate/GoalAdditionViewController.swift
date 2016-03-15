@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol GoalAdditionViewControllerDelegate{
+    func addNewGoal(newGoal: TrophyInformation)
+}
+
 class GoalAdditionViewController: UIViewController, GoalAdditonDelegate {
     
     var userGoalAdditionView: GoalAdditionView
+    var delegate: GoalAdditionViewControllerDelegate?
     
     required init(coder aDecoder: NSCoder!) {
         userGoalAdditionView = GoalAdditionView()
@@ -49,8 +54,18 @@ class GoalAdditionViewController: UIViewController, GoalAdditonDelegate {
         var newGoal = TrophyInformation()
         newGoal.completed = false
         newGoal.distance = Double(distanceInteger) + Double(distanceFractional)
-        newGoal.totalTime = time
-        print(newGoal)
+        newGoal.minutes = time
+        newGoal.imageName = "trophyImg" + String(arc4random_uniform(10) + 1)
+        if let currentUser = PFUser.currentUser() {
+            newGoal.userObjectID = currentUser.objectId
+        } else {
+            print("error, user logged out")
+        }
+        newGoal.completed = false
+       // print(newGoal)
+        newGoal.saveInBackground()
+        delegate!.addNewGoal(newGoal)
+        self.dismissViewControllerAnimated(true, completion: nil)
        // newGoal.totalTime = time
     }
     

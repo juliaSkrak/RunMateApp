@@ -18,9 +18,9 @@ class ProfileView: UIScrollView {
     var trophyLabel: UILabel
     var trophyCaseContainerView: UIView
     var seeRunHistory:UIButton
+    var trophyView : UIImageView
 
-    
-    
+
     override init(frame: CGRect) {
         print(frame)
         
@@ -40,9 +40,11 @@ class ProfileView: UIScrollView {
         trophyLabel = UILabel.init(frame: CGRect(x:frame.origin.x + 10, y:  frame.origin.y + 380, width: frame.size.width - 20, height: 40))
         trophyLabel.textAlignment = .Center
 
-        trophyCaseContainerView = UIView.init(frame: CGRect(x:frame.origin.x + 10, y:frame.origin.y + 450,  width: frame.width - 20, height:frame.width - 20))
-        print("containerviewedd \(trophyCaseContainerView.frame)")
-        trophyCaseContainerView.backgroundColor = UIColor.purpleColor()
+        trophyCaseContainerView = UIView.init(frame: CGRect(x:frame.origin.x + 40, y:frame.origin.y + 480,  width: frame.width - 80, height:frame.width - 80))
+       
+        
+        trophyView = UIImageView(image: UIImage(named: "trophyCase"))//UIImageView(frame: CGRect(x:frame.origin.x + 5, y:frame.origin.y + 445,  width: frame.width - 10, height:frame.width - 10))
+        trophyView.frame = CGRect(x:frame.origin.x + 5, y:frame.origin.y + 445,  width: frame.width - 10, height:frame.width - 10)
         
         var personalInfoHeight = frame.origin.y + 460 + frame.width - 20
         suggestTrophyButton = UIButton.init(frame: CGRect(x: frame.origin.x + 10, y: personalInfoHeight, width: (frame.width - 25)/2, height: 40))
@@ -58,6 +60,7 @@ class ProfileView: UIScrollView {
         seeRunHistory = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight + 60, width: (frame.width - 25)/2, height: 40))
         seeRunHistory.setTitle("see your own run history", forState: UIControlState.Normal)//this should only be viewable from the current user's profile
         seeRunHistory.backgroundColor = UIColor.purpleColor()
+    
         
         super.init(frame: frame)
         
@@ -66,6 +69,7 @@ class ProfileView: UIScrollView {
         self.addSubview(profilePictureImageView)
         self.addSubview(nameLabel)
         self.addSubview(overviewLabel)
+        self.addSubview(trophyView)
         self.addSubview(trophyCaseContainerView)
         self.addSubview(suggestTrophyButton)
         self.addSubview(createTrophyButton)
@@ -89,5 +93,7 @@ class ProfileView: UIScrollView {
         // Drawing code
     }
     */
+    
+    
 
 }

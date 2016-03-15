@@ -70,6 +70,7 @@
 		CC889CD01C8C76A500B2D24C /* CommunityRelationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */; };
 		CC889CD21C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */; };
 		CC889CD41C8E90EF00B2D24C /* RunHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */; };
+		CCA15FFC1C922BB8005BFD3D /* TrophyInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA15FFB1C922BB8005BFD3D /* TrophyInformationView.swift */; };
 		CCA8185A1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185B1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185C1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
@@ -149,6 +150,7 @@
 		CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityRelationships.swift; sourceTree = "<group>"; };
 		CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunHistoryViewController.swift; sourceTree = "<group>"; };
+		CCA15FFB1C922BB8005BFD3D /* TrophyInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyInformationView.swift; sourceTree = "<group>"; };
 		CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CCA8185D1C56C8D6005CD90A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				CC13D0541C4F39800051144D /* Main.storyboard */,
 				CC8532A01C679A7100895F6B /* ProfileViewController.swift */,
 				CC8532A41C679A7E00895F6B /* ProfileView.swift */,
+				CCA15FFB1C922BB8005BFD3D /* TrophyInformationView.swift */,
 				CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */,
 				CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */,
 				CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */,
@@ -442,6 +445,7 @@
 			files = (
 				CC13D0531C4F39800051144D /* ViewController.swift in Sources */,
 				CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */,
+				CCA15FFC1C922BB8005BFD3D /* TrophyInformationView.swift in Sources */,
 				CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */,
 				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC6CAEC11C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift in Sources */,

@@ -12,6 +12,7 @@ import UIKit
 protocol testDelegate {
     func testMethodA(testString: NSString)
     func testMethodB(testString: NSString, testInt:NSNumber)
+    func rejectButtonTapped()
 }
 
 
@@ -31,6 +32,7 @@ class popupView: UIView {
     var goalWeightTextField: UITextField
     
     var acceptButton: UIButton
+    var rejectButton: UIButton //i think this is important: we are a fitness app and most people might not be comforteble sharing this information with an app because they feel bad about it.
     
     var delegate:testDelegate?
  
@@ -101,8 +103,11 @@ class popupView: UIView {
         
         labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 100, height: 30)
         acceptButton = UIButton(frame: labelEdges)
-        acceptButton.setTitle("hello world", forState: UIControlState.Normal)
-
+        acceptButton.setTitle("save information", forState: UIControlState.Normal)
+        
+        labelEdges = CGRect(x: 150, y: labelEdges.origin.y, width: 100, height: 30)
+        rejectButton = UIButton(frame: labelEdges)
+        rejectButton.setTitle("do this later", forState: .Normal)
         
         super.init(frame: frame)
         self.backgroundColor = UIColor.orangeColor()
@@ -119,11 +124,13 @@ class popupView: UIView {
         self.addSubview(acceptButton)
         self.addSubview(title)
         self.addSubview(facebookLogin)
+        self.addSubview(rejectButton)
         
         self.setAppearance()
         
         acceptButton.addTarget(self, action: "eatMe:", forControlEvents: UIControlEvents.TouchUpInside)
-        facebookLogin.addTarget(self, action: "biteMe:", forControlEvents: UIControlEvents.TouchUpInside)
+        facebookLogin.addTarget(self, action: "facebookLoginTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        rejectButton.addTarget(self, action: "rejectButtonTapped:", forControlEvents: .TouchUpInside)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -145,12 +152,15 @@ class popupView: UIView {
     }
     
     
-    func biteMe(sender: AnyObject){
+    func facebookLoginTapped(sender: AnyObject){
         let string:NSString = "hello world"
         self.delegate?.testMethodB(string, testInt: 18)
     }
 
-
+    func rejectButtonTapped(sender:AnyObject){
+        self.delegate?.rejectButtonTapped()
+    }
+    
     func setAppearance(){
         var isInputHidden = true
         var isFacebookHidden = false
@@ -168,6 +178,7 @@ class popupView: UIView {
         acceptButton.hidden = isInputHidden
         title.hidden = isInputHidden
         facebookLogin.hidden = isFacebookHidden
+        rejectButton.hidden = isInputHidden
         
     }
     

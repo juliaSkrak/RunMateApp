@@ -8,15 +8,21 @@
 
 import UIKit
 
-class CommunityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class CommunityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FriendTableViewCellDelegate {
     
     var communityTableView : UITableView
     var friendArray : [CommunityRelationships]
+    var pendingRequests : [CommunityRelationships]
+    var sentRequests : [CommunityRelationships]
+    var communityDictionary : [String: [CommunityRelationships]]
     
     
     required init(coder aDecoder: NSCoder!) {
         friendArray = [CommunityRelationships]()
+        pendingRequests = [CommunityRelationships]()
+        sentRequests = [CommunityRelationships]()
         communityTableView = UITableView.init()
+        communityDictionary = [:]
         super.init(coder: aDecoder)!
 
         communityTableView = UITableView.init(frame:self.view.frame)
@@ -30,7 +36,10 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {  //TODO: PLZ MAKE CONVIENCE INITS HERE where you init the friend tableviewcell
         friendArray = [CommunityRelationships]()
+        pendingRequests = [CommunityRelationships]()
+        sentRequests = [CommunityRelationships]()
         communityTableView = UITableView.init()
+        communityDictionary = [:]
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
       
         communityTableView = UITableView.init(frame:self.view.frame)
@@ -44,6 +53,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
+   // func setDictionary
     
 /*
     override init(frame: CGRect) {
@@ -94,15 +104,24 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(communityTableView.frame.size.height == 0){
-            return 0
+        switch section{
+            case 0:
+                return (self.pendingRequests.isEmpty) ? self.friendArray.count : self.pendingRequests.count
+            case 1:
+                return self.friendArray.count
+            default:
+                return 0
         }
-        return self.friendArray.count
+        return 0//self.friendArray.count
         
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        var pending = (self.pendingRequests.isEmpty) ? 0 : 1
+        var friends = (self.friendArray.isEmpty) ? 0 : 1
+        print("number of sections")
+        print(pending + friends)
+        return pending + friends
     }
        // (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
         
@@ -115,10 +134,24 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        // let arraycount = self.friendArray as Array
         var cell:FriendTableViewCell = self.communityTableView.dequeueReusableCellWithIdentifier("communityCell")! as! FriendTableViewCell
-        if(!self.friendArray.isEmpty){
-            cell.backgroundColor = UIColor.redColor()
+        cell.delegate = self
+        if(!self.friendArray.isEmpty || !self.pendingRequests.isEmpty){
+            cell.backgroundColor = UIColor.purpleColor()
             // cell.textLabel?.text = self.items[indexPath.row]
-            cell.setCellFriendship(self.friendArray[indexPath.row])
+            //print(indexPath)
+            switch(indexPath.section){
+            case 0:
+                if(self.pendingRequests.isEmpty){
+                    cell.setCellFriendship(self.friendArray[indexPath.row])
+                } else {
+                    print(self.pendingRequests[indexPath.row])
+                    cell.setCellFriendship(self.pendingRequests[indexPath.row])
+                }
+            case 1:
+                cell.setCellFriendship(self.friendArray[indexPath.row])
+            default:
+                break
+            }
         }
         return cell
     }
@@ -141,26 +174,55 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func loadFriends(currentUser: PFUser){
         var bothLoaded = false
+        
+        let sort : (UnsafeMutablePointer<[CommunityRelationships]>) -> (CommunityRelationships) -> () = {(cRArray: UnsafeMutablePointer<[CommunityRelationships]>) in
+            var returnFunction = { (cR:CommunityRelationships) -> () in
+                print("printing a cr)")
+                print(cR)
+                switch(cR.accepted){
+                case 1:
+                    self.friendArray.append(cR)
+                    return
+                case 0:
+                    cRArray.memory.append(cR)
+                 /*   print("self.pendingRequests")
+                    print(self.pendingRequests)
+                    print("cRArray::")
+                    print(cRArray.memory) */
+                 //   print(cRArray == self.pendingRequests)
+                    return
+                default:
+                 //   cRArray.memory.append(cR)
+                    return
+                }
+            }
+            return returnFunction
+        }
+        
+  
         var query = PFQuery(className: "CommunityRelationships")
         query.whereKey("Friended", equalTo:currentUser.objectId!)
+        
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil{
                 print("communities found")
-                //print(objects)
-                //bothLoaded = bothLoaded + 1
                 let friendedArray = (objects as? [CommunityRelationships])!
-                self.friendArray = friendedArray + self.friendArray
+                friendedArray.map(sort(&self.pendingRequests))
+                print("hot dayum you just curried, printing requests")
+                print(self.pendingRequests)
+                //self.friendArray = friendedArray + self.friendArray
                 if(bothLoaded){
                     self.communityTableView.reloadData()
                 } else {
-                    
                     bothLoaded = true
                 }
             } else {
                 print("ERROR: \(error!) \(error!.userInfo)")
             }
         }
+        
         
         query = PFQuery(className: "CommunityRelationships")
         query.whereKey("Friender", equalTo:currentUser.objectId!)
@@ -170,8 +232,11 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
                 print("communities found")
                 //print(objects)
                 let frienderArray = (objects as? [CommunityRelationships])!
-                self.friendArray = self.friendArray + frienderArray
-                print(self.friendArray)
+                //self.friendArray = self.friendArray + frienderArray
+                frienderArray.map(sort(&self.sentRequests))
+                print("hot dayum you just curried, printing requested")
+                print(self.sentRequests)
+                //print(self.friendArray)
                 if(bothLoaded){
                     print("oh hi i found u babee")
                     self.communityTableView.reloadData()
@@ -185,4 +250,25 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
+    
+    func requestRun(userObjectId : String){
+        print("requesting run with \(userObjectId)")
+    }
+    
+    func acceptFriendRequest(communityRelationship: CommunityRelationships){
+        communityRelationship.accepted = true
+        communityRelationship.saveInBackground()
+    }
+    
+    func segueToUserProfile(communityRelationship: CommunityRelationships){
+        var friendProfileViewController: ProfileViewController
+        if(PFUser.currentUser()?.objectId == communityRelationship.Friended){
+            friendProfileViewController = ProfileViewController.init(userObjId:communityRelationship.Friender, isCurrentUser:false)
+        } else {
+           friendProfileViewController = ProfileViewController.init(userObjId:communityRelationship.Friended, isCurrentUser:false)
+        }
+        self.navigationController?.pushViewController(friendProfileViewController, animated: true)
+        
+    }
+    
 }

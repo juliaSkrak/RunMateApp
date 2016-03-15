@@ -9,15 +9,15 @@
 import UIKit
 
 class TrophyInformation: PFObject, PFSubclassing {
-    @NSManaged var userObjectId: String!
+    @NSManaged var userObjectID: String!
     @NSManaged var completed: NSNumber!//should be 0 if false and 1 if true we can access with as Bool
     @NSManaged var runNum: NSNumber! //number it was completed at, -1 if not completed yet
-    @NSManaged var timestamp: NSNumber!
+    //@NSManaged var timestamp: NSNumber!
     @NSManaged var definitionOfTrophy: String!
     @NSManaged var distance: NSNumber! // lets just do in miles??
-    @NSManaged var totalTime: NSNumber! //would be nice to do this in number of minutes it took to do this run
-    @NSManaged var iOSImageName: String!
-    
+    @NSManaged var minutes: NSNumber! //would be nice to do this in number of minutes it took to do this run
+    @NSManaged var imageName: String!
+   
     
     override class func initialize() {
         struct Static {

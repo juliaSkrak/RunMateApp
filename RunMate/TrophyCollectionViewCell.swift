@@ -11,14 +11,13 @@ import UIKit
 class TrophyCollectionViewCell: UICollectionViewCell {
     
     var trophyImg: UIImageView
-    var tropTest: UILabel
+    
     
     override init(frame: CGRect) {
         trophyImg = UIImageView.init(frame: frame)
-        tropTest = UILabel.init(frame: frame)//CGRect(x: 0, y: 0, width: 50, height: 10))//x:frame.x, y:frame.y, width: 50, height: 30))
+
         super.init(frame: frame)
         self.addSubview(trophyImg)
-        self.addSubview(tropTest)
         //print("gottttum")
     }
 
@@ -29,16 +28,17 @@ class TrophyCollectionViewCell: UICollectionViewCell {
     
     func setImage(trophyInformation:TrophyInformation){
       // if(trophyInformation.iOSImageName != "trophyImg1"){
-        let image = UIImage.init(named: trophyInformation.iOSImageName)
+        let image = UIImage.init(named: trophyInformation.imageName)
         
         trophyImg.image = image
-        print("printing image from \(trophyInformation.iOSImageName)")
-       
-        self.backgroundColor = UIColor.purpleColor()
-       
-        self.tropTest.text = "hello world"
+        print("printing image from \(trophyInformation.imageName)")
         
-        print(self.tropTest.text)
-         }
+        print(trophyInformation.completed!)
+        if(trophyInformation.completed! != 1){
+            trophyImg.alpha = 0.5
+        } else {
+            trophyImg.alpha = 1
+        }
+    }
            
 }

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RunHistoryTableViewCell: UITableViewCell {
+class RunHistoryTableViewCell: UITableViewCell {  //ok so i really tried to make the runhisotry view cell the same as the previous run view, but thats really unessesary and buggy (views resizing).  Also the benifits of using a tableview is lost when there is only one cell always in view.  TODO:: test how this works with autolayout
     
     var runStatsLabel: UILabel
     var mapView: MKMapView
@@ -22,7 +22,7 @@ class RunHistoryTableViewCell: UITableViewCell {
         
         mapView = MKMapView.init(frame: CGRect(x: 0, y: 70, width: frame.width, height: frame.width))
         runStatsLabel = UILabel.init(frame: CGRect(x: 16.0, y: frame.width + 70 , width: frame.width - 32, height: 100))
-        
+         
         self.addSubview(mapView)
         self.addSubview(runStatsLabel)
     }

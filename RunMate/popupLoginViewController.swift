@@ -43,25 +43,19 @@ class popupLoginViewController: UIViewController, testDelegate {
     }
     
     func testMethodA(testString: NSString){
-        print("in test method a ")
         if let currentUser = PFUser.currentUser() {
-            currentUser["weight"] = 100
-            currentUser["facebookIdPublic"] = FBSDKAccessToken.currentAccessToken().userID
-            currentUser.saveInBackground()
-           // self.navigationController!.popViewControllerAnimated(true)
+            var newUser = currentUser
+            newUser.setObject((Int(popView.wightTextField.text!)!), forKey: "weight")//["goalWeight"] = 134  //setObject(Int(popView.wightTextField.text!)!, forKey: "weight")
+            newUser.setObject((Int(popView.goalWeightTextField.text!)!), forKey: "goalWeight")
+            var heightInches = Int(popView.feetTextField.text!)! * Int(popView.inchTextField.text!)!
+            newUser.setObject(heightInches, forKey: "height")
+            print("my new user is:::: \(newUser)")
+            newUser.saveInBackground()
             self.dismissViewControllerAnimated(true, completion: nil)
             }
-    /*    } else {
-            print("error, no user is available")
-        } */
-        //print(testString)
     }
     
     func testMethodB(testString: NSString, testInt:NSNumber){
-        print("in test method b ")
-        print(testString)
-        print("with a number ")
-        print(testInt)
         
         let permissions = ["email","user_birthday", "public_profile", "user_friends", "user_birthday", ]
         
@@ -69,6 +63,28 @@ class popupLoginViewController: UIViewController, testDelegate {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
+                     let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: FBSDKAccessToken.currentAccessToken().userID, parameters: ["fields":"email , name"])
+                    graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+                        if ((error) != nil) {
+                            print("Error: \(error)")
+                        }  else  {
+                            user["speed"] = -1
+                            user["facebookIdPublic"] = FBSDKAccessToken.currentAccessToken().userID
+                            user["name"] = result["name"]
+                            user["totalDistance"] = 0
+                            user["milePerHourTime"] = "0:00"
+                            user["runNum"] = 0
+                            if let val =  result["email"] {
+                                if(val != nil){
+                                    user["email"] = val
+                                }
+                            }
+                            user.saveInBackground()
+                        }
+                    })
+
+                    
+                    
                     print("User signed up and logged in through Facebook!")
                    // let popupLogin:popupLoginViewController = popupLoginViewController()
                     //self.presentViewController(popupLogin, animated: true, completion: nil)
@@ -93,7 +109,10 @@ class popupLoginViewController: UIViewController, testDelegate {
         
         
     }
-
+    
+    func rejectButtonTapped(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 }
