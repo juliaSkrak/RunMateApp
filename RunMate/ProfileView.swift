@@ -19,8 +19,14 @@ class ProfileView: UIScrollView {
     var trophyCaseContainerView: UIView
     var seeRunHistory:UIButton
     var trophyView : UIImageView
+    var isCurrentUser: Bool?
 
-
+    convenience init(frame: CGRect, isCurrentUser  currentUser: Bool){
+        
+        self.init(frame: frame)
+        isCurrentUser = currentUser
+    }
+    
     override init(frame: CGRect) {
         print(frame)
         
@@ -31,8 +37,6 @@ class ProfileView: UIScrollView {
         nameLabel.backgroundColor = UIColor.grayColor()
         nameLabel.font = nameLabel.font.fontWithSize(28)
         nameLabel.textAlignment = .Center
-        
-        
         
         overviewLabel = UILabel.init(frame: CGRect(x:frame.origin.x + 10, y: frame.origin.y + 290, width: frame.size.width - 20, height: 80))
         overviewLabel.backgroundColor = UIColor.purpleColor()
@@ -93,7 +97,6 @@ class ProfileView: UIScrollView {
         // Drawing code
     }
     */
-    
     
 
 }

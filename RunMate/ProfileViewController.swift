@@ -95,6 +95,8 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
     
     func suggestTrophy(sender: AnyObject){
         print("hey choloe's server")
+        var suggestedRunViewController = SuggestedRunViewController.init()
+        self.presentViewController(suggestedRunViewController, animated: true, completion:  nil)
     }
     
     func addTrophyManually(sender: AnyObject){

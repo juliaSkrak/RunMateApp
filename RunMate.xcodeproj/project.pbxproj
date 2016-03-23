@@ -15,6 +15,8 @@
 		CC13D05E1C4F39800051144D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */; };
 		CC13D0691C4F39800051144D /* RunMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0681C4F39800051144D /* RunMateTests.swift */; };
 		CC13D0741C4F39800051144D /* RunMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13D0731C4F39800051144D /* RunMateUITests.swift */; };
+		CC1B363B1C9CE2A20005EED5 /* SuggestedRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B363A1C9CE2A20005EED5 /* SuggestedRunViewController.swift */; };
+		CC216B421CA2DDB300C32477 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC216B411CA2DDB300C32477 /* Run.swift */; };
 		CC2D360D1C55D44E008AA375 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D360C1C55D44E008AA375 /* AudioToolbox.framework */; };
 		CC2D360F1C55D455008AA375 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D360E1C55D455008AA375 /* CFNetwork.framework */; };
 		CC2D36111C55D45B008AA375 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36101C55D45B008AA375 /* CoreLocation.framework */; };
@@ -116,6 +118,8 @@
 		CC13D06F1C4F39800051144D /* RunMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC13D0731C4F39800051144D /* RunMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITests.swift; sourceTree = "<group>"; };
 		CC13D0751C4F39800051144D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC1B363A1C9CE2A20005EED5 /* SuggestedRunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedRunViewController.swift; sourceTree = "<group>"; };
+		CC216B411CA2DDB300C32477 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		CC2D360C1C55D44E008AA375 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CC2D360E1C55D455008AA375 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CC2D36101C55D45B008AA375 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -256,9 +260,11 @@
 				CC8532901C65091000895F6B /* RunLocation.swift */,
 				CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */,
 				CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */,
+				CC1B363A1C9CE2A20005EED5 /* SuggestedRunViewController.swift */,
 				CC85328C1C64F61200895F6B /* RunScreenViewController.swift */,
 				CC8532881C64F60000895F6B /* RunScreenView.swift */,
 				CC8532981C66C55400895F6B /* CommunityView.swift */,
+				CC216B411CA2DDB300C32477 /* Run.swift */,
 				CC8532941C65195000895F6B /* RunStatsView.swift */,
 				CC13D05A1C4F39800051144D /* Assets.xcassets */,
 				CC13D05C1C4F39800051144D /* LaunchScreen.storyboard */,
@@ -449,6 +455,7 @@
 				CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */,
 				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC6CAEC11C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift in Sources */,
+				CC216B421CA2DDB300C32477 /* Run.swift in Sources */,
 				CC889CD41C8E90EF00B2D24C /* RunHistoryViewController.swift in Sources */,
 				CC85327F1C5B09F900895F6B /* popupView.swift in Sources */,
 				CC8532891C64F60100895F6B /* RunScreenView.swift in Sources */,
@@ -467,6 +474,7 @@
 				CC13D0511C4F39800051144D /* AppDelegate.swift in Sources */,
 				CC5E45B21C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift in Sources */,
 				CC8532A51C679A7E00895F6B /* ProfileView.swift in Sources */,
+				CC1B363B1C9CE2A20005EED5 /* SuggestedRunViewController.swift in Sources */,
 				CC5E45B41C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift in Sources */,
 				CC5E45B61C6CEAF400EF6C1C /* TrophyInformation.swift in Sources */,
 				CC8532911C65091000895F6B /* RunLocation.swift in Sources */,

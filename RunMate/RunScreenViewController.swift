@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runScreenViewDelegate, runStatsDelegate {
     
@@ -57,6 +58,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         print("last run location isss \(last.longitude), \(last.latitude)")
         last.distance = -2 //set it at -2, then it goes to -1 then it starts
         distance = -2
+        
         setApperance()
         // Do any additional setup after loading the view.
     }
@@ -80,6 +82,9 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                         } else {
                             distance = 0
                             savedLocation.distance = distance
+                        }
+                        if(last.longitude != nil){
+                            drawMyLine(location.coordinate)
                         }
                         self.runScreenView.speedLabel.text = String(location.speed)
                         savedLocation.speed = location.speed
@@ -139,8 +144,9 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         localQuery.findObjectsInBackground().continueWithBlock ({
             (task: BFTask!) -> AnyObject! in
             locationArray = (task.result as? [RunLocation])!
-            PFObject.saveAllInBackground(locationArray)
-            print("location array is: \(locationArray)")
+            PFObject.saveAllInBackground(locationArray, block: { (Bool, error: NSError?) -> Void in
+                self.createRunObject(locationArray)
+            })
             dispatch_async(dispatch_get_main_queue()) {
                 self.displayData(locationArray)
             }
@@ -148,6 +154,22 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         })
     }
 
+    
+    func createRunObject(locations: [RunLocation]){
+        var run = Run.init()
+        run.user = locations.first?.userObjId
+      var formatter = NSDateFormatter()
+        run.runDate = NSDateFormatter.dateFormatFromTemplate("MMMM d", options: 0, locale: NSLocale.currentLocale())
+        //run.runlocations = [String].init()
+        run.ACL = PFACL(user: PFUser.currentUser()!)
+        run.distance = distance / 1609.34
+        var runLocations = [String]()
+        for location: RunLocation in locations {
+            runLocations.append(location.objectId!)
+        }
+        run.runlocations = runLocations
+        PFObject.saveAllInBackground([run])
+    }
     
     func displayData(locationArray: [RunLocation]){
         let screenRect = UIScreen.mainScreen().bounds
@@ -176,5 +198,17 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func drawMyLine(pointB: CLLocationCoordinate2D){
+        
+        let pointA = CLLocationCoordinate2D(latitude: last.latitude.doubleValue, longitude: last.longitude.doubleValue)
+        print("printing last for fun \(pointA)")
+        var lineBetween = [MKMapPointForCoordinate(pointA), MKMapPointForCoordinate(pointB)]
+        // var myPoint = UnsafeMutablePointer<MKMapPoint>()
+        //myPoint = &lineBetween.first
+        let segment = MKPolyline(points: &lineBetween, count: 2)
+        runScreenView.userRouteMapView.addOverlays([segment])
+    }
+    
 
 }

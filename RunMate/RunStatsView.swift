@@ -91,7 +91,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
             default:
                 runCongratutationsLabel.text = "Congratulations on your \(runNum)th run!!!"
         }
-        runStatsLabel.text = "You ran \(distance) meters!"
+        runStatsLabel.text = "You ran \(distance.doubleValue / 1609.34) meters!"
         
         locations = locations.sort({Double($0.timestamp) < Double($1.timestamp)})
         
@@ -132,8 +132,6 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     func drawMyLine(){
         print(coordinateArray)
         for i in 1...coordinateArray.count-1{
-            print(i)
-            print(coordinateArray[i])
             let pointA = coordinateArray[i-1]
             let pointB = coordinateArray[i]
             
