@@ -27,8 +27,13 @@ class TrophyCollectionViewCell: UICollectionViewCell {
     
     
     func setImage(trophyInformation:TrophyInformation){
-      // if(trophyInformation.iOSImageName != "trophyImg1"){
-        let image = UIImage.init(named: trophyInformation.imageName)
+        var image = UIImage.init()
+        if (trophyInformation.imageName != nil && trophyInformation.imageName != "") {
+            image = UIImage.init(named: trophyInformation.imageName)!
+            
+        } else {
+            image = UIImage.init(named: self.addTrophyImageName(trophyInformation))!
+        }
         
         trophyImg.image = image
         print("printing image from \(trophyInformation.imageName)")
@@ -40,5 +45,13 @@ class TrophyCollectionViewCell: UICollectionViewCell {
             trophyImg.alpha = 1
         }
     }
-           
+    
+    func addTrophyImageName(trophInfo: TrophyInformation) -> String {
+        let trophyImageName = "trophyImg" + String(arc4random_uniform(10) + 1)
+        trophInfo.imageName = trophyImageName
+       // image = UIImage.init(named: trophInfo.imageName)!
+        trophInfo.saveInBackground()
+        return trophyImageName
+    }
+    
 }

@@ -33,9 +33,6 @@ class FriendTableViewCell: UITableViewCell {
     }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-      //  nameLabel = nil//UIButton.init()
-      //  rightButton = nil//UIButton.init()
-      //  leftButton = nil//UIButton.init()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
@@ -50,7 +47,6 @@ class FriendTableViewCell: UITableViewCell {
         leftButton?.titleLabel?.numberOfLines = 0
         
         
-     //   nameLabel.textColor = UIColor.blueColor()
         self.backgroundColor = UIColor.whiteColor()
 
         nameLabel!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center//NSTextAlignment.Center
@@ -67,7 +63,7 @@ class FriendTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setCellFriendship(communityRelationship: CommunityRelationships){
+    func setCellFriendship(communityRelationship: CommunityRelationships, friend : Friend){
         relationship = communityRelationship
         //var request = FBSDKGraphRequest.init(graphPath: "/me", parameters: nil
         let pictureRequest = FBSDKGraphRequest(graphPath: "102142236840216", parameters: nil)
@@ -83,12 +79,17 @@ class FriendTableViewCell: UITableViewCell {
                 print(communityRelationship.accepted)
                 if(communityRelationship.accepted == true){
                     self.rightButton?.setTitle("request run", forState: .Normal)
+                    
                     self.leftButton?.removeFromSuperview()
+                    self.rightButton?.addTarget(self, action: "requestRun:", forControlEvents: .TouchUpInside)
                     
 
                 } else {
                     self.rightButton?.setTitle("accept friend", forState: .Normal)
                     self.leftButton?.setTitle("deny friend", forState: .Normal)
+                    
+                    self.rightButton?.addTarget(self, action: "acceptFriend:", forControlEvents: .TouchUpInside)
+                    self.leftButton?.addTarget(self, action: "rejectFriend:", forControlEvents: .TouchUpInside)
                 }
                 
             } else {
@@ -97,8 +98,24 @@ class FriendTableViewCell: UITableViewCell {
         })
     }
     
+    func requestRun(sender:AnyObject?){
+       // self.delegate!.requestRun(rela)
+    }
+    
+    func acceptFriend(sender: AnyObject?){
+        relationship?.accepted = 1
+        relationship?.saveInBackground()
+        
+        self.delegate!.acceptFriendRequest(relationship!)
+    }
+    
+    func rejectFriend(sender: AnyObject?){
+        relationship?.deleteInBackground()
+     //   self.delegate!.
+    }
+    
     func segueToUserProfile(sender: AnyObject?){
-        delegate?.segueToUserProfile(relationship!)
+        //delegate?.segueToUserProfile(relationship!
     }
 
 }

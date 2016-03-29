@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct Friend {
+    var userObjectId : String
+    var facebookId : String
+    var accepted : Bool
+}
+
+
 class CommunityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FriendTableViewCellDelegate {
     
     var communityTableView : UITableView
@@ -136,22 +143,30 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         var cell:FriendTableViewCell = self.communityTableView.dequeueReusableCellWithIdentifier("communityCell")! as! FriendTableViewCell
         cell.delegate = self
         if(!self.friendArray.isEmpty || !self.pendingRequests.isEmpty){
+            var friendshipConnection : CommunityRelationships?
             cell.backgroundColor = UIColor.purpleColor()
-            // cell.textLabel?.text = self.items[indexPath.row]
-            //print(indexPath)
+            
             switch(indexPath.section){
             case 0:
                 if(self.pendingRequests.isEmpty){
-                    cell.setCellFriendship(self.friendArray[indexPath.row])
+                    friendshipConnection = friendArray[indexPath.row]
                 } else {
-                    print(self.pendingRequests[indexPath.row])
-                    cell.setCellFriendship(self.pendingRequests[indexPath.row])
+                    friendshipConnection = self.pendingRequests[indexPath.row]
                 }
             case 1:
-                cell.setCellFriendship(self.friendArray[indexPath.row])
+                print("beeep beep")
+                friendshipConnection = self.friendArray[indexPath.row]
             default:
                 break
             }
+            if let currentUser = PFUser.currentUser(){
+                if(friendshipConnection!.Friended == currentUser.objectId){
+                    cell.setCellFriendship(friendshipConnection!, friend : Friend(userObjectId: friendshipConnection!.Friender, facebookId: friendshipConnection!.FrienderFacebookID, accepted: (friendshipConnection!.accepted != 0)))
+                } else {
+                    cell.setCellFriendship(friendshipConnection!, friend : Friend(userObjectId: friendshipConnection!.Friended, facebookId: friendshipConnection!.FriendedFacebookID, accepted: (friendshipConnection!.accepted != 0)))
+                }
+            }
+
         }
         return cell
     }
@@ -181,9 +196,13 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(cR)
                 switch(cR.accepted){
                 case 1:
+                    //self.friendArray.append(Friend(userObjectId: cR.Friender, facebookId: cR.FrienderFacebookID, accepted: true))
+                    //self.friendArray.append(Friend(userObjectId: cR.Friended, facebookId: cR.FriendedFacebookID, accepted: true))
                     self.friendArray.append(cR)
                     return
                 case 0:
+                   // cRArray.memory.append(Friend(userObjectId: cR.Friender, facebookId: cR.FrienderFacebookID, accepted: false))
+                    //cRArray.memory.append(Friend(userObjectId: cR.Friended, facebookId: cR.FriendedFacebookID, accepted: false))
                     cRArray.memory.append(cR)
                  /*   print("self.pendingRequests")
                     print(self.pendingRequests)
@@ -238,7 +257,6 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(self.sentRequests)
                 //print(self.friendArray)
                 if(bothLoaded){
-                    print("oh hi i found u babee")
                     self.communityTableView.reloadData()
                 } else {
                     print("not")

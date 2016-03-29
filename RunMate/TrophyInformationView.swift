@@ -85,7 +85,6 @@ class TrophyInformationView: UIView {//can be reused!!
     
     
     func setUpView(trophInfo: TrophyInformation){
-        
         closeWindowButton.addTarget(self, action: "closeWindow:", forControlEvents: .TouchUpInside)
         if let currentUser = PFUser.currentUser() {
             if(trophInfo.userObjectID == currentUser.objectId && trophInfo.completed == 0){
@@ -94,8 +93,9 @@ class TrophyInformationView: UIView {//can be reused!!
         }
         //print(trophInfo.completed)
        // deleteTrophyButton.opaque = trophInfo.completed == 1 ? false : true
-        
+
         trophyImageView.image = UIImage.init(named: trophInfo.imageName)
+
         titleLabel.text = "Your goal to run \(trophInfo.distance) miles in \(trophInfo.minutes) minutes."
       // subtitleLabel.text =
         if(trophInfo.completed == 1){
@@ -105,6 +105,7 @@ class TrophyInformationView: UIView {//can be reused!!
         }
         
     }
+    
     
     func buildConstraints(trophInfo:TrophyInformation){
         let viewsDictionary = ["titleLabel" : self.titleLabel, "closeWindowButton": self.closeWindowButton, "deleteTrophyButton":self.deleteTrophyButton, "trophyImageView": self.trophyImageView, "subtitleLabel": self.subtitleLabel]
@@ -137,7 +138,6 @@ class TrophyInformationView: UIView {//can be reused!!
             } else{
                 let buttonViewConstraintHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[closeWindowButton]-20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                 interactiveFrame.addConstraints(buttonViewConstraintHorizontal)
-                
             }
         }
         

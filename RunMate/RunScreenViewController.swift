@@ -16,7 +16,10 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     var locationManager:CLLocationManager!
     var distance: CLLocationDistance
     var last: RunLocation
-    
+    var startTime: NSTimeInterval
+    var timerClock: NSTimer
+    var timerCoord: NSTimer
+    var timer: NSTimer
     
     required init(coder aDecoder: NSCoder) {
         runScreenView = RunScreenView()
@@ -24,6 +27,10 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         distance = -2
         last = RunLocation()
         last.distance = -2
+        startTime = NSTimeInterval.init()
+        timer = NSTimer.init()
+        timerClock = NSTimer.init()
+        timerCoord = NSTimer.init()
         super.init(coder: aDecoder)!
     
     }
@@ -33,6 +40,10 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         runHash = 0
         distance = 0
         last = RunLocation()
+        startTime = NSTimeInterval.init()
+        timer = NSTimer.init()
+        timerClock = NSTimer.init()
+        timerCoord = NSTimer.init()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -46,11 +57,19 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
+        timerClock = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateRunStats", userInfo: nil, repeats: true)
+        timerCoord = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateMapCoords", userInfo: nil, repeats: true)
+
+        
+        startTime = NSDate.timeIntervalSinceReferenceDate()
         
         print("distance isss \(distance)")
         //last.longitude = 0
@@ -200,7 +219,6 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     */
     
     func drawMyLine(pointB: CLLocationCoordinate2D){
-        
         let pointA = CLLocationCoordinate2D(latitude: last.latitude.doubleValue, longitude: last.longitude.doubleValue)
         print("printing last for fun \(pointA)")
         var lineBetween = [MKMapPointForCoordinate(pointA), MKMapPointForCoordinate(pointB)]
@@ -210,5 +228,31 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         runScreenView.userRouteMapView.addOverlays([segment])
     }
     
+    func updateTime(){
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime = currentTime - startTime
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        let fraction = String(elapsedTime * 100)
+        self.runScreenView.currentRunStatsView.displayTimeText(minutes : String(minutes), seconds: String(seconds), fraction : fraction)
+        
+    }
+    
+    func updateRunStats(){
+        self.runScreenView.currentRunStatsView.displayRunStats(last)
+    }
+    
+    func updateMapCoords(){
+        if(last.latitude != nil && last.longitude != nil){
+            var coord = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: Double(last.latitude),
+                    longitude: Double(last.longitude)),
+                span: MKCoordinateSpan(latitudeDelta: 0.0001,
+                    longitudeDelta: 0.0001))
+            self.runScreenView.setMapCoordinates(coord)
+        } //maybe put an else here for the start point? ur call
+    }
 
 }

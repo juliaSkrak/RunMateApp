@@ -24,6 +24,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     var mapView: MKMapView
     var lineSegments: [MKPolyline]
     var coordinateArray: [CLLocationCoordinate2D]
+    
 
     
     var delegate: runStatsDelegate?
