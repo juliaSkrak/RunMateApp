@@ -28,7 +28,7 @@ class TrophyCollectionViewCell: UICollectionViewCell {
     
     func setImage(trophyInformation:TrophyInformation){
         var image = UIImage.init()
-        if (trophyInformation.imageName != nil && trophyInformation.imageName != "") {
+        if (trophyInformation.imageName != nil && trophyInformation.imageName != "None") {
             image = UIImage.init(named: trophyInformation.imageName)!
             
         } else {

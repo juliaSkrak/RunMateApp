@@ -19,6 +19,7 @@ class RunScreenView: UIView, MKMapViewDelegate{
     var userRouteMapView: MKMapView
     var delegate: runScreenViewDelegate?
     var currentRunStatsView: CurrentRunStatsView
+    var endView : UIView
     
     override init(frame: CGRect) {
         
@@ -35,7 +36,8 @@ class RunScreenView: UIView, MKMapViewDelegate{
         currentRunStatsView.backgroundColor = UIColor.grayColor()
         //currentRunStatsView =
         
-        
+        endView = UIView.init(frame: frame)
+        endView.backgroundColor = UIColor.whiteColor()
         super.init(frame: frame)
         
         finishRunButton.addTarget(self, action: "stopRun:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -60,17 +62,9 @@ class RunScreenView: UIView, MKMapViewDelegate{
 
     func stopRun(sender:AnyObject){
         print("run stopping")
+        self.addSubview(endView)
         delegate?.stopRun("just stawwwp")
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    
 
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {

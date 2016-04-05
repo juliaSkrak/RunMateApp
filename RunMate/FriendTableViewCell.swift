@@ -10,8 +10,9 @@ import UIKit
 
 protocol FriendTableViewCellDelegate{
     func requestRun(userObjectId : String)
-    func acceptFriendRequest(communityRelationship: CommunityRelationships)
-    func segueToUserProfile(communityRelationship: CommunityRelationships)
+    func acceptFriendRequest(userObjectId: String)
+    func segueToUserProfile(userObjId: String)
+    func deleteFriendRequest(userObjId: String)
 }
 
 class FriendTableViewCell: UITableViewCell {
@@ -21,6 +22,9 @@ class FriendTableViewCell: UITableViewCell {
     var leftButton:UIButton?
     var delegate: FriendTableViewCellDelegate?
     var relationship: CommunityRelationships?
+    var cellFriend : FriendStruct?
+    var user: PFUser?
+    var acceptedRequest : Bool?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,10 +67,16 @@ class FriendTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setCellFriendship(communityRelationship: CommunityRelationships, friend : Friend){
-        relationship = communityRelationship
-        //var request = FBSDKGraphRequest.init(graphPath: "/me", parameters: nil
-        let pictureRequest = FBSDKGraphRequest(graphPath: "102142236840216", parameters: nil)
+    func setCellFriendship(friend: PFUser, accepted : Bool){
+        acceptedRequest = accepted
+        user = friend
+        
+        rightButton?.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
+        leftButton?.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
+       
+        
+        print(user)
+        let pictureRequest = FBSDKGraphRequest(graphPath: user!.objectForKey("facebookIdPublic") as! String, parameters: nil)
         pictureRequest.startWithCompletionHandler({
         (connection, result, error: NSError!) -> Void in
             if error == nil {
@@ -76,18 +86,17 @@ class FriendTableViewCell: UITableViewCell {
                 self.nameLabel?.setTitle(resultText, forState: .Normal)
                 self.nameLabel?.addTarget(self, action: "segueToUserProfile:", forControlEvents: .TouchUpInside)
                 
-                print(communityRelationship.accepted)
-                if(communityRelationship.accepted == true){
+                print(accepted)
+                if(accepted == true){
                     self.rightButton?.setTitle("request run", forState: .Normal)
                     
-                    self.leftButton?.removeFromSuperview()
+                    self.leftButton?.alpha = 0
                     self.rightButton?.addTarget(self, action: "requestRun:", forControlEvents: .TouchUpInside)
-                    
-
+                 
                 } else {
                     self.rightButton?.setTitle("accept friend", forState: .Normal)
                     self.leftButton?.setTitle("deny friend", forState: .Normal)
-                    
+                    self.leftButton?.alpha = 1
                     self.rightButton?.addTarget(self, action: "acceptFriend:", forControlEvents: .TouchUpInside)
                     self.leftButton?.addTarget(self, action: "rejectFriend:", forControlEvents: .TouchUpInside)
                 }
@@ -99,23 +108,21 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     func requestRun(sender:AnyObject?){
-       // self.delegate!.requestRun(rela)
+        self.delegate!.requestRun(user!.objectId!)
     }
     
     func acceptFriend(sender: AnyObject?){
-        relationship?.accepted = 1
-        relationship?.saveInBackground()
-        
-        self.delegate!.acceptFriendRequest(relationship!)
+        print("feel acceptance")
+        self.delegate!.acceptFriendRequest(user!.objectId!)
     }
     
     func rejectFriend(sender: AnyObject?){
-        relationship?.deleteInBackground()
-     //   self.delegate!.
+        print("mehhh")
+        delegate!.deleteFriendRequest(user!.objectId!)
     }
     
     func segueToUserProfile(sender: AnyObject?){
-        //delegate?.segueToUserProfile(relationship!
+        delegate?.segueToUserProfile(user!.objectId!)
     }
 
 }

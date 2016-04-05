@@ -31,6 +31,9 @@ class popupView: UIView {
     var goalWeightLabel: UILabel
     var goalWeightTextField: UITextField
     
+    var ageLabel: UILabel
+    var ageTextField: UITextField
+    
     var acceptButton: UIButton
     var rejectButton: UIButton //i think this is important: we are a fitness app and most people might not be comforteble sharing this information with an app because they feel bad about it.
     
@@ -101,6 +104,19 @@ class popupView: UIView {
         goalWeightTextField.layer.cornerRadius = 5
         goalWeightTextField.font = goalWeightTextField.font?.fontWithSize(28)
         
+        labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 170, height: 30)
+        ageLabel = UILabel.init(frame: labelEdges)
+        ageLabel.text = "Age : "
+        ageLabel.font = ageLabel.font?.fontWithSize(28)
+        ageLabel.textColor = UIColor.redColor()
+        
+        labelEdges = CGRect(x: 200, y: labelEdges.origin.y, width: 100, height: 30)
+        ageTextField = UITextField.init(frame: labelEdges)
+        ageTextField.backgroundColor = UIColor.whiteColor()
+        ageTextField.placeholder = "age"
+        ageTextField.layer.cornerRadius = 5
+        ageTextField.font = ageTextField.font?.fontWithSize(28)
+        
         labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 100, height: 30)
         acceptButton = UIButton(frame: labelEdges)
         acceptButton.setTitle("save information", forState: UIControlState.Normal)
@@ -123,6 +139,8 @@ class popupView: UIView {
         self.addSubview(goalWeightTextField)
         self.addSubview(acceptButton)
         self.addSubview(title)
+        self.addSubview(ageLabel)
+        self.addSubview(ageTextField)
         self.addSubview(facebookLogin)
         self.addSubview(rejectButton)
         
@@ -177,9 +195,11 @@ class popupView: UIView {
         goalWeightTextField.hidden = isInputHidden
         acceptButton.hidden = isInputHidden
         title.hidden = isInputHidden
+        ageLabel.hidden = isInputHidden
+        ageTextField.hidden = isInputHidden
         facebookLogin.hidden = isFacebookHidden
         rejectButton.hidden = isInputHidden
-        
+
     }
     
     

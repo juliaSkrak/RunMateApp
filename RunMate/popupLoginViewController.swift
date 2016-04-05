@@ -45,11 +45,16 @@ class popupLoginViewController: UIViewController, testDelegate {
     func testMethodA(testString: NSString){
         if let currentUser = PFUser.currentUser() {
             var newUser = currentUser
-            newUser.setObject((Int(popView.wightTextField.text!)!), forKey: "weight")//["goalWeight"] = 134  //setObject(Int(popView.wightTextField.text!)!, forKey: "weight")
-            newUser.setObject((Int(popView.goalWeightTextField.text!)!), forKey: "goalWeight")
-            var heightInches = Int(popView.feetTextField.text!)! * Int(popView.inchTextField.text!)!
-            newUser.setObject(heightInches, forKey: "height")
-            print("my new user is:::: \(newUser)")
+            let weight: Int = Int(popView.wightTextField.text!) ?? -1
+            let goalWeight: Int = Int(popView.goalWeightTextField.text!) ?? -1
+            let foot: Int = Int(popView.feetTextField.text!) ?? 0
+            let inches: Int = Int(popView.inchTextField.text!) ?? 0
+            var height = (foot * 12 + inches == 0) ? -1 : foot * 12 + inches
+            let age:Int = Int(self.popView.ageTextField.text!) ?? -1
+            newUser.setObject(weight, forKey: "weight")
+            newUser.setObject(goalWeight, forKey: "goalWeight")
+            newUser.setObject(height, forKey: "height")
+            newUser.setObject(String(age), forKey: "age")
             newUser.saveInBackground()
             self.dismissViewControllerAnimated(true, completion: nil)
             }
@@ -72,11 +77,17 @@ class popupLoginViewController: UIViewController, testDelegate {
                             user["facebookIdPublic"] = FBSDKAccessToken.currentAccessToken().userID
                             user["name"] = result["name"]
                             user["totalDistance"] = 0
-                            user["milePerHourTime"] = "0:00"
                             user["runNum"] = 0
+                            user["age"] = String(-1)
+                            user["weight"] = -1
+                            user["goalWeight"] = -1
+                            user["goalWeeks"] = -1
+                            user["height"]  = -1
                             if let val =  result["email"] {
                                 if(val != nil){
                                     user["email"] = val
+                                } else {
+                                    user["email"] = ""
                                 }
                             }
                             user.saveInBackground()

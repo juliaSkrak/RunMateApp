@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+//TODO: TURN OFF TIMER WHEN RUN IS  FINISHED
+
 class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runScreenViewDelegate, runStatsDelegate {
     
     var runScreenView: RunScreenView
@@ -19,8 +21,10 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     var startTime: NSTimeInterval
     var timerClock: NSTimer
     var timerCoord: NSTimer
+    var timerRunWithFriend: NSTimer
     var timer: NSTimer
-    
+    var runWithFriendId : String
+
     required init(coder aDecoder: NSCoder) {
         runScreenView = RunScreenView()
         runHash = 0
@@ -31,6 +35,8 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timer = NSTimer.init()
         timerClock = NSTimer.init()
         timerCoord = NSTimer.init()
+        timerRunWithFriend = NSTimer.init()
+        runWithFriendId = ""
         super.init(coder: aDecoder)!
     
     }
@@ -44,10 +50,17 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timer = NSTimer.init()
         timerClock = NSTimer.init()
         timerCoord = NSTimer.init()
+        timerRunWithFriend = NSTimer.init()
+        runWithFriendId = ""
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-
+    
+    convenience init(friend friendId : String){
+        self.init(nibName: nil, bundle:nil)
+        runWithFriendId = friendId
+    }
+    
     func setApperance(){
         runScreenView = RunScreenView.init(frame: self.view.frame) //idk how to fix
         runScreenView.delegate = self
@@ -56,8 +69,6 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -68,6 +79,9 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateRunStats", userInfo: nil, repeats: true)
         timerCoord = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateMapCoords", userInfo: nil, repeats: true)
 
+        if(!runWithFriendId.isEmpty){
+            timerRunWithFriend = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "updateFriendSpeed", userInfo: nil, repeats: true)
+        }
         
         startTime = NSDate.timeIntervalSinceReferenceDate()
         
@@ -252,7 +266,20 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                 span: MKCoordinateSpan(latitudeDelta: 0.0001,
                     longitudeDelta: 0.0001))
             self.runScreenView.setMapCoordinates(coord)
-        } //maybe put an else here for the start point? ur call
+        }
+    }
+    
+    func updateFriendSpeed(){
+    /*    var query:PFQuery = PFUser.query()!
+        query.getObjectInBackgroundWithId(runWithFriendId) {
+            (user: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let user = user {
+                print(user)
+            }
+        } */
+        print(runWithFriendId)
     }
 
 }

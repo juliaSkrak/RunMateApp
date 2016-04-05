@@ -29,11 +29,6 @@ class ViewController: UIViewController {
         homeScreenView = HomeScreenView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
-  /*  convenience override init() {
-        self.init(nibName: nil, bundle: nil)
-    } */
-    
 
     func setApperance(){
         homeScreenView = HomeScreenView.init(frame: self.view.frame)
@@ -41,9 +36,7 @@ class ViewController: UIViewController {
         print(self.view.subviews)
         self.view.addSubview(homeScreenView)
         homeScreenView.startRunButton.addTarget(self, action: "runInitiated:", forControlEvents: UIControlEvents.TouchUpInside)
-        homeScreenView.friendsButton.addTarget(self, action: "friendslist:", forControlEvents: UIControlEvents.TouchUpInside)
-        homeScreenView.profileButton.addTarget(self, action: "viewProfile:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+      
     }
     
     
@@ -209,8 +202,7 @@ class ViewController: UIViewController {
                 print("\(error)")
             }
         }) */
-        
-        addProfilePicture(self.homeScreenView.yourProfPic)
+
         
     }
     

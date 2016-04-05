@@ -23,7 +23,6 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         profileView = ProfileView()
         trophyCaseViewController = TrophyCaseViewController.init()
         super.init(coder: aDecoder)!
-        self.setUpView()
     }
     
     convenience init(userObjId: String?, isCurrentUser:Bool){//ONLY USE THIS CONVIENCE, might need two
@@ -32,6 +31,10 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
             userObjectId = userObjId
         }
         self.currentUser = isCurrentUser
+        self.setUpView()
+        if(!isCurrentUser){
+            profileView.removeCurrentUserButtons()
+        }
     }
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
@@ -40,9 +43,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         scrollView = UIScrollView()
         popupView = TrophyInformationView()
         trophyCaseViewController = TrophyCaseViewController.init()
-        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.setUpView()
     }
     
 
@@ -53,8 +54,11 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.contentSize = profileView.bounds.size
         //scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
-        trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame)
+        if(!currentUser!){
+            trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame, userId: userObjectId!)
+        } else {
+            trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame, userId: "")
+        }
         trophyCaseViewController.delegate = self
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(profileView)
@@ -120,8 +124,6 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
     
         userGoalAdditionViewController.userGoalAdditionView.goalAdditonDelegate = userGoalAdditionViewController
         self.presentViewController(userGoalAdditionViewController, animated: true, completion: nil)//(userGoalAdditionViewController, animated: true)
-       // print("is it editable?? \(userGoalAdditonView.testText.enabled)")
-        
     }
     
     func setLabelInformationForUser(userObject: PFObject?){
@@ -151,7 +153,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         self.profileView.overviewLabel.numberOfLines = 0
         
         dispatch_async(dispatch_get_main_queue()) {
-            var mph = (userObject!.objectForKey("milePerHourTime") as? String)!.componentsSeparatedByString(":")
+            var mph = ["hello", "world"]//(userObject!.objectForKey("milePerHourTime") as? String)!.componentsSeparatedByString(":")
             self.profileView.nameLabel.text = (userObject!.objectForKey("name") as? String)!
             var overviewLabelText = (userObject!.objectForKey("name") as? String)! + " has been on " + String((userObject!.objectForKey("runNum") as? Int)!) + " runs for a total of "
             overviewLabelText =   overviewLabelText +   String((userObject!.objectForKey("totalDistance") as? Int)!) + " miles with a last mph of " + (mph[0] as? String)! + " minutes and " + (mph[1] as? String)! + " seconds"
@@ -170,7 +172,6 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         runHistoryViewController.navigationItem.title = "run history"
         self.navigationController?.pushViewController(runHistoryViewController, animated: true) // need to remember to do this every time!!
         
-        //self.presentViewController(runHistoryViewController, animated: true, completion: nil)
     }
     
     
@@ -197,26 +198,10 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
     }
     
     func deleteGoal(trophInfo: TrophyInformation){
-       /* if let currentUser = PFUser.currentUser() {
-            if(trophInfo.userObjectID == currentUser.objectId && trophInfo.completed! != 1){
-                let query = PFQuery(className: "TrophyInformation")
-                query.getObjectInBackgroundWithId(trophInfo.objectId!)
-                query.getFirstObjectInBackgroundWithBlock{
-                    (trophy: PFObject?, error: NSError?) -> Void in
-                    if error == nil && trophy != nil { */
-                        trophInfo.deleteInBackground()
-                        closeWindow()
-                        //trophyCaseViewController.co
-               /*     } else {
-                        print(error)
-                    }
-                }
-            } else{
-                print("error!!!!")
-            
-            }
-        } */
-        trophyCaseViewController.trophyArray.removeAtIndex(trophyCaseViewController.trophyCaseCollectionView.indexPathsForSelectedItems()!.first!.row)
+        trophInfo.deleteInBackground()
+        closeWindow()
+
+    trophyCaseViewController.trophyArray.removeAtIndex(trophyCaseViewController.trophyCaseCollectionView.indexPathsForSelectedItems()!.first!.row)
      //   trophyCaseViewController.trophyCaseCollectionView.reloadDataSource()
         trophyCaseViewController.trophyCaseCollectionView.reloadData()
       //  print("the path is \(trophyCaseViewController.trophyCaseCollectionView.indexPathsForSelectedItems()!.first!.row)")

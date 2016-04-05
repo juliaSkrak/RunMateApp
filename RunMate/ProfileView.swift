@@ -26,6 +26,7 @@ class ProfileView: UIScrollView {
         self.init(frame: frame)
         isCurrentUser = currentUser
     }
+
     
     override init(frame: CGRect) {
         print(frame)
@@ -89,7 +90,12 @@ class ProfileView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    func removeCurrentUserButtons(){
+        suggestTrophyButton.removeFromSuperview()
+        createTrophyButton.removeFromSuperview()
+        seeRunHistory.removeFromSuperview()
+    }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

@@ -18,10 +18,14 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     var delegate: TrophyCaseViewControllerDelegate?
     var trophyCaseCollectionView: UICollectionView
     var trophyArray: [TrophyInformation]
+    var userObjectId: String
+    
+
     
     required init(coder aDecoder: NSCoder) {
         trophyCaseCollectionView = UICollectionView()
         trophyArray = [TrophyInformation]()
+        userObjectId = ""
        // delegate = TrophyCaseViewControllerDelegate()
         super.init(coder: aDecoder)!
     }
@@ -29,6 +33,7 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         //UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         //[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        userObjectId = ""
         trophyArray = [TrophyInformation]()
         var flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
@@ -42,8 +47,9 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
        
     }
     
-    convenience init(profileViewFrame:CGRect){
+    convenience init(profileViewFrame:CGRect, userId: String){
         self.init()
+        userObjectId = userId
      //   trophyCaseCollectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 300), collectionViewLayout: UICollectionViewFlowLayout.init())
         print(profileViewFrame)
         trophyCaseCollectionView.frame = CGRect(x: 0, y: 0, width: profileViewFrame.size.width, height: profileViewFrame.size.height)//CGRect(x: 0, y: 0, width: 300, height: 300) //need to reposition the profileViewFrame to the center
@@ -52,8 +58,6 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
         self.trophyCaseCollectionView.layer.borderColor = UIColor.blackColor().CGColor
         self.trophyCaseCollectionView.layer.borderWidth = 3.0
         self.view.addSubview(trophyCaseCollectionView)
-
-     
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,30 +69,6 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-/*
-       var query:PFQuery = PFUser.query()!
-        query.whereKey("userId", equalTo:PFUser.currentUser()!.objectId!)
-        //query!.whereKey("weight", equalTo:100)
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil && (objects!.count == 1){
-                // The find succeeded.
-                let runScreen:RunScreenViewController = RunScreenViewController()
-                self.presentViewController(runScreen, animated: true, completion: nil)
-                
-                // Do something with the found objects
-                runScreen.runHash = (objects![0].objectForKey("runNum") as? NSNumber)!
-                runScreen.runHash = NSNumber(integer: runScreen.runHash.integerValue + 1)
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-       
-       if let currentUser = PFUser.currentUser() {
-            loadTrophies(currentUser)
-        }
-        */
         
         
         trophyCaseCollectionView.delegate = self
@@ -108,20 +88,6 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-  /*      let screenSize: CGRect = CGRect(origin: <#T##CGPoint#>, size: <#T##CGSize#>)
-        
-        visibleRect.origin scrollView.contentOffset;
-        visibleRect.size = scrollView.contentSize;
-        let centerPoint = CGPoint(x: screenWidth/2, y: screenHeight/2)
-        
-        //let onScreenView
-        print(centerPoint)
-        var popupAlertView = UIAlertView.init(frame: CGRect(x:Double(centerPoint.x), y:Double(centerPoint.y), width: 200.0, height:200.0))//UI.init(frame:CGRect(x:centerPoint.x, y:centerPoint.y, width: 200, height:200))
-        popupAlertView.backgroundColor = UIColor.purpleColor()
-    //    popupView.layer.cornerRadius = 10
-        self.view.addSubview(popupAlertView)
-        //(framewidth/2-100, ) */
-     //   if(indexPath.section == -=){
             delegate?.openWindow(trophyArray[indexPath.row])
        // }
     }
@@ -131,7 +97,8 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //print("cltn")
+        print("cltn \(trophyArray.count)")
+        
         return trophyArray.count
     }
     
@@ -148,8 +115,9 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func loadTrophies(currentUser: PFUser){
+        let objectId = (userObjectId == "") ? currentUser.objectId! : userObjectId
         let query = PFQuery(className: "TrophyInformation")
-        query.whereKey("userObjectID", equalTo:currentUser.objectId!)
+        query.whereKey("userObjectID", equalTo:objectId)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil{

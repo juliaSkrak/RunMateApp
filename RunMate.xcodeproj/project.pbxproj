@@ -33,7 +33,6 @@
 		CC2D36231C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
 		CC2D36241C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
 		CC2D36251C55D4DF008AA375 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2D36221C55D4DF008AA375 /* Parse.framework */; };
-		CC3DE9B41CAB043C0091B36C /* FriendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE9B31CAB043C0091B36C /* FriendObject.swift */; };
 		CC5E45AE1C69480E00EF6C1C /* RunMateUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */; };
 		CC5E45B01C6A4F6000EF6C1C /* TrophyCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */; };
 		CC5E45B21C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */; };
@@ -84,6 +83,7 @@
 		CCA818621C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818631C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818641C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
+		CCF474A81CAC4810005BEC28 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF474A71CAC4810005BEC28 /* Friend.swift */; };
 		CCF945101C82313900F3E470 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */; };
 		CCF945111C82313900F3E470 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -135,7 +135,6 @@
 		CC2D361E1C55D4D1008AA375 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CC2D36221C55D4DF008AA375 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		CC2D363E1C56B7F1008AA375 /* RunMate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunMate-Bridging-Header.h"; sourceTree = "<group>"; };
-		CC3DE9B31CAB043C0091B36C /* FriendObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendObject.swift; sourceTree = "<group>"; };
 		CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunMateUserInformation.swift; sourceTree = "<group>"; };
 		CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCaseViewController.swift; sourceTree = "<group>"; };
 		CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CCA8185D1C56C8D6005CD90A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CCF474A71CAC4810005BEC28 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,11 +259,11 @@
 				CC85329C1C66C56400895F6B /* CommunityViewController.swift */,
 				CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */,
 				CC216B431CA31B7600C32477 /* CurrentRunStatsView.swift */,
-				CC3DE9B31CAB043C0091B36C /* FriendObject.swift */,
 				CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */,
 				CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */,
 				CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */,
 				CC8532901C65091000895F6B /* RunLocation.swift */,
+				CCF474A71CAC4810005BEC28 /* Friend.swift */,
 				CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */,
 				CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */,
 				CC1B363A1C9CE2A20005EED5 /* SuggestedRunViewController.swift */,
@@ -455,7 +455,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC3DE9B41CAB043C0091B36C /* FriendObject.swift in Sources */,
 				CC13D0531C4F39800051144D /* ViewController.swift in Sources */,
 				CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */,
 				CCA15FFC1C922BB8005BFD3D /* TrophyInformationView.swift in Sources */,
@@ -486,6 +485,7 @@
 				CC5E45B41C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift in Sources */,
 				CC5E45B61C6CEAF400EF6C1C /* TrophyInformation.swift in Sources */,
 				CC8532911C65091000895F6B /* RunLocation.swift in Sources */,
+				CCF474A81CAC4810005BEC28 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +575,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Julia Skrak (6SV42L5K2Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -597,6 +598,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6f10ede1-19cc-4d30-af68-8bfee246a611";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -619,6 +621,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Julia Skrak (6SV42L5K2Z)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -634,6 +637,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "6f10ede1-19cc-4d30-af68-8bfee246a611";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -643,7 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: runmate";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/juliaskrak/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
@@ -652,7 +656,7 @@
 				INFOPLIST_FILE = RunMate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMate;
+				PRODUCT_BUNDLE_IDENTIFIER = runmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RunMate/RunMate-Bridging-Header.h";
 			};
@@ -662,7 +666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: runmate";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/juliaskrak/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
@@ -671,7 +675,7 @@
 				INFOPLIST_FILE = RunMate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jskrak.RunMate;
+				PRODUCT_BUNDLE_IDENTIFIER = runmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RunMate/RunMate-Bridging-Header.h";
 			};

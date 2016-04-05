@@ -27,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("dX9JzxUVmJXzIqKh3keU7GCHTRwzqqp3dmI9TuRu",
             clientKey: "IvXSKVzB08BiTTeZA9VV0q7iRsGlgBY8ojbTlAh3")
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         // Override point for customization after application launch.
@@ -34,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
       FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
           PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        Friend.registerSubclass() //this is a parse bug fix.  you touch this, you die.
         
         var testImage = UIImage.init(named: "imagetest2")
         var homeViewTabBarItem = UITabBarItem.init(title: "Home", image: testImage, tag: 0)
@@ -78,7 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UIImage* anImage = [UIImage imageNamed:@"MyViewControllerImage.png"];
 //        UITabBarItem* theItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:anImage tag:0];
 
-        
+        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        }
         
         return true
     }
@@ -182,6 +191,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+        var currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+     //   currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+        if (error.code == 3010) {
+            print("push notificiations are NOT supported on simulatorrrr")
+        }else{
+            
+            print("error!!  the code is \(error)")
+        }
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("dictionary is \(userInfo.description)")
+        var userInfoDictionary : [String: AnyObject] = userInfo as! [String: AnyObject]
+        print(userInfoDictionary)
+        PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        if(application.applicationState != UIApplicationState.Active){
+            PFPush.handlePush(userInfo)
+        }
+        let alert = UIAlertController(title: "Run Request", message: "your friend \(userInfoDictionary["name"]!) wants to for run!!!", preferredStyle: UIAlertControllerStyle.Alert)
+        let cancelAction = UIAlertAction(title: "deny request", style: .Cancel) { (action) in
+            print("cancel")
+        }
+        alert.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "OK GO!", style: .Default) { (action) in
+            print("action")
+        }
+        alert.addAction(OKAction)
+
+        //alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+       // self.presentViewController(alert, animated: true, completion: nil)
+         window!.rootViewController!.presentViewController(alert, animated: true, completion: nil)
+        /*
+        //Present the AlertController
+        window!.rootViewController!.presentViewController(actionSheetController, animated: true, completion: nil)
+*/
+    }
+    // [PFPush handlePush:userInfo];
 
 }
 
