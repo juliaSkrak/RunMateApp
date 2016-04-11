@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
     var profileView: ProfileView //profile pic is being stretched!!! oh no no
     var trophyCaseViewController : TrophyCaseViewController
     var popupView : TrophyInformationView?
-    var userObjectId: String?
+    var userObject: PFUser?
     var currentUser: Bool?
     
     required init(coder aDecoder: NSCoder) {
@@ -25,10 +25,10 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         super.init(coder: aDecoder)!
     }
     
-    convenience init(userObjId: String?, isCurrentUser:Bool){//ONLY USE THIS CONVIENCE, might need two
+    convenience init(userObj: PFUser?, isCurrentUser:Bool){//ONLY USE THIS CONVIENCE, might need two
         self.init(nibName: nil, bundle: nil)
         if(!isCurrentUser){
-            userObjectId = userObjId
+            userObject = userObj
         }
         self.currentUser = isCurrentUser
         self.setUpView()
@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         scrollView.contentSize = profileView.bounds.size
         //scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         if(!currentUser!){
-            trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame, userId: userObjectId!)
+            trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame, userId: userObject!.objectId!)
         } else {
             trophyCaseViewController = TrophyCaseViewController.init(profileViewFrame: self.profileView.trophyCaseContainerView.frame, userId: "")
         }
@@ -75,16 +75,26 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        
     }
 
     override func viewDidAppear(animated: Bool) {
         if(self.currentUser!){
             if let currentUser = PFUser.currentUser() {
-                self.userObjectId = currentUser.objectId
+                self.userObject = currentUser
             }
         }
+        var name = self.userObject!["name"] as! String
+        var fullNameArr = name.characters.split{$0 == " "}.map(String.init)
+        print(fullNameArr)
+        if(fullNameArr[0].characters.last! == "s"){
+            fullNameArr[0] = fullNameArr[0] + "'"
+        } else {
+             fullNameArr[0] = fullNameArr[0] + "'s"
+        }
+        self.title = "\(fullNameArr[0]) profile"
         var query:PFQuery = PFUser.query()!
-        query.whereKey("objectId", equalTo:self.userObjectId!)
+        query.whereKey("objectId", equalTo:self.userObject!.objectId!)
         //query!.whereKey("weight", equalTo:100)
         query.getFirstObjectInBackgroundWithBlock{
             (object: PFObject?, error: NSError?) -> Void in
@@ -132,7 +142,7 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
      //   print("current user is \(currentUser.username)")
         print("then in facebook user is \(FBSDKAccessToken.currentAccessToken().userID)")
         print("the facebook user for the object is \(userObject!.objectForKey("facebookIdPublic"))")
-        var profilePictureGraphPath = FBSDKAccessToken.currentAccessToken().userID + "/picture?type=large&redirect=false"
+        var profilePictureGraphPath = (self.userObject!["facebookIdPublic"]! as! String) + "/picture?type=large&redirect=false"
         let pictureRequest = FBSDKGraphRequest(graphPath: profilePictureGraphPath, parameters: nil)
         pictureRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in

@@ -103,10 +103,13 @@ class GoalAdditionView: UIView {
         labelEdges = CGRect(x: 20, y: labelEdges.origin.y + 50, width: 100, height: 30)
         acceptButton = UIButton(frame: labelEdges)
         acceptButton.setTitle("accept", forState: UIControlState.Normal)
+        acceptButton.backgroundColor = UIColor.blueColor()
         
         labelEdges = CGRect(x: 30 + labelEdges.size.width, y: labelEdges.origin.y, width: 100, height: labelEdges.size.height)
         rejectButton = UIButton(frame: labelEdges)
         rejectButton.setTitle("reject", forState: UIControlState.Normal)
+        rejectButton.backgroundColor = UIColor.blueColor()
+        
         
         super.init(frame: frame)
         self.backgroundColor = UIColor.whiteColor()

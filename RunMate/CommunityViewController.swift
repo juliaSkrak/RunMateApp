@@ -232,15 +232,15 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         pendingRun.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
             if  success {
-        //        self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(300, target:self, selector: "requestTimout", userInfo: nil, repeats: false)
-        //        self.acceptanceCheckTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkAccepted", userInfo: nil, repeats: true)
+                self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(300, target:self, selector: "requestTimout", userInfo: nil, repeats: false)
+                self.acceptanceCheckTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkAccepted", userInfo: nil, repeats: true)
             } else {
                 print("\(error)")
             }
         }
                 
         let userQuery = PFUser.query()
-        userQuery?.whereKey("objectId", equalTo: "XBEZ2OybcO")
+        userQuery?.whereKey("objectId", equalTo: user.objectId!)
                 // Find devices associated with these users
         let pushQuery: PFQuery = PFInstallation.query()!
         pushQuery.whereKey("user", matchesQuery: userQuery!)
@@ -285,9 +285,9 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         self.communityTableView.reloadData()
     }
     
-    func segueToUserProfile(userObjId: String){
+    func segueToUserProfile(userObj: PFUser){
         var friendProfileViewController: ProfileViewController
-        friendProfileViewController = ProfileViewController.init(userObjId: userObjId, isCurrentUser:false)
+        friendProfileViewController = ProfileViewController.init(userObj: userObj, isCurrentUser:false)
         self.navigationController?.pushViewController(friendProfileViewController, animated: true)
     }
     

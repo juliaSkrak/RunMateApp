@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appDeviceToken: NSData?
+    var runCountDownView: CountDownView?
+    var countdownTimer : NSTimer?
+    var sentBy: PFUser? //forgive me father for i have sinned
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -43,22 +46,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Friend.registerSubclass() //this is a parse bug fix.  you touch this, you die.
         
-        var testImage = UIImage.init(named: "imagetest2")
-        var homeViewTabBarItem = UITabBarItem.init(title: "Home", image: testImage, tag: 0)
+        var testImage = UIImage.init(named: "running_man")
+        testImage = testImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        var homeViewTabBarItem  = UITabBarItem(title: "Run", image: testImage, selectedImage: testImage)
         
 
-        var testImage2 = UIImage.init(named: "imagetest2")
+        var testImage2 = UIImage.init(named: "profile_pic")
         var profileViewTabBarItem = UITabBarItem.init(title: "Profile", image: testImage2, tag: 0)
+        testImage2 = testImage2?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-        var testImage3 = UIImage.init(named: "imagetest2")
+        
+        var testImage3 = UIImage.init(named: "friends")
         var communityViewTabBarItem = UITabBarItem.init(title: "Community", image: testImage3, tag: 0)
+        testImage3 = testImage3?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
         var tabBarController = UITabBarController.init()
         
         var homeViewController = ViewController.init()
         homeViewController.tabBarItem = homeViewTabBarItem
         
-        var profileViewController = ProfileViewController.init(userObjId: nil, isCurrentUser: true)
+        var profileViewController = ProfileViewController.init(userObj: nil, isCurrentUser: true)
         //profileViewController.tabBarItem = profileViewTabBarItem
         
         var profileNavigationController = UINavigationController(rootViewController: profileViewController)
@@ -104,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 annotation: annotation)
     } 
     
-
+   
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -272,16 +279,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             pendingRun["test"] = "blah blah blah"
                             print(pendingRun)
                             pendingRun.saveInBackground()
-                            
+                            self.runCountDownView = CountDownView(frame: self.window!.rootViewController!.view.frame)
+                            self.runCountDownView!.timerLabel.text = "30"
+                            self.countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: "updateRunCountDown", userInfo: nil, repeats: true)
+                            self.sentBy = pendingRun["sentBy"] as! PFUser
+                            self.window!.rootViewController!.view.addSubview(self.runCountDownView!)
+                        
                         }
                         
                     }
                 }
                 alert.dismissViewControllerAnimated(false, completion: nil)
+
+                
             }
             alert.addAction(OKAction)
             window!.rootViewController!.presentViewController(alert, animated: true, completion: nil)
             
+        }
+    }
+    
+    func updateRunCountDown(){
+        
+        var seconds = Int(self.runCountDownView!.timerLabel.text!)! - 1
+        if(seconds == 0){
+            countdownTimer?.invalidate()
+            self.runCountDownView!.removeFromSuperview()
+            var runScreenViewController = RunScreenViewController.init(friendObj: self.sentBy!)
+            window!.rootViewController!.presentViewController(runScreenViewController, animated: true, completion: nil)
+        } else {
+            self.runCountDownView!.timerLabel.text = String(seconds)
         }
     }
 }

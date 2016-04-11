@@ -11,7 +11,7 @@ import UIKit
 protocol FriendTableViewCellDelegate{
     func requestRun(user : PFUser)
     func acceptFriendRequest(userObjectId: String)
-    func segueToUserProfile(userObjId: String)
+    func segueToUserProfile(userObj: PFUser)
     func deleteFriendRequest(userObjId: String)
 }
 
@@ -122,7 +122,7 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     func segueToUserProfile(sender: AnyObject?){
-        delegate?.segueToUserProfile(user!.objectId!)
+        delegate?.segueToUserProfile(user!)
     }
 
 }

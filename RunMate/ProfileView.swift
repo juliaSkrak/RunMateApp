@@ -33,33 +33,42 @@ class ProfileView: UIScrollView {
         
         profilePictureImageView = UIImageView.init(frame: CGRect(x:frame.size.width/2-100, y: frame.origin.y + 30, width: 200, height: 200))
         profilePictureImageView.backgroundColor = UIColor(red: 59/255.0, green: 89/255.0, blue: 152/255.0, alpha: 1)
+        profilePictureImageView.clipsToBounds = true
+        profilePictureImageView.layer.cornerRadius = 10
         
         nameLabel = UILabel.init(frame: CGRect(x:frame.origin.x, y: frame.origin.y + 240, width: frame.size.width, height: 40))
-        nameLabel.backgroundColor = UIColor.grayColor()
         nameLabel.font = nameLabel.font.fontWithSize(28)
         nameLabel.textAlignment = .Center
+        nameLabel.textColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        
         
         overviewLabel = UILabel.init(frame: CGRect(x:frame.origin.x + 10, y: frame.origin.y + 290, width: frame.size.width - 20, height: 80))
-        overviewLabel.backgroundColor = UIColor.purpleColor()
+        overviewLabel.backgroundColor = UIColor(red: 254/255, green: 122/255, blue: 107/255, alpha: 1)
+        overviewLabel.layer.cornerRadius = 10
+        overviewLabel.clipsToBounds = true
         
         trophyLabel = UILabel.init(frame: CGRect(x:frame.origin.x + 10, y:  frame.origin.y + 380, width: frame.size.width - 20, height: 40))
         trophyLabel.textAlignment = .Center
+        trophyLabel.textColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
 
         trophyCaseContainerView = UIView.init(frame: CGRect(x:frame.origin.x + 40, y:frame.origin.y + 480,  width: frame.width - 80, height:frame.width - 80))
-       
+        
         
         trophyView = UIImageView(image: UIImage(named: "trophyCase"))//UIImageView(frame: CGRect(x:frame.origin.x + 5, y:frame.origin.y + 445,  width: frame.width - 10, height:frame.width - 10))
         trophyView.frame = CGRect(x:frame.origin.x + 5, y:frame.origin.y + 445,  width: frame.width - 10, height:frame.width - 10)
         
         var personalInfoHeight = frame.origin.y + 460 + frame.width - 20
         suggestTrophyButton = UIButton.init(frame: CGRect(x: frame.origin.x + 10, y: personalInfoHeight, width: (frame.width - 25)/2, height: 40))
-        suggestTrophyButton.backgroundColor = UIColor.blueColor()
+        suggestTrophyButton.backgroundColor = UIColor.grayColor()
         suggestTrophyButton.setTitle("get suggested goal", forState: UIControlState.Normal)
         suggestTrophyButton.layer.cornerRadius = 10
         
         createTrophyButton = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight, width: (frame.width - 25)/2, height: 40))
         createTrophyButton.layer.cornerRadius = 10
-        createTrophyButton.backgroundColor = UIColor.blueColor()
+        createTrophyButton.backgroundColor = UIColor.whiteColor()
+        createTrophyButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        createTrophyButton.layer.borderWidth = 2
+        createTrophyButton.layer.borderColor = UIColor.blackColor().CGColor
         createTrophyButton.setTitle("make your own goal", forState: UIControlState.Normal)
         
         seeRunHistory = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight + 60, width: (frame.width - 25)/2, height: 40))

@@ -225,38 +225,6 @@
             endingLineNumber = "60"
             landmarkName = "testMethodA(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RunMate.popupLoginViewController.testMethodA (RunMate.popupLoginViewController)(__ObjC.NSString) -&gt; ()"
-                  moduleName = "RunMate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/popupLoginViewController.swift"
-                  timestampString = "482021292.84662"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "3648">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RunMate.popupLoginViewController.testMethodA (RunMate.popupLoginViewController)(__ObjC.NSString) -&gt; ()"
-                  moduleName = "RunMate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/popupLoginViewController.swift"
-                  timestampString = "482021292.846786"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "3664">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -828,11 +796,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481142478.687426"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "addTrophyManually(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -844,11 +812,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481142478.687426"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "addTrophyManually(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1255,15 +1223,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/goalAdditionView.swift"
-            timestampString = "481667064.439545"
+            timestampString = "482032792.861017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "init(frame:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1275,11 +1243,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/goalAdditionView.swift"
-            timestampString = "481667064.439545"
+            timestampString = "482032792.861017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "acceptSelection(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1291,11 +1259,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/goalAdditionView.swift"
-            timestampString = "481667064.439545"
+            timestampString = "482032792.861017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "acceptSelection(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1499,12 +1467,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/RunStatsView.swift"
-                  timestampString = "482021292.906035"
+                  timestampString = "482081970.861458"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
                   endingLineNumber = "130"
-                  offsetFromSymbolStart = "5992">
+                  offsetFromSymbolStart = "7910">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1514,12 +1482,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/RunStatsView.swift"
-                  timestampString = "482021292.906255"
+                  timestampString = "482081970.861606"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
                   endingLineNumber = "130"
-                  offsetFromSymbolStart = "6008">
+                  offsetFromSymbolStart = "7934">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1563,11 +1531,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481143566.018132"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1579,11 +1547,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481142478.687426"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "goToHistory(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1723,11 +1691,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481143566.018132"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "openWindow(_:)"
             landmarkType = "5">
             <Locations>
@@ -1771,11 +1739,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481143566.018132"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "openWindow(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1808,7 +1776,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "init(userObjId:isCurrentUser:)"
+            landmarkName = "init(userObj:isCurrentUser:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1840,7 +1808,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "init(userObjId:isCurrentUser:)"
+            landmarkName = "init(userObj:isCurrentUser:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1851,11 +1819,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481142478.687426"
+            timestampString = "482081299.025501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1899,11 +1867,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482030857.948023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "drawMyLine(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2187,11 +2155,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "481143566.018132"
+            timestampString = "482081919.640188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2347,12 +2315,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.921733"
+                  timestampString = "482081970.876394"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "270"
                   endingLineNumber = "270"
-                  offsetFromSymbolStart = "2412">
+                  offsetFromSymbolStart = "3040">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2362,12 +2330,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.9219"
+                  timestampString = "482081970.876603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "270"
                   endingLineNumber = "270"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "27">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2379,11 +2347,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577337.476992"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2395,11 +2363,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577337.476992"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2411,11 +2379,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577337.476992"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2427,13 +2395,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481921940.9461"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/AppDelegate.swift"
+            timestampString = "482078726.754726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2443,27 +2427,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482028101.535455"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "application(_:didReceiveRemoteNotification:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481921940.9461"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2507,11 +2475,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577461.802702"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "saveInstalation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2523,11 +2491,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577465.341063"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "saveInstalation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2539,11 +2507,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "481577466.108897"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "saveInstalation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2683,12 +2651,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/ViewController.swift"
-                  timestampString = "482021292.935297"
+                  timestampString = "482081970.885471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
                   endingLineNumber = "117"
-                  offsetFromSymbolStart = "1032">
+                  offsetFromSymbolStart = "1411">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2698,12 +2666,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/ViewController.swift"
-                  timestampString = "482021292.935548"
+                  timestampString = "482081970.885669"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
                   endingLineNumber = "117"
-                  offsetFromSymbolStart = "1064">
+                  offsetFromSymbolStart = "1459">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2763,12 +2731,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.938072"
+                  timestampString = "482081970.887257"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "232"
                   endingLineNumber = "232"
-                  offsetFromSymbolStart = "828">
+                  offsetFromSymbolStart = "994">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2778,12 +2746,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.938296"
+                  timestampString = "482081970.887413"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "234"
                   endingLineNumber = "234"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "30">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2859,11 +2827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2875,11 +2843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
             <Locations>
@@ -2891,12 +2859,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.991588"
+                  timestampString = "482081970.889973"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "264"
-                  endingLineNumber = "264"
-                  offsetFromSymbolStart = "985">
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "996">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2906,12 +2874,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.991726"
+                  timestampString = "482081970.890203"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "266"
-                  endingLineNumber = "266"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2923,45 +2891,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RunMate.AppDelegate.(application (RunMate.AppDelegate) -&gt; (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()).(closure #2)"
-                  moduleName = "RunMate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.993057"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "264"
-                  endingLineNumber = "264"
-                  offsetFromSymbolStart = "985">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RunMate.AppDelegate.(application (RunMate.AppDelegate) -&gt; (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()).(closure #2).(closure #1)"
-                  moduleName = "RunMate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.993202"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "266"
-                  endingLineNumber = "266"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3019,11 +2955,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3035,11 +2971,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
             <Locations>
@@ -3051,12 +2987,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.995398"
+                  timestampString = "482081970.895018"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "277"
-                  endingLineNumber = "277"
-                  offsetFromSymbolStart = "1955">
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "4127">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3066,12 +3002,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482027525.995538"
+                  timestampString = "482081970.895239"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "277"
-                  endingLineNumber = "277"
-                  offsetFromSymbolStart = "1963">
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "4232">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3083,13 +3019,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RunMate.AppDelegate.(application (RunMate.AppDelegate) -&gt; (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "RunMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
+                  timestampString = "482081970.896545"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "4127">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RunMate.AppDelegate.(application (RunMate.AppDelegate) -&gt; (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "RunMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
+                  timestampString = "482081970.896688"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "4232">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3163,11 +3131,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/AppDelegate.swift"
-            timestampString = "482027525.950103"
+            timestampString = "482078726.754726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3195,12 +3163,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.971549"
+                  timestampString = "482081970.89839"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "366"
                   endingLineNumber = "366"
-                  offsetFromSymbolStart = "2564">
+                  offsetFromSymbolStart = "3005">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3210,12 +3178,12 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482021292.973161"
+                  timestampString = "482081970.898612"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "366"
                   endingLineNumber = "366"
-                  offsetFromSymbolStart = "2576">
+                  offsetFromSymbolStart = "3025">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3297,6 +3265,70 @@
             startingLineNumber = "362"
             endingLineNumber = "362"
             landmarkName = "runAccepted(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/AppDelegate.swift"
+            timestampString = "482078726.754726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "updateRunCountDown()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/goalAdditionView.swift"
+            timestampString = "482032792.861017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "init(frame:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/goalAdditionView.swift"
+            timestampString = "482032792.861017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "init(frame:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/ProfileViewController.swift"
+            timestampString = "482081929.690765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

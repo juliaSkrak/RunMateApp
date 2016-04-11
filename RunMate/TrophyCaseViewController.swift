@@ -55,7 +55,7 @@ class TrophyCaseViewController: UIViewController, UICollectionViewDelegate, UICo
         trophyCaseCollectionView.frame = CGRect(x: 0, y: 0, width: profileViewFrame.size.width, height: profileViewFrame.size.height)//CGRect(x: 0, y: 0, width: 300, height: 300) //need to reposition the profileViewFrame to the center
         //print("in convienience \(viewFrame)")
        // trophyCaseCollectionView.backgroundColor = UIColor.redColor()
-        self.trophyCaseCollectionView.layer.borderColor = UIColor.blackColor().CGColor
+        self.trophyCaseCollectionView.layer.borderColor = UIColor.whiteColor().CGColor
         self.trophyCaseCollectionView.layer.borderWidth = 3.0
         self.view.addSubview(trophyCaseCollectionView)
     }
