@@ -19,7 +19,7 @@ class GenericTableViewHeaderFooterView: UITableViewHeaderFooterView { //gonna us
     override init(reuseIdentifier: String?) {
         titleLabel = UILabel.init()
         super.init(reuseIdentifier: reuseIdentifier)
-        titleLabel.text = "TESTING PLZ WORK"
+        //titleLabel.text = "TESTING PLZ WORK"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
         self.doLayoutStuff()

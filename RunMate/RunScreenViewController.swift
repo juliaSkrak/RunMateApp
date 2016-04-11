@@ -55,6 +55,10 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
+    convenience init(friendObj friend : PFUser){
+        self.init(nibName: nil, bundle:nil)
+        runWithFriendId = friend.objectId!
+    }
     
     convenience init(friend friendId : String){
         self.init(nibName: nil, bundle:nil)
@@ -111,7 +115,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                         if(distance >= 0){
                             distance += location.distanceFromLocation(CLLocation(latitude: Double(last.latitude), longitude: Double(last.longitude)))
                         //print("distance isss \(distance) with \(Double(last.latitude)) as lat and \(Double(last.longitude)) as long  and a raw value of \(last.latitude) and \(last.longitude)")
-                            savedLocation.distance = distance
+                            savedLocation.distance = distance / 1609.344
                         } else {
                             distance = 0
                             savedLocation.distance = distance
@@ -120,7 +124,8 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                             drawMyLine(location.coordinate)
                         }
                         self.runScreenView.speedLabel.text = String(location.speed)
-                        savedLocation.speed = location.speed
+                        let convertedSpeed = location.speed *  3600 / 1609.344
+                        savedLocation.speed = convertedSpeed//location.speed
                         savedLocation.userObjId = PFUser.currentUser()?.objectId
                         savedLocation.facebookUserId = FBSDKAccessToken.currentAccessToken().userID //not sure i need this but oh well
                         savedLocation.runHash = self.runHash

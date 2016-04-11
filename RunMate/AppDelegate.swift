@@ -18,6 +18,7 @@ import ParseFacebookUtilsV4
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var appDeviceToken: NSData?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -193,10 +194,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
-        var currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation.setDeviceTokenFromData(deviceToken)
-     //   currentInstallation.channels = ["global"]
-        currentInstallation.saveInBackground()
+        appDeviceToken = deviceToken
+        self.saveInstalation()
+    }
+    
+    func saveInstalation(){
+        if let currentUser = PFUser.currentUser() {
+            var currentInstallation = PFInstallation.currentInstallation()
+            currentInstallation.setDeviceTokenFromData(appDeviceToken!)
+       
+            currentInstallation["user"] = currentUser
+       
+            currentInstallation.saveInBackground()
+        }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
@@ -210,32 +220,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("dictionary is \(userInfo.description)")
-        var userInfoDictionary : [String: AnyObject] = userInfo as! [String: AnyObject]
-        print(userInfoDictionary)
-        PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
-        if(application.applicationState != UIApplicationState.Active){
-            PFPush.handlePush(userInfo)
-        }
-        let alert = UIAlertController(title: "Run Request", message: "your friend \(userInfoDictionary["name"]!) wants to for run!!!", preferredStyle: UIAlertControllerStyle.Alert)
-        let cancelAction = UIAlertAction(title: "deny request", style: .Cancel) { (action) in
-            print("cancel")
-        }
-        alert.addAction(cancelAction)
+        if let userInfoDictionary : [String: AnyObject] = userInfo as! [String: AnyObject] {
+            
+            print(userInfoDictionary)
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+            if(application.applicationState != UIApplicationState.Active){
+                PFPush.handlePush(userInfo)
+            }
+            let alert = UIAlertController(title: "Run Request", message: "your friend \(userInfoDictionary["name"]!) wants to for run!!!", preferredStyle: UIAlertControllerStyle.Alert)
+            let cancelAction = UIAlertAction(title: "deny request", style: .Cancel) { (action) in
+                let userQuery = PFUser.query()
+                userQuery?.whereKey("objectId", equalTo: userInfoDictionary["objectId"]!)
+                
+                let query = PFQuery(className: "PendingRun")
+                query.whereKey("sentBy", matchesQuery: userQuery!)
+                query.includeKey("sentBy")
+                
+                query.findObjectsInBackgroundWithBlock {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    if error == nil{
+                        if let pendingRun = objects?.first {
+                            pendingRun["accepted"] = 2
+                            pendingRun.saveInBackground()
+                        }
+                        
+                    }
+                }
+                
+                alert.dismissViewControllerAnimated(false, completion: nil)
+            }
+            
+            alert.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "OK GO!", style: .Default) { (action) in
-            print("action")
+            let OKAction = UIAlertAction(title: "OK GO!", style: .Default) { (action) in
+                let userQuery = PFUser.query()
+                userQuery?.whereKey("objectId", equalTo: userInfoDictionary["objectId"]!)
+                
+                let query = PFQuery(className: "PendingRun")
+                query.whereKey("sentBy", matchesQuery: userQuery!)
+                query.includeKey("sentBy")
+                
+                query.findObjectsInBackgroundWithBlock {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    if error == nil{
+                        if let pendingRun = objects?.first {
+                            print("\(pendingRun)")
+                            var date = NSDate().timeIntervalSince1970
+                            date = date + 30
+                            pendingRun["beginRunTime"] = date
+                            pendingRun["accepted"] = 1
+                            pendingRun["test"] = "blah blah blah"
+                            print(pendingRun)
+                            pendingRun.saveInBackground()
+                            
+                        }
+                        
+                    }
+                }
+                alert.dismissViewControllerAnimated(false, completion: nil)
+            }
+            alert.addAction(OKAction)
+            window!.rootViewController!.presentViewController(alert, animated: true, completion: nil)
+            
         }
-        alert.addAction(OKAction)
-
-        //alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-       // self.presentViewController(alert, animated: true, completion: nil)
-         window!.rootViewController!.presentViewController(alert, animated: true, completion: nil)
-        /*
-        //Present the AlertController
-        window!.rootViewController!.presentViewController(actionSheetController, animated: true, completion: nil)
-*/
     }
-    // [PFPush handlePush:userInfo];
-
 }
 

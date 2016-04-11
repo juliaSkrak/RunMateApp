@@ -91,6 +91,9 @@ class popupLoginViewController: UIViewController, testDelegate {
                                 }
                             }
                             user.saveInBackground()
+                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                            appDelegate.saveInstalation()
+                            //UIApplication.sharedApplication().saveInstalation()
                         }
                     })
 

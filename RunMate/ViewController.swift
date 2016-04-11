@@ -50,6 +50,8 @@ class ViewController: UIViewController {
             createSomeTrophies()
             //let username = currentUser.username
             print(currentUser)
+            
+            
   /*          FBSDKGraphRequest.init(graphPath: "me", parameters:["fields": "email, friends, birthday"]).startWithCompletionHandler {
                 (connection:FBSDKGraphRequestConnection!,  result:AnyObject!, error:NSError!) -> Void in
                 print("result")
@@ -102,6 +104,19 @@ class ViewController: UIViewController {
        // self.view.addSubview(runStatsView)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var QuoteHashNum = Int(arc4random_uniform(17))
+        var query = PFQuery(className: "TitleQuote")
+        query.whereKey("QuoteHashNum", equalTo: QuoteHashNum)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil{
+                let titleQuoteArray = objects!
+                self.homeScreenView.quoteLabel.text = titleQuoteArray.first!.valueForKey("Quote")! as! String
+            }
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
         if let currentUser = PFUser.currentUser() {
@@ -120,7 +135,6 @@ class ViewController: UIViewController {
             //popView.alpha = 0.5
             popView.delegate = popupLogin
             self.presentViewController(popupLogin, animated: true, completion: nil)
-            print(self.view.subviews)
         }
     }
 

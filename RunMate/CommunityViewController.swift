@@ -23,6 +23,11 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     var pendingRequestsUserArrary : [PFUser]
     var pendingRequests : [Friend]
     var communityDictionary : [String: [Friend]]
+    var timeoutTimer : NSTimer
+    var acceptanceCheckTimer : NSTimer
+    var countdownTimer : NSTimer
+    var runCountdownView : CountDownView
+    var pendingRunOptional: PendingRun?
 
     
     required init(coder aDecoder: NSCoder!) {
@@ -32,6 +37,12 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         communityDictionary = [:]
         friendUserArray = [PFUser]()
         pendingRequestsUserArrary = [PFUser]()
+        
+        timeoutTimer = NSTimer.init()
+        acceptanceCheckTimer = NSTimer.init()
+        countdownTimer = NSTimer.init()
+        runCountdownView = CountDownView()
+        
         super.init(coder: aDecoder)!
 
         communityTableView = UITableView.init(frame:self.view.frame)
@@ -50,6 +61,13 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         communityDictionary = [:]
         friendUserArray = [PFUser]()
         pendingRequestsUserArrary = [PFUser]()
+    
+        timeoutTimer = NSTimer.init()
+        acceptanceCheckTimer = NSTimer.init()
+        
+        countdownTimer = NSTimer.init()
+        runCountdownView = CountDownView()
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
       
         communityTableView = UITableView.init(frame:self.view.frame)
@@ -146,7 +164,19 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = self.communityTableView.dequeueReusableHeaderFooterViewWithIdentifier("headerView")
         var header = cell as! GenericTableViewHeaderFooterView
-       // header!.contentView.backgroundColor = UIColor.whiteColor()
+        switch(section){
+        case 0:
+            if(self.pendingRequestsUserArrary.isEmpty){
+                header.titleLabel.text = "Friends"
+            } else {
+                header.titleLabel.text = "Pending Friend Requests"
+            }
+        case 1:
+            header.titleLabel.text = "Friends"
+        default:
+            break
+        }
+    
         header.setNeedsLayout()
         return header
     }
@@ -193,33 +223,37 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func requestRun(userObjectId : String){
-        var query:PFQuery = PFUser.query()!
-        query.whereKey("objectId", equalTo:PFUser.currentUser()!.objectId!)
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil && (objects!.count == 1){
-            //  let runScreen:RunScreenViewController = RunScreenViewController(friend : userObjectId)
-            //  self.presentViewController(runScreen, animated: true, completion: nil)
-            //  runScreen.runHash = (objects![0].objectForKey("runNum") as? NSNumber)!
-            //  runScreen.runHash = NSNumber(integer: runScreen.runHash.integerValue + 1)
-            // Find users near a given location
-                let query = PFInstallation.query()
-               // query!.whereKey("objectId", equalTo: "XBEZ2OybcO")
-                let data  = [
-                    "alertType" : 1,
-                    "objectId" :  (PFUser.currentUser()?.objectId!)!,
-                    "name" : (PFUser.currentUser()?.objectForKey("name")!)!
-                ] as [String: AnyObject]
-                let push = PFPush()
-                push.setQuery(query)
-                push.setData(data)
-                push.sendPushInBackground()
-                
+    func requestRun(user : PFUser){
+        let pendingRun = PendingRun.init()
+        pendingRun["accepted"] = 0
+        pendingRun["sentBy"] = PFUser.currentUser() //sentBy = PFUser.currentUser()
+        pendingRun["sentTo"] = user
+        pendingRun["test"] = "this is a test"
+        pendingRun.saveInBackgroundWithBlock{
+            (success: Bool, error: NSError?) -> Void in
+            if  success {
+        //        self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(300, target:self, selector: "requestTimout", userInfo: nil, repeats: false)
+        //        self.acceptanceCheckTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkAccepted", userInfo: nil, repeats: true)
             } else {
-                print("Error: \(error!) \(error!.userInfo)")
+                print("\(error)")
             }
         }
+                
+        let userQuery = PFUser.query()
+        userQuery?.whereKey("objectId", equalTo: "XBEZ2OybcO")
+                // Find devices associated with these users
+        let pushQuery: PFQuery = PFInstallation.query()!
+        pushQuery.whereKey("user", matchesQuery: userQuery!)
+        let data  = [
+            "alertType" : 1,
+            "objectId" :  (PFUser.currentUser()?.objectId!)!,
+            "name" : (PFUser.currentUser()?.objectForKey("name")!)!
+        ] as [String: AnyObject]
+        let push = PFPush()
+        push.setQuery(pushQuery)
+        push.setData(data)
+        push.sendPushInBackground()
+        print(push)
     }
     
     
@@ -257,4 +291,83 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.pushViewController(friendProfileViewController, animated: true)
     }
     
+    func requestTimout(){
+        self.acceptanceCheckTimer.invalidate()
+        let userQuery = PFUser.query()
+        userQuery?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+
+        let query = PFQuery(className: "PendingRun")
+        query.whereKey("sentBy", matchesQuery: userQuery!)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil{
+                objects?.first?.deleteInBackground()
+            }
+        }
+    }
+    
+    func checkAccepted(){
+        let query = PFQuery(className: "PendingRun")
+        query.whereKey("sentBy", equalTo: PFUser.currentUser()!)
+        query.includeKey("sentTo")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if (error == nil && !objects!.isEmpty){
+                if let pendingRun = objects?.first as! PendingRun? {
+                   print("\(pendingRun)")
+                    switch (pendingRun["accepted"] as? Int!) {
+                        case .Some(0):
+                            break
+                        case .Some(1):
+                            self.runAccepted(pendingRun)
+                            break
+                        case .Some(2):
+                            self.runRejected(pendingRun)
+                            break
+                        default:
+                            break
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateRunCountdownAlert(){
+        let message = Int(runCountdownView.timerLabel.text!)! - 1
+        if (message == 0){
+            timeoutTimer.invalidate()   
+            runCountdownView.removeFromSuperview()
+            print("second second \(pendingRunOptional)")
+            var runScreenViewController = RunScreenViewController.init(friendObj: pendingRunOptional!["sentTo"]! as! PFUser)
+            self.presentViewController(runScreenViewController, animated: true, completion: nil)
+        } else {
+            runCountdownView.timerLabel.text = String(message)
+        }
+    }
+    
+    
+    func runAccepted(pendingRun: PendingRun){
+        acceptanceCheckTimer.invalidate()
+        
+        if let startRun = pendingRun["beginRunTime"] as! Double! {
+            let timeNow = NSDate().timeIntervalSince1970
+            let timeLeft = startRun - timeNow
+            print(timeLeft)
+            if(timeLeft > 0){
+                self.pendingRunOptional = pendingRun
+                print("hello time left is \(pendingRunOptional!["sentTo"]!)")
+                runCountdownView = CountDownView.init(frame: self.view.frame)
+                self.view.addSubview(runCountdownView)
+                runCountdownView.timerLabel.text = String(Int(timeLeft))
+                self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: "updateRunCountdownAlert", userInfo: nil, repeats: true)
+            }
+            pendingRun.deleteInBackground()
+            
+        }
+    }
+    
+    func runRejected(pendingRun: PendingRun){
+        self.acceptanceCheckTimer.invalidate()
+        pendingRun.deleteInBackground()
+    }
 }

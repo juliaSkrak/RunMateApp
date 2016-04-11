@@ -16,13 +16,18 @@ class HomeScreenView: UIView {
     override init(frame: CGRect) {
  
         startRunButton = UIButton.init(type: UIButtonType.RoundedRect) as UIButton
-        startRunButton.frame = CGRect (x:20, y:frame.height/2, width: 300, height: 30)
+        startRunButton.frame = CGRect (x:20, y:frame.height*2/3, width: frame.width - 40, height: 150)
+        startRunButton.backgroundColor = UIColor.greenColor()
+        startRunButton.layer.cornerRadius = 10
+        startRunButton.titleLabel!.font = startRunButton.titleLabel!.font.fontWithSize(20)
         startRunButton.setTitle("go for a run!!", forState: UIControlState.Normal)
         
-        quoteLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 200))
+        quoteLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 400))
         quoteLabel.font = quoteLabel.font.fontWithSize(35)
+        quoteLabel.numberOfLines = 0
+        quoteLabel.textAlignment = .Center
         
-        quoteLabel.text = "hey guys!!!!!"
+        
             
         super.init(frame: frame)
         

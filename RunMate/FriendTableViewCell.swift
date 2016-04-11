@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FriendTableViewCellDelegate{
-    func requestRun(userObjectId : String)
+    func requestRun(user : PFUser)
     func acceptFriendRequest(userObjectId: String)
     func segueToUserProfile(userObjId: String)
     func deleteFriendRequest(userObjId: String)
@@ -108,7 +108,7 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     func requestRun(sender:AnyObject?){
-        self.delegate!.requestRun(user!.objectId!)
+        self.delegate!.requestRun(user!)
     }
     
     func acceptFriend(sender: AnyObject?){

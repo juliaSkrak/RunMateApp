@@ -73,6 +73,8 @@
 		CC889CD01C8C76A500B2D24C /* CommunityRelationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */; };
 		CC889CD21C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */; };
 		CC889CD41C8E90EF00B2D24C /* RunHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */; };
+		CC8ECDEE1CB45CE40069F8A5 /* TitleQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8ECDED1CB45CE40069F8A5 /* TitleQuote.swift */; };
+		CC8ECDF01CB96D200069F8A5 /* PendingRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8ECDEF1CB96D200069F8A5 /* PendingRun.swift */; };
 		CCA15FFC1C922BB8005BFD3D /* TrophyInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA15FFB1C922BB8005BFD3D /* TrophyInformationView.swift */; };
 		CCA8185A1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
 		CCA8185B1C56C80D005CD90A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */; };
@@ -83,6 +85,7 @@
 		CCA818621C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818631C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
 		CCA818641C56CA45005CD90A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */; };
+		CCEBFEF51CBACDB4004DF1D9 /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBFEF41CBACDB4004DF1D9 /* CountDownView.swift */; };
 		CCF474A81CAC4810005BEC28 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF474A71CAC4810005BEC28 /* Friend.swift */; };
 		CCF945101C82313900F3E470 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */; };
 		CCF945111C82313900F3E470 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */; };
@@ -157,10 +160,13 @@
 		CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityRelationships.swift; sourceTree = "<group>"; };
 		CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunHistoryViewController.swift; sourceTree = "<group>"; };
+		CC8ECDED1CB45CE40069F8A5 /* TitleQuote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleQuote.swift; sourceTree = "<group>"; };
+		CC8ECDEF1CB96D200069F8A5 /* PendingRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingRun.swift; sourceTree = "<group>"; };
 		CCA15FFB1C922BB8005BFD3D /* TrophyInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyInformationView.swift; sourceTree = "<group>"; };
 		CCA818591C56C80D005CD90A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CCA8185D1C56C8D6005CD90A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		CCA818611C56CA45005CD90A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CCEBFEF41CBACDB4004DF1D9 /* CountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
 		CCF474A71CAC4810005BEC28 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
@@ -252,9 +258,11 @@
 				CC5E45AF1C6A4F6000EF6C1C /* TrophyCaseViewController.swift */,
 				CC5E45B11C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift */,
 				CC889CD31C8E90EF00B2D24C /* RunHistoryViewController.swift */,
+				CC8ECDED1CB45CE40069F8A5 /* TitleQuote.swift */,
 				CC889CD11C8DBE5F00B2D24C /* RunHistoryTableViewCell.swift */,
 				CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */,
 				CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */,
+				CCEBFEF41CBACDB4004DF1D9 /* CountDownView.swift */,
 				CC6CAEC01C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift */,
 				CC85329C1C66C56400895F6B /* CommunityViewController.swift */,
 				CC5E45B51C6CEAF400EF6C1C /* TrophyInformation.swift */,
@@ -266,6 +274,7 @@
 				CCF474A71CAC4810005BEC28 /* Friend.swift */,
 				CC5E45AD1C69480E00EF6C1C /* RunMateUserInformation.swift */,
 				CC5E45B31C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift */,
+				CC8ECDEF1CB96D200069F8A5 /* PendingRun.swift */,
 				CC1B363A1C9CE2A20005EED5 /* SuggestedRunViewController.swift */,
 				CC85328C1C64F61200895F6B /* RunScreenViewController.swift */,
 				CC8532881C64F60000895F6B /* RunScreenView.swift */,
@@ -459,6 +468,7 @@
 				CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */,
 				CCA15FFC1C922BB8005BFD3D /* TrophyInformationView.swift in Sources */,
 				CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */,
+				CC8ECDF01CB96D200069F8A5 /* PendingRun.swift in Sources */,
 				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC6CAEC11C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift in Sources */,
 				CC216B441CA31B7600C32477 /* CurrentRunStatsView.swift in Sources */,
@@ -476,12 +486,14 @@
 				CC5E45B01C6A4F6000EF6C1C /* TrophyCaseViewController.swift in Sources */,
 				CC5E45B81C7233D800EF6C1C /* goalAdditionView.swift in Sources */,
 				CC8532851C64DFD600895F6B /* HomeScreenView.swift in Sources */,
+				CCEBFEF51CBACDB4004DF1D9 /* CountDownView.swift in Sources */,
 				CC8532A11C679A7100895F6B /* ProfileViewController.swift in Sources */,
 				CCF945101C82313900F3E470 /* FriendTableViewCell.swift in Sources */,
 				CC13D0511C4F39800051144D /* AppDelegate.swift in Sources */,
 				CC5E45B21C6A7F7A00EF6C1C /* TrophyCollectionViewCell.swift in Sources */,
 				CC8532A51C679A7E00895F6B /* ProfileView.swift in Sources */,
 				CC1B363B1C9CE2A20005EED5 /* SuggestedRunViewController.swift in Sources */,
+				CC8ECDEE1CB45CE40069F8A5 /* TitleQuote.swift in Sources */,
 				CC5E45B41C6AC73800EF6C1C /* TrophyCaseCollectionViewLayout.swift in Sources */,
 				CC5E45B61C6CEAF400EF6C1C /* TrophyInformation.swift in Sources */,
 				CC8532911C65091000895F6B /* RunLocation.swift in Sources */,

@@ -57,14 +57,15 @@ class GoalAdditionView: UIView {
         var labelEdges = CGRect(x:20, y:20, width: 300, height: 30)
         title = UILabel.init(frame: labelEdges)
         title.text = "Create Your Own Goal"
-        title.font = title.font?.fontWithSize(40)
+        title.numberOfLines = 0
+        title.font = title.font?.fontWithSize(30)
         
         
         labelEdges = CGRect(x:20, y:labelEdges.origin.y + titleHeight, width: 100, height: 30)
         distanceLabel = UILabel.init(frame: labelEdges)
         distanceLabel.text = "Distance : "
-        distanceLabel.font = distanceLabel.font?.fontWithSize(28)
-        distanceLabel.textColor = UIColor.redColor()
+        distanceLabel.font = distanceLabel.font?.fontWithSize(20)
+
         
         periodLabel = UILabel.init(frame: CGRect(x:230, y:labelEdges.origin.y, width: 10, height: 30))
         periodLabel.text = "."
@@ -108,7 +109,7 @@ class GoalAdditionView: UIView {
         rejectButton.setTitle("reject", forState: UIControlState.Normal)
         
         super.init(frame: frame)
-        self.backgroundColor = UIColor.purpleColor()
+        self.backgroundColor = UIColor.whiteColor()
         
         self.addSubview(distanceLabel)
         self.addSubview(periodLabel)

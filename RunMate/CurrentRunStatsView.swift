@@ -14,6 +14,7 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
     var userDistance : UILabel
     var userAltitude: UILabel
     var userTime: UILabel
+    var userCalories : UILabel
     var barA: UILabel
     var barB: UILabel
     //var barC:
@@ -23,6 +24,9 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         userSpeed.translatesAutoresizingMaskIntoConstraints = false
         userSpeed.backgroundColor = UIColor.blueColor()
        // userSpeed.text  = "userSpeed"
+        
+        userCalories = UILabel.init()
+        userCalories.translatesAutoresizingMaskIntoConstraints = false
         
         userDistance = UILabel.init()
         userDistance.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +62,7 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         self.addSubview(barA)
         self.addSubview(barB)
         self.addSubview(userTime)
+        self.addSubview(userCalories)
         
         setConstraints()
     }
@@ -74,10 +79,11 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         userDistance.text = String(location.distance)
         userAltitude.text = String(location.altitude)
         userSpeed.text = String(location.speed)
+        userCalories.text = "Calories: \(String(150 * 0.63 * location.distance!.doubleValue))"
     }
     
     func setConstraints(){
-        var viewsDictionary = ["userSpeed": self.userSpeed, "userDistance": self.userDistance, "userAltitude": self.userAltitude, "barA": self.barA, "barB": self.barB, "userTime": self.userTime]
+        var viewsDictionary = ["userSpeed": self.userSpeed, "userDistance": self.userDistance, "userAltitude": self.userAltitude, "barA": self.barA, "barB": self.barB, "userTime": self.userTime, "userCalories": self.userCalories]
 
         let horizontialLayoutOfUserStats = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userSpeed][barA][userDistance][barB][userAltitude]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let setWidthConstraintEqualA = NSLayoutConstraint(item: self.userSpeed, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self.userDistance, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
@@ -96,8 +102,9 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         let hieghtUserSpeedConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userSpeed]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let heightlUserDistanceConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userDistance]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let heightUserAltitudeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userAltitude]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-        let bottomUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[userTime(100)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let bottomUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[userTime(50)][userCalories(50)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let widthUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userTime]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let widthCalorieConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userCalories]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
 
         let verticaluserBarAConstraints = NSLayoutConstraint(item: self.barA, attribute: NSLayoutAttribute.Height, relatedBy: .Equal, toItem: self.userDistance, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
         let verticaluserBarBConstraints = NSLayoutConstraint(item: self.barB, attribute: NSLayoutAttribute.Height, relatedBy: .Equal, toItem: self.userAltitude, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
@@ -120,7 +127,7 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         self.addConstraint(verticaluserBarAConstraints)
         self.addConstraint(verticaluserBarBConstraints)
         self.addConstraint(originUserBarAConstraints)
-      // self.addConstraint(verticaluserTimeConstraints)
+        self.addConstraints(widthCalorieConstraints)
         self.addConstraint(originUserBarBConstraints)
     }
     
