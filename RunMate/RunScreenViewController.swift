@@ -24,6 +24,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     var timerRunWithFriend: NSTimer
     var timer: NSTimer
     var runWithFriendId : String
+    var runStatsView: RunStatsView
 
     required init(coder aDecoder: NSCoder) {
         runScreenView = RunScreenView()
@@ -37,6 +38,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timerCoord = NSTimer.init()
         timerRunWithFriend = NSTimer.init()
         runWithFriendId = ""
+        runStatsView = RunStatsView.init()
         super.init(coder: aDecoder)!
     
     }
@@ -52,6 +54,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timerCoord = NSTimer.init()
         timerRunWithFriend = NSTimer.init()
         runWithFriendId = ""
+        runStatsView = RunStatsView.init()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -127,7 +130,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                         let convertedSpeed = location.speed *  3600 / 1609.344
                         savedLocation.speed = convertedSpeed//location.speed
                         savedLocation.userObjId = PFUser.currentUser()?.objectId
-                        savedLocation.facebookUserId = FBSDKAccessToken.currentAccessToken().userID //not sure i need this but oh well
+                        savedLocation.facebookUserId = FBSDKAccessToken.currentAccessToken().userID
                         savedLocation.runHash = self.runHash
                         savedLocation.altitude = location.altitude
                         savedLocation.latitude = location.coordinate.latitude
@@ -190,10 +193,12 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
             locationArray = (task.result as? [RunLocation])!
             PFObject.saveAllInBackground(locationArray, block: { (Bool, error: NSError?) -> Void in
                 self.createRunObject(locationArray)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.displayData(locationArray)
+                }
+            
             })
-            dispatch_async(dispatch_get_main_queue()) {
-                self.displayData(locationArray)
-            }
             return PFObject.unpinAllObjectsInBackgroundWithName("currentRun")
         })
     }
@@ -211,7 +216,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
             runLocations.append(location.objectId!)
         }
         run.runlocations = runLocations
-        run.saveInBackgroundWithBlock{
+        run.saveInBackgroundWithBlock {
             (success: Bool?, error: NSError?) -> Void in
             if (success != nil) {
                 let urlPath: String = "https://sleepy-brook-69357.herokuapp.com/checkTrophies?userId=" + PFUser.currentUser()!.objectId! + "&runId=" + run.objectId!
@@ -223,30 +228,37 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                     var err: NSError
                     do {
                         let object:AnyObject? = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                        print("printing object")
-                        print(object)
+                        if let dictionaryObject = object!["error"]{
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.updateTrophies("Awe shucks no trophies earned on this run!")
+                            }
+                        } else {
+                            self.updateTrophies("Check your trophy case for updated trophies!!")
+                        }
                     } catch let caught as ErrorType {
-                        // completeWith(nil, response, caught)
                     }
                 })
             } else {
                 print(error)
             }
         }
-        
     }
     
     func displayData(locationArray: [RunLocation]){
         let screenRect = UIScreen.mainScreen().bounds
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
-        var runStatsView = RunStatsView.init(frame:  CGRect(x: 30, y: 30, width: screenWidth-60, height: screenHeight-60), setButton:true)
+        runStatsView = RunStatsView.init(frame:  CGRect(x: 30, y: 30, width: screenWidth-60, height: screenHeight-60), setButton:true)
         runStatsView.opaque = false
         runStatsView.layer.cornerRadius = 15;
         self.view.backgroundColor = UIColor.whiteColor()
         runStatsView.delegate = self
         runStatsView.setStats(locationArray, runNum: runHash, distance: distance)
         self.view.addSubview(runStatsView)
+    }
+    
+    func updateTrophies(text: String){
+        runStatsView.trophyList.text = text
     }
     
     func closeWindow(testString: NSString){

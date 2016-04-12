@@ -83,6 +83,7 @@ class popupLoginViewController: UIViewController, testDelegate {
                             user["goalWeight"] = -1
                             user["goalWeeks"] = -1
                             user["height"]  = -1
+                            user["mph"] = 0
                             if let val =  result["email"] {
                                 if(val != nil){
                                     user["email"] = val

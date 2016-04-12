@@ -231,7 +231,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         pendingRun.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
             if  success {
-                self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(300, target:self, selector: "requestTimout", userInfo: nil, repeats: false)
+                self.timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(30, target:self, selector: "requestTimout", userInfo: nil, repeats: false)
                 self.acceptanceCheckTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkAccepted", userInfo: nil, repeats: true)
             } else {
                 print("\(error)")
@@ -291,7 +291,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func requestTimout(){
-        self.acceptanceCheckTimer.invalidate()
+        acceptanceCheckTimer.invalidate()
         let userQuery = PFUser.query()
         userQuery?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
 

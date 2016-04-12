@@ -40,7 +40,11 @@ class TrophyInformationView: UIView {//can be reused!!
 
         let centerPoint = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
         interactiveFrame = UIView.init(frame: CGRect(x:Double(centerPoint.x)-150, y:Double(centerPoint.y)-150, width: 300.0, height:300.0))
-        interactiveFrame.backgroundColor = UIColor.purpleColor()
+        interactiveFrame.backgroundColor = UIColor.whiteColor()
+        interactiveFrame.layer.cornerRadius = 10
+        interactiveFrame.layer.borderColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1).CGColor
+        interactiveFrame.layer.borderWidth = 3
+        interactiveFrame.clipsToBounds = true
         
         titleLabel = UILabel.init()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -55,12 +59,13 @@ class TrophyInformationView: UIView {//can be reused!!
         closeWindowButton = UIButton.init()
         closeWindowButton.translatesAutoresizingMaskIntoConstraints = false
         closeWindowButton.setTitle("close Window", forState: .Normal)
-        
+        closeWindowButton.setTitleColor( UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1), forState: .Normal)
         
         deleteTrophyButton = UIButton.init()
         deleteTrophyButton.translatesAutoresizingMaskIntoConstraints = false
         deleteTrophyButton.setTitle("delete goal", forState: .Normal)
         deleteTrophyButton.opaque = false
+        deleteTrophyButton.setTitleColor( UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1), forState: .Normal)
         
         
         trophyImageView = UIImageView.init()

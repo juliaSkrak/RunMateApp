@@ -162,10 +162,12 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
         self.profileView.overviewLabel.numberOfLines = 0
         
         dispatch_async(dispatch_get_main_queue()) {
-            var mph = ["hello", "world"]//(userObject!.objectForKey("milePerHourTime") as? String)!.componentsSeparatedByString(":")
+            //(userObject!.objectForKey("milePerHourTime") as? String)!.componentsSeparatedByString(":")
+            var mph = String(round(userObject!["mph"]! as! Double * 100.0)/100.0)
+            var totalDist = String(round(userObject!["totalDistance"]! as! Double * 100.0) / 100.0)
             self.profileView.nameLabel.text = (userObject!.objectForKey("name") as? String)!
             var overviewLabelText = (userObject!.objectForKey("name") as? String)! + " has been on " + String((userObject!.objectForKey("runNum") as? Int)!) + " runs for a total of "
-            overviewLabelText =   overviewLabelText +   String((userObject!.objectForKey("totalDistance") as? Int)!) + " miles with a last mph of " + (mph[0] as? String)! + " minutes and " + (mph[1] as? String)! + " seconds"
+            overviewLabelText =   overviewLabelText + totalDist + " miles with a last mph of " + mph
             self.profileView.overviewLabel.text = overviewLabelText//currentUser.weight //mehhh :(
             let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: (userObject!.objectForKey("name") as? String)! + "'s Trophies")
             attributeString.addAttribute(NSUnderlineStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))

@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         if let currentUser = PFUser.currentUser() {
             print("current user is \(currentUser.username)")
             print("facebook user is \(FBSDKAccessToken.currentAccessToken())")
-            createSomeTrophies()
+         //   createSomeTrophies()
             //let username = currentUser.username
             print(currentUser)
             
@@ -148,17 +148,17 @@ class ViewController: UIViewController {
         //var query = PFUser.query()
         var query:PFQuery = PFUser.query()!
         query.whereKey("objectId", equalTo:PFUser.currentUser()!.objectId!)
-        //query!.whereKey("weight", equalTo:100)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil && (objects!.count == 1){
                 // The find succeeded.
                 let runScreen:RunScreenViewController = RunScreenViewController()
-                self.presentViewController(runScreen, animated: true, completion: nil)
-
-                // Do something with the found objects
+                
                 runScreen.runHash = (objects![0].objectForKey("runNum") as? NSNumber)!
                 runScreen.runHash = NSNumber(integer: runScreen.runHash.integerValue + 1)
+                self.presentViewController(runScreen, animated: true, completion: nil)
+
+                // Do something with the found user
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -198,48 +198,9 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-       // FBSDKGraphRequest.init(graphPath: "10153440960432831/picture", parameters:
-  /*      let pictureRequest = FBSDKGraphRequest(graphPath: "10153440960432831/picture?type=large&redirect=false", parameters: nil)
-        pictureRequest.startWithCompletionHandler({
-            (connection, result, error: NSError!) -> Void in
-            if error == nil {
-                print("\(result)")
-                var resultdict = result as? NSDictionary
-                var mydata = resultdict?["data"]!
-                var myURL = mydata!["url"] as! String
-                let url = NSURL(string: myURL as! String)
-                let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                self.homeScreenView.yourProfPic.image = UIImage(data: data!)
-                
-            } else {
-                print("\(error)")
-            }
-        }) */
-
-        
+    
     }
     
-    func addProfilePicture(imageView:UIImageView){
-       /* let pictureRequest = FBSDKGraphRequest(graphPath: "10153440960432831/picture?type=large&redirect=false", parameters: nil)
-        pictureRequest.startWithCompletionHandler({
-            (connection, result, error: NSError!) -> Void in
-            if error == nil {
-                print("\(result)")
-                var resultdict = result as? NSDictionary
-                var mydata = resultdict?["data"]!
-                var myURL = mydata!["url"] as! String
-                let url = NSURL(string: myURL as! String)
-                let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                imageView.image = UIImage(data: data!)
-                
-            } else {
-                print("\(error)")
-            }
-        }) */
-       var testImage = UIImage.init(named: "lilcatpic")
-        imageView.image = testImage
-    }
     
     func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
         NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in

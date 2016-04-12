@@ -24,6 +24,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     var mapView: MKMapView
     var lineSegments: [MKPolyline]
     var coordinateArray: [CLLocationCoordinate2D]
+    var trophyList : UILabel
     
 
     
@@ -32,23 +33,30 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     override init(frame: CGRect) {
         locationView = UILabel.init(frame: frame)
     
-        exitButton = UIButton.init(type: UIButtonType.RoundedRect)
-        exitButton.frame = CGRect(x: frame.origin.x + 10, y: frame.size.height - 100, width: frame.size.width-20, height: 30)
+        exitButton = UIButton.init(frame: CGRect(x: 0, y: frame.size.height - 60, width: frame.size.width, height: 30))
+        exitButton.titleLabel?.textAlignment = .Center
         exitButton.setTitle("close window", forState: UIControlState.Normal)
-        exitButton.backgroundColor = UIColor.blackColor()
         
         mapView = MKMapView.init(frame: CGRect(x: 0, y: 70, width: frame.width, height: frame.width))
         
         runCongratutationsLabel = UILabel.init(frame:CGRect(x: 16, y: 16, width: frame.width-32, height: 64))
        
-        runStatsLabel = UILabel.init(frame: CGRect(x: 16.0, y: frame.width + 70 , width: frame.width - 32, height: 100))
-        runStatsLabel.backgroundColor = UIColor.purpleColor()
+        runStatsLabel = UILabel.init(frame: CGRect(x: 16.0, y: frame.width + 86 , width: frame.width - 32, height: 50))
+        runStatsLabel.backgroundColor = UIColor.whiteColor()
+        runStatsLabel.layer.cornerRadius = 9
+        runStatsLabel.clipsToBounds = true
+        runStatsLabel.textAlignment = .Center
+        
+        trophyList = UILabel.init(frame: CGRect(x: 16.0, y: frame.size.height - 140, width: frame.size.width - 32, height: 80))
+        trophyList.backgroundColor = UIColor.whiteColor()
+        trophyList.layer.cornerRadius = 9
+        trophyList.clipsToBounds = true
+        trophyList.numberOfLines = 0
         
         lineSegments = [MKPolyline]()
         
         coordinateArray = [CLLocationCoordinate2D]()
         
-    
         
         super.init(frame: frame)
         
@@ -56,6 +64,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         self.addSubview(runCongratutationsLabel)
         self.addSubview(mapView)
         self.addSubview(runStatsLabel)
+        self.addSubview(trophyList)
         self.backgroundColor = UIColor(red: 254/255, green: 122/255, blue: 107/255, alpha: 1)
         mapView.delegate = self
     }
@@ -90,7 +99,8 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
             default:
                 runCongratutationsLabel.text = "Congratulations on your \(runNum)th run!!!"
         }
-        runStatsLabel.text = "You ran \(distance.doubleValue / 1609.34) meters!"
+        var roundedDist = round(distance.doubleValue / 1609.34*100)/100
+        runStatsLabel.text = "You ran \(roundedDist) miles!"
         
         locations = locations.sort({Double($0.timestamp) < Double($1.timestamp)})
         
@@ -130,15 +140,17 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
     
     func drawMyLine(){
         print(coordinateArray)
-        for i in 1...coordinateArray.count-1{
-            let pointA = coordinateArray[i-1]
-            let pointB = coordinateArray[i]
+        if(coordinateArray.count > 1){
+            for i in 1...coordinateArray.count-1{
+                let pointA = coordinateArray[i-1]
+                let pointB = coordinateArray[i]
             
-            var lineBetween = [MKMapPointForCoordinate(pointA), MKMapPointForCoordinate(pointB)]
-           // var myPoint = UnsafeMutablePointer<MKMapPoint>()
+                var lineBetween = [MKMapPointForCoordinate(pointA), MKMapPointForCoordinate(pointB)]
+            // var myPoint = UnsafeMutablePointer<MKMapPoint>()
             //myPoint = &lineBetween.first
-            let segment = MKPolyline(points: &lineBetween, count: 2)
-            lineSegments.append(segment)
+                let segment = MKPolyline(points: &lineBetween, count: 2)
+                lineSegments.append(segment)
+            }
         }
     }
     
