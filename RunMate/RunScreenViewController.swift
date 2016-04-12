@@ -108,7 +108,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     
     func locationManager(manager: CLLocationManager,
         didUpdateLocations locations: [CLLocation]){
-            for location in locations {
+            for (index, element) in locations.enumerate() {
                 if (location.horizontalAccuracy < 20) {
                     let savedLocation = RunLocation()
                     if(distance >= -1){
@@ -129,6 +129,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                         savedLocation.userObjId = PFUser.currentUser()?.objectId
                         savedLocation.facebookUserId = FBSDKAccessToken.currentAccessToken().userID //not sure i need this but oh well
                         savedLocation.runHash = self.runHash
+                        savedLocation.index = self.index
                         savedLocation.altitude = location.altitude
                         savedLocation.latitude = location.coordinate.latitude
                         savedLocation.longitude = location.coordinate.longitude
