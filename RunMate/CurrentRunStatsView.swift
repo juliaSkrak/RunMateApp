@@ -10,48 +10,46 @@ import UIKit
 
 class CurrentRunStatsView: UIView {//because i want to reuse this method im gonna use
     
-    var userSpeed : UILabel
-    var userDistance : UILabel
-    var userAltitude: UILabel
+    var userSpeed : RunMetricView
+    var userDistance : RunMetricView
+    var userAltitude: RunMetricView
     var userTime: UILabel
     var userCalories : UILabel
     var barA: UILabel
     var barB: UILabel
-    //var barC:
     
     override init(frame: CGRect) {
-        userSpeed = UILabel.init()
+        userSpeed = RunMetricView.init()
         userSpeed.translatesAutoresizingMaskIntoConstraints = false
-        userSpeed.backgroundColor = UIColor.blueColor()
-       // userSpeed.text  = "userSpeed"
+    
         
         userCalories = UILabel.init()
         userCalories.translatesAutoresizingMaskIntoConstraints = false
+        userCalories.font = userCalories.font.fontWithSize(24)
         
-        userDistance = UILabel.init()
+        userDistance = RunMetricView.init()
         userDistance.translatesAutoresizingMaskIntoConstraints = false
-        userDistance.backgroundColor = UIColor.redColor()
-     //   userDistance.text  = "userDistance"
         
-        userAltitude = UILabel.init()
+        userAltitude = RunMetricView.init()
         userAltitude.translatesAutoresizingMaskIntoConstraints = false
-        userAltitude.backgroundColor = UIColor.greenColor()
        // userAltitude.text = "userAltitude"
         
         
         barA = UILabel.init()
         barA.translatesAutoresizingMaskIntoConstraints = false
-        barA.backgroundColor = UIColor.blackColor()
-        barA.text = "|"
+        barA.backgroundColor =  UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        barA.text = "\t"
         
         barB = UILabel.init()
         barB.translatesAutoresizingMaskIntoConstraints = false
-        barB.backgroundColor = UIColor.blackColor()
-        barB.text = "|"
+        barB.backgroundColor =  UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        barB.text = "\t"
         
         userTime = UILabel.init()
         userTime.translatesAutoresizingMaskIntoConstraints = false
         userTime.backgroundColor = UIColor.whiteColor()
+        userTime.textAlignment = .Center
+        userTime.font = userTime.font.fontWithSize(30)
         
         
         super.init(frame: frame)
@@ -71,15 +69,15 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayTimeText(minutes minutes: String, seconds: String, fraction: String){
-        userTime.text = "\(minutes) : \(seconds) : \(fraction)"
+    func displayTimeText(minutes minutes: String, seconds: String){
+        userTime.text = "⏳  \(minutes) : \(seconds)  ⏳"
     }
     
     func displayRunStats(location: RunLocation){
-        userDistance.text = String(location.distance)
-        userAltitude.text = String(location.altitude)
-        userSpeed.text = String(location.speed)
-        userCalories.text = "Calories: \(String(150 * 0.63 * location.distance!.doubleValue))"
+        userDistance.setLabels(location.distance, discription: "distance")
+        userAltitude.setLabels(location.altitude, discription: "altitude")
+        userSpeed.setLabels(location.speed, discription: "speed")
+        userCalories.text = "Calories:" +  String(Int(Double(round(100.0 * Double(150 * 0.63 * location.distance!.doubleValue) / 100.0))))
     }
     
     func setConstraints(){
@@ -88,8 +86,8 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         let horizontialLayoutOfUserStats = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userSpeed][barA][userDistance][barB][userAltitude]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let setWidthConstraintEqualA = NSLayoutConstraint(item: self.userSpeed, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self.userDistance, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
         let setWidthConstraintEqualB = NSLayoutConstraint(item: self.userSpeed, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self.userAltitude, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
-        let setWidthConstraintBarB = NSLayoutConstraint(item: self.barB, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0, constant: 10)
-        let setWidthConstraintBarA = NSLayoutConstraint(item: self.barA, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0, constant: 10)
+        let setWidthConstraintBarB = NSLayoutConstraint(item: self.barB, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0, constant: 5)
+        let setWidthConstraintBarA = NSLayoutConstraint(item: self.barA, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0, constant: 5)
         
         
         let verticalUserSpeedConstraints = NSLayoutConstraint(item: self.userSpeed, attribute: NSLayoutAttribute.Height, relatedBy: .Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0.5, constant: 0)
@@ -102,7 +100,7 @@ class CurrentRunStatsView: UIView {//because i want to reuse this method im gonn
         let hieghtUserSpeedConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userSpeed]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let heightlUserDistanceConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userDistance]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let heightUserAltitudeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[userAltitude]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-        let bottomUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[userTime(50)][userCalories(50)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let bottomUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[userTime(100)][userCalories(50)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let widthUserTimeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userTime]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         let widthCalorieConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[userCalories]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
 

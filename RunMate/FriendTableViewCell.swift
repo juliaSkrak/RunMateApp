@@ -41,21 +41,24 @@ class FriendTableViewCell: UITableViewCell {
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
-        nameLabel = UIButton.init(frame: CGRect(x: 0,y: 0,width: screenWidth - 120, height: 60))
+        nameLabel = UIButton.init(frame: CGRect(x: 0,y: 0,width: screenWidth - 200, height: 60))
 
         
-        rightButton = UIButton.init(frame : CGRect(x: screenWidth - 60 , y: 0, width: 60, height: 60))
+        rightButton = UIButton.init(frame : CGRect(x: screenWidth - 100 , y: 0, width: 100, height: 60))
         rightButton?.titleLabel?.numberOfLines = 0
         
-        leftButton = UIButton.init(frame: CGRect(x: screenWidth - 120 , y: 0, width: 60, height: 60))
+        leftButton = UIButton.init(frame: CGRect(x: screenWidth - 200 , y: 0, width: 100, height: 60))
         leftButton?.titleLabel?.numberOfLines = 0
         
         
         self.backgroundColor = UIColor.whiteColor()
 
         nameLabel!.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center//NSTextAlignment.Center
-        rightButton!.backgroundColor = UIColor.blackColor()
-        nameLabel?.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        rightButton!.backgroundColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+        nameLabel?.setTitleColor(UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1), forState: .Normal)
+        leftButton!.layer.borderWidth = 3
+        leftButton!.layer.borderColor = UIColor.blackColor().CGColor
+        leftButton?.setTitleColor(UIColor.blackColor(), forState: .Normal)
         
         self.addSubview(nameLabel!)
         self.addSubview(rightButton!)
@@ -73,38 +76,25 @@ class FriendTableViewCell: UITableViewCell {
         
         rightButton?.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
         leftButton?.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
-       
         
-        print(user)
-        let pictureRequest = FBSDKGraphRequest(graphPath: user!.objectForKey("facebookIdPublic") as! String, parameters: nil)
-        pictureRequest.startWithCompletionHandler({
-        (connection, result, error: NSError!) -> Void in
-            if error == nil {
-                print("result is: \(result)")
-                var resultdict = result as? NSDictionary
-                let resultText = resultdict?.valueForKey("name") as! String
-                self.nameLabel?.setTitle(resultText, forState: .Normal)
-                self.nameLabel?.addTarget(self, action: "segueToUserProfile:", forControlEvents: .TouchUpInside)
+        self.nameLabel?.setTitle(user!.objectForKey("name") as! String, forState: .Normal)
+        self.nameLabel?.addTarget(self, action: "segueToUserProfile:", forControlEvents: .TouchUpInside)
+        
+        if(accepted == true){
+            self.rightButton?.setTitle("request run", forState: .Normal)
+            
+            self.leftButton?.alpha = 0
+            self.rightButton?.addTarget(self, action: "requestRun:", forControlEvents: .TouchUpInside)
+            
+        } else {
+            self.rightButton?.setTitle("accept friend", forState: .Normal)
+            self.leftButton?.setTitle("deny friend", forState: .Normal)
+            self.leftButton?.alpha = 1
+            self.rightButton?.addTarget(self, action: "acceptFriend:", forControlEvents: .TouchUpInside)
+            self.leftButton?.addTarget(self, action: "rejectFriend:", forControlEvents: .TouchUpInside)
+        }
                 
-                print(accepted)
-                if(accepted == true){
-                    self.rightButton?.setTitle("request run", forState: .Normal)
-                    
-                    self.leftButton?.alpha = 0
-                    self.rightButton?.addTarget(self, action: "requestRun:", forControlEvents: .TouchUpInside)
-                 
-                } else {
-                    self.rightButton?.setTitle("accept friend", forState: .Normal)
-                    self.leftButton?.setTitle("deny friend", forState: .Normal)
-                    self.leftButton?.alpha = 1
-                    self.rightButton?.addTarget(self, action: "acceptFriend:", forControlEvents: .TouchUpInside)
-                    self.leftButton?.addTarget(self, action: "rejectFriend:", forControlEvents: .TouchUpInside)
-                }
-                
-            } else {
-                print("\(error)")
-            }
-        })
+        
     }
     
     func requestRun(sender:AnyObject?){

@@ -49,7 +49,6 @@ class ProfileViewController: UIViewController , UIScrollViewDelegate, TrophyCase
 
     func setUpView(){ //must be called after super.init
         profileView = ProfileView.init(frame: CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width, height: self.view.frame.height + 3000)))
-        profileView.nameLabel.textColor = UIColor.blackColor()
         
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.contentSize = profileView.bounds.size

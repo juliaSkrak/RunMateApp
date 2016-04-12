@@ -11,17 +11,17 @@ import UIKit
 class GenericTableViewHeaderFooterView: UITableViewHeaderFooterView { //gonna use autolayout here b/c size mutates
     var titleLabel: UILabel
     
-   /* convenience init(reuseIdentifier: String?, frameSize: CGRect){// so i guess using a convience init to get around having to init a frame twice doesnt work....
-       // titleLabel = UILabel.init(frame: frameSize)
-        self.init(reuseIdentifier: reuseIdentifier)
-    } */
     
     override init(reuseIdentifier: String?) {
         titleLabel = UILabel.init()
+        titleLabel.font = titleLabel.font.fontWithSize(30)
+        titleLabel.textAlignment = .Right
+        
         super.init(reuseIdentifier: reuseIdentifier)
-        //titleLabel.text = "TESTING PLZ WORK"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
+        self.titleLabel.backgroundColor = UIColor(red: 254/255, green: 122/255, blue: 107/255, alpha: 1)
+        self.titleLabel.textColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
         self.doLayoutStuff()
     }
 

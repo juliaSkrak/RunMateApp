@@ -93,7 +93,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.communityTableView.backgroundColor = UIColor.purpleColor()
+        self.communityTableView.backgroundColor = UIColor.whiteColor()
         self.view.opaque = true
         communityTableView.delegate = self
         communityTableView.dataSource = self
@@ -134,7 +134,7 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         if(!self.friendUserArray.isEmpty || !self.pendingRequestsUserArrary.isEmpty){
             var friendshipConnection : PFUser?
             var acceptedd: Bool = true
-            cell.backgroundColor = UIColor.purpleColor()
+            cell.backgroundColor = UIColor.whiteColor()
             switch(indexPath.section){
             case 0:
                 if(self.pendingRequestsUserArrary.isEmpty){
@@ -144,7 +144,6 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
                     acceptedd = false
                 }
             case 1:
-                print("beeep beep")
                 friendshipConnection = self.friendUserArray[indexPath.row]
             default:
                 break
@@ -167,12 +166,12 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
         switch(section){
         case 0:
             if(self.pendingRequestsUserArrary.isEmpty){
-                header.titleLabel.text = "Friends"
+                header.titleLabel.text = "Friends \t \t"
             } else {
                 header.titleLabel.text = "Pending Friend Requests"
             }
         case 1:
-            header.titleLabel.text = "Friends"
+            header.titleLabel.text = "Friends \t \t" 
         default:
             break
         }

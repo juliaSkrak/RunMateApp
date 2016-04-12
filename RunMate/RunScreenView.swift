@@ -25,14 +25,12 @@ class RunScreenView: UIView, MKMapViewDelegate{
         
         speedLabel = UILabel.init(frame: CGRect(origin: CGPoint(x: 20, y: 200), size: CGSize(width: 200, height: 30)))
         
-        finishRunButton = UIButton.init(type: UIButtonType.RoundedRect)
-        finishRunButton.frame = CGRect(origin: CGPoint(x:100, y:frame.height - 100), size: CGSize(width: frame.width - 200, height: 100))
-        finishRunButton.setTitle("END RUN", forState: UIControlState.Normal)
-        finishRunButton.backgroundColor = UIColor.yellowColor()
-        
+        finishRunButton = UIButton.init(frame: CGRect(origin: CGPoint(x:(frame.width / 2) - (76 / 2), y:frame.height - 100), size: CGSize(width: 76, height: 76)))
+        var stopImage = UIImage(named: "stopbutton")
+        finishRunButton.setImage(stopImage, forState: .Normal)
         userRouteMapView = MKMapView.init(frame: CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height * 0.4))
         
-        currentRunStatsView = CurrentRunStatsView.init(frame: CGRect(x: 0.0, y: frame.height * 0.4, width: frame.width, height: frame.height * 0.3))
+        currentRunStatsView = CurrentRunStatsView.init(frame: CGRect(x: 0.0, y: frame.height * 0.4, width: frame.width, height: frame.height * 0.35))
         currentRunStatsView.backgroundColor = UIColor.grayColor()
         //currentRunStatsView =
         

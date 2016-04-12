@@ -59,7 +59,10 @@ class ProfileView: UIScrollView {
         
         var personalInfoHeight = frame.origin.y + 460 + frame.width - 20
         suggestTrophyButton = UIButton.init(frame: CGRect(x: frame.origin.x + 10, y: personalInfoHeight, width: (frame.width - 25)/2, height: 40))
-        suggestTrophyButton.backgroundColor = UIColor.grayColor()
+        suggestTrophyButton.backgroundColor = UIColor.whiteColor()
+        suggestTrophyButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        suggestTrophyButton.layer.borderWidth = 2
+        suggestTrophyButton.layer.borderColor = UIColor.blackColor().CGColor
         suggestTrophyButton.setTitle("get suggested goal", forState: UIControlState.Normal)
         suggestTrophyButton.layer.cornerRadius = 10
         

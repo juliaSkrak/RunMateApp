@@ -412,11 +412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162551.699935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "finishRun()"
             landmarkType = "5">
          </BreakpointContent>
@@ -476,11 +476,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162913.493791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "closeWindow(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -492,11 +492,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162913.493791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "displayData(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -524,11 +524,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162551.699935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "finishRun()"
             landmarkType = "5">
          </BreakpointContent>
@@ -796,11 +796,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "addTrophyManually(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -812,11 +812,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "addTrophyManually(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1387,11 +1387,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
+            timestampString = "482094348.841509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "setCellFriendship(_:accepted:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1467,7 +1467,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/RunStatsView.swift"
-                  timestampString = "482081970.861458"
+                  timestampString = "482159008.682448"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
@@ -1482,7 +1482,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/RunStatsView.swift"
-                  timestampString = "482081970.861606"
+                  timestampString = "482159008.68264"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
@@ -1531,11 +1531,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1547,11 +1547,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "goToHistory(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1579,27 +1579,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/GenericTableViewHeaderFooterView.swift"
-            timestampString = "479233152.646019"
+            timestampString = "482091453.485954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "GenericTableViewHeaderFooterView"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunMate/GenericTableViewHeaderFooterView.swift"
-            timestampString = "479235438.707117"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "init(reuseIdentifier:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1611,11 +1595,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1643,11 +1627,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "loadFriends(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1691,11 +1675,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "openWindow(_:)"
             landmarkType = "5">
             <Locations>
@@ -1739,11 +1723,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "openWindow(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1819,11 +1803,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081299.025501"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1851,11 +1835,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162551.699935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "finishRun()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1867,11 +1851,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482030857.948023"
+            timestampString = "482162913.493791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "drawMyLine(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2011,11 +1995,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162913.493791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "updateTime()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2043,11 +2027,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
+            timestampString = "482094348.841509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "setCellFriendship(_:accepted:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2059,27 +2043,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
+            timestampString = "482094348.841509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "setCellFriendship(_:accepted:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "setCellFriendship(_:accepted:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2091,27 +2059,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
+            timestampString = "482094348.841509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "setCellFriendship(_:accepted:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunMate/FriendTableViewCell.swift"
-            timestampString = "481138147.252257"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "setCellFriendship(_:accepted:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2123,11 +2075,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "acceptFriendRequest(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2139,11 +2091,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482162913.493791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "updateFriendSpeed()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2155,11 +2107,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081919.640188"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2187,11 +2139,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "loadFriends(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2203,11 +2155,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2219,11 +2171,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "acceptFriendRequest(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2251,11 +2203,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "acceptFriendRequest(_:)"
             landmarkType = "5">
             <Locations>
@@ -2299,11 +2251,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "acceptFriendRequest(_:)"
             landmarkType = "5">
             <Locations>
@@ -2315,11 +2267,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.876394"
+                  timestampString = "482159008.695461"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "270"
-                  endingLineNumber = "270"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
                   offsetFromSymbolStart = "3040">
                </Location>
                <Location
@@ -2330,11 +2282,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.876603"
+                  timestampString = "482159008.695599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "270"
-                  endingLineNumber = "270"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
                   offsetFromSymbolStart = "27">
                </Location>
             </Locations>
@@ -2443,11 +2395,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/RunScreenView.swift"
-            timestampString = "481569684.439289"
+            timestampString = "482164374.650653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "stopRun(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2459,11 +2411,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "requestRun(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2651,7 +2603,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/ViewController.swift"
-                  timestampString = "482081970.885471"
+                  timestampString = "482159008.704507"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -2666,7 +2618,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/ViewController.swift"
-                  timestampString = "482081970.885669"
+                  timestampString = "482159008.704662"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -2683,11 +2635,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "requestTimout()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2699,11 +2651,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2715,11 +2667,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "requestRun(_:)"
             landmarkType = "5">
             <Locations>
@@ -2731,11 +2683,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.887257"
+                  timestampString = "482159008.706118"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "232"
-                  endingLineNumber = "232"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
                   offsetFromSymbolStart = "994">
                </Location>
                <Location
@@ -2746,11 +2698,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.887413"
+                  timestampString = "482159008.706248"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
                   offsetFromSymbolStart = "30">
                </Location>
             </Locations>
@@ -2763,11 +2715,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2779,11 +2731,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482021188.895711"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2795,11 +2747,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "CommunityViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2811,11 +2763,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019069.686128"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "requestTimout()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2859,7 +2811,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.889973"
+                  timestampString = "482159008.708154"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "270"
@@ -2874,7 +2826,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.890203"
+                  timestampString = "482159008.70832"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "272"
@@ -2907,11 +2859,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "runAccepted(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2923,11 +2875,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "runRejected(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2939,11 +2891,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2987,7 +2939,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.895018"
+                  timestampString = "482159008.711685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "288"
@@ -3002,7 +2954,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.895239"
+                  timestampString = "482159008.711822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "288"
@@ -3035,7 +2987,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.896545"
+                  timestampString = "482159008.712685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "288"
@@ -3050,7 +3002,7 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/AppDelegate.swift"
-                  timestampString = "482081970.896688"
+                  timestampString = "482159008.712897"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "288"
@@ -3067,11 +3019,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
             <Locations>
@@ -3115,11 +3067,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3147,11 +3099,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "runAccepted(_:)"
             landmarkType = "5">
             <Locations>
@@ -3163,11 +3115,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.89839"
+                  timestampString = "482159008.714788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "366"
-                  endingLineNumber = "366"
+                  startingLineNumber = "365"
+                  endingLineNumber = "365"
                   offsetFromSymbolStart = "3005">
                </Location>
                <Location
@@ -3178,11 +3130,11 @@
                   moduleName = "RunMate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juliaskrak/Documents/RunMate/RunMate/CommunityViewController.swift"
-                  timestampString = "482081970.898612"
+                  timestampString = "482159008.714927"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "366"
-                  endingLineNumber = "366"
+                  startingLineNumber = "365"
+                  endingLineNumber = "365"
                   offsetFromSymbolStart = "3025">
                </Location>
             </Locations>
@@ -3195,11 +3147,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019612.245126"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "updateRunCountdownAlert()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3211,11 +3163,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "CommunityViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3227,11 +3179,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482019459.847441"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "checkAccepted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3259,11 +3211,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/CommunityViewController.swift"
-            timestampString = "482020969.537992"
+            timestampString = "482094063.457548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "runAccepted(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3323,12 +3275,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunMate/ProfileViewController.swift"
-            timestampString = "482081929.690765"
+            timestampString = "482082674.161442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/RunScreenViewController.swift"
+            timestampString = "482162551.699935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "finishRun()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/RunMetricView.swift"
+            timestampString = "482105834.993171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setLabels(_:discription:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/RunMetricView.swift"
+            timestampString = "482103156.087424"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init(frame:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/RunMetricView.swift"
+            timestampString = "482103157.012989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(frame:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunMate/RunScreenViewController.swift"
+            timestampString = "482162913.493791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "updateTime()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

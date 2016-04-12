@@ -157,7 +157,9 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     }
     
     func stopRun(testString: NSString){
-        print(testString)
+        timerClock.invalidate()
+        timer.invalidate()
+        timerCoord.invalidate()
         finishRun()
     }
     
@@ -171,12 +173,16 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
             } else if let user = user {
                 user["runNum"] = self.runHash
                 user["speed"] = -1
+                user["totalDistance"] = user["totalDistance"] as! Double + (self.distance / 1609.34)
+                var currentTime = NSDate.timeIntervalSinceReferenceDate()
+                var elapsedTime = currentTime - self.startTime
+                let minutes = UInt8(elapsedTime / 60.0)
+                user["mph"] = (self.distance / 1609.34) / (elapsedTime / 3600)
                 user.saveInBackground()
             }
         }
         
         var locationArray = [RunLocation]()
-        
         let localQuery = PFQuery(className: "RunLocation")
         localQuery.fromPinWithName("currentRun")
         localQuery.findObjectsInBackground().continueWithBlock ({
@@ -197,7 +203,6 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         var run = Run.init()
         run.user = locations.first?.userObjId
       var formatter = NSDateFormatter()
-        run.runDate = NSDateFormatter.dateFormatFromTemplate("MMMM d", options: 0, locale: NSLocale.currentLocale())
         //run.runlocations = [String].init()
         run.ACL = PFACL(user: PFUser.currentUser()!)
         run.distance = distance / 1609.34
@@ -206,7 +211,29 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
             runLocations.append(location.objectId!)
         }
         run.runlocations = runLocations
-        PFObject.saveAllInBackground([run])
+        run.saveInBackgroundWithBlock{
+            (success: Bool?, error: NSError?) -> Void in
+            if (success != nil) {
+                let urlPath: String = "https://sleepy-brook-69357.herokuapp.com/checkTrophies?userId=" + PFUser.currentUser()!.objectId! + "&runId=" + run.objectId!
+                print(urlPath)
+                var url: NSURL = NSURL(string: urlPath)!
+                var request1: NSURLRequest = NSURLRequest(URL: url)
+                let queue:NSOperationQueue = NSOperationQueue()
+                NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                    var err: NSError
+                    do {
+                        let object:AnyObject? = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                        print("printing object")
+                        print(object)
+                    } catch let caught as ErrorType {
+                        // completeWith(nil, response, caught)
+                    }
+                })
+            } else {
+                print(error)
+            }
+        }
+        
     }
     
     func displayData(locationArray: [RunLocation]){
@@ -227,15 +254,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func drawMyLine(pointB: CLLocationCoordinate2D){
         let pointA = CLLocationCoordinate2D(latitude: last.latitude.doubleValue, longitude: last.longitude.doubleValue)
@@ -249,13 +268,13 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     
     func updateTime(){
         var currentTime = NSDate.timeIntervalSinceReferenceDate()
+       
         var elapsedTime = currentTime - startTime
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        let fraction = String(elapsedTime * 100)
-        self.runScreenView.currentRunStatsView.displayTimeText(minutes : String(minutes), seconds: String(seconds), fraction : fraction)
+         print(elapsedTime)
+        let minutes = floor(elapsedTime / 60.0)
+        elapsedTime = round(elapsedTime - minutes * 60.0)
+        let seconds = Int(round(elapsedTime))
+        self.runScreenView.currentRunStatsView.displayTimeText(minutes : String(Int(minutes)), seconds: String(seconds))
         
     }
     
@@ -284,7 +303,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                 print(user)
             }
         } */
-        print(runWithFriendId)
+        //print(runWithFriendId)
     }
 
 }

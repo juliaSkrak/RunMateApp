@@ -41,6 +41,7 @@
 		CC5E45B81C7233D800EF6C1C /* goalAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */; };
 		CC5E45BA1C73C0C900EF6C1C /* GoalAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */; };
 		CC6CAEC11C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CAEC01C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift */; };
+		CC76B1311CBC4BEC004A3EA3 /* RunMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76B1301CBC4BEC004A3EA3 /* RunMetricView.swift */; };
 		CC85327D1C5B08B800895F6B /* popupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85327C1C5B08B800895F6B /* popupLoginViewController.swift */; };
 		CC85327F1C5B09F900895F6B /* popupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85327E1C5B09F900895F6B /* popupView.swift */; };
 		CC8532851C64DFD600895F6B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8532841C64DFD600895F6B /* HomeScreenView.swift */; };
@@ -146,6 +147,7 @@
 		CC5E45B71C7233D800EF6C1C /* goalAdditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalAdditionView.swift; sourceTree = "<group>"; };
 		CC5E45B91C73C0C900EF6C1C /* GoalAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalAdditionViewController.swift; sourceTree = "<group>"; };
 		CC6CAEC01C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		CC76B1301CBC4BEC004A3EA3 /* RunMetricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunMetricView.swift; sourceTree = "<group>"; };
 		CC85327C1C5B08B800895F6B /* popupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupLoginViewController.swift; sourceTree = "<group>"; };
 		CC85327E1C5B09F900895F6B /* popupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupView.swift; sourceTree = "<group>"; };
 		CC8532841C64DFD600895F6B /* HomeScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				CC216B431CA31B7600C32477 /* CurrentRunStatsView.swift */,
 				CCF9450E1C82313900F3E470 /* FriendTableViewCell.swift */,
 				CC889CCF1C8C76A500B2D24C /* CommunityRelationships.swift */,
+				CC76B1301CBC4BEC004A3EA3 /* RunMetricView.swift */,
 				CCF9450F1C82313900F3E470 /* FriendTableViewCell.xib */,
 				CC8532901C65091000895F6B /* RunLocation.swift */,
 				CCF474A71CAC4810005BEC28 /* Friend.swift */,
@@ -471,6 +474,7 @@
 				CC8ECDF01CB96D200069F8A5 /* PendingRun.swift in Sources */,
 				CC8532951C65195000895F6B /* RunStatsView.swift in Sources */,
 				CC6CAEC11C9081F2002EED4B /* GenericTableViewHeaderFooterView.swift in Sources */,
+				CC76B1311CBC4BEC004A3EA3 /* RunMetricView.swift in Sources */,
 				CC216B441CA31B7600C32477 /* CurrentRunStatsView.swift in Sources */,
 				CC216B421CA2DDB300C32477 /* Run.swift in Sources */,
 				CC889CD41C8E90EF00B2D24C /* RunHistoryViewController.swift in Sources */,

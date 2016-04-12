@@ -42,7 +42,6 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         runCongratutationsLabel = UILabel.init(frame:CGRect(x: 16, y: 16, width: frame.width-32, height: 64))
        
         runStatsLabel = UILabel.init(frame: CGRect(x: 16.0, y: frame.width + 70 , width: frame.width - 32, height: 100))
-        
         runStatsLabel.backgroundColor = UIColor.purpleColor()
         
         lineSegments = [MKPolyline]()
@@ -57,8 +56,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         self.addSubview(runCongratutationsLabel)
         self.addSubview(mapView)
         self.addSubview(runStatsLabel)
-        self.backgroundColor = UIColor.orangeColor()
-        self.setStats([], runNum: 23, distance: 10.3)
+        self.backgroundColor = UIColor(red: 254/255, green: 122/255, blue: 107/255, alpha: 1)
         mapView.delegate = self
     }
 

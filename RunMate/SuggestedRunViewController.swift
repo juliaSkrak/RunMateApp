@@ -107,7 +107,20 @@ class SuggestedRunViewController: UIViewController {
     }
     
     func acceptButtonTapped(sender: AnyObject?){
-        print("chloes server ping ping")
+        let urlPath: String = "https://sleepy-brook-69357.herokuapp.com/buddies/" + PFUser.currentUser()!.objectId!
+        print(urlPath)
+        var url: NSURL = NSURL(string: urlPath)!
+        var request1: NSURLRequest = NSURLRequest(URL: url)
+        let queue:NSOperationQueue = NSOperationQueue()
+        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            var err: NSError
+        do {
+            let object:AnyObject? = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            print(object)
+        } catch let caught as ErrorType {
+           // completeWith(nil, response, caught)
+            }
+        })
     }
     
     func rejectButtonTapped(sender: AnyObject?){
