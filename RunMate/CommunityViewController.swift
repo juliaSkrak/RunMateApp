@@ -338,7 +338,11 @@ class CommunityViewController: UIViewController, UITableViewDelegate, UITableVie
             runCountdownView.removeFromSuperview()
             print("second second \(pendingRunOptional)")
             var runScreenViewController = RunScreenViewController.init(friendObj: pendingRunOptional!["sentTo"]! as! PFUser)
-            self.presentViewController(runScreenViewController, animated: true, completion: nil)
+            if let user = PFUser.currentUser(){
+                runScreenViewController.runHash = (user["runNum"] as? NSNumber)!
+                runScreenViewController.runHash = NSNumber(integer: runScreenViewController.runHash.integerValue + 1)
+                self.presentViewController(runScreenViewController, animated: true, completion: nil)
+            }
         } else {
             runCountdownView.timerLabel.text = String(message)
         }

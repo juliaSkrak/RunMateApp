@@ -20,6 +20,7 @@ class RunScreenView: UIView, MKMapViewDelegate{
     var delegate: runScreenViewDelegate?
     var currentRunStatsView: CurrentRunStatsView
     var endView : UIView
+    var runWithFriendsLabel: UILabel
     
     override init(frame: CGRect) {
         
@@ -36,6 +37,10 @@ class RunScreenView: UIView, MKMapViewDelegate{
         
         endView = UIView.init(frame: frame)
         endView.backgroundColor = UIColor.whiteColor()
+        
+        
+        runWithFriendsLabel = UILabel.init(frame: CGRect(x: 0.0, y: frame.height * 0.75, width: frame.width, height: frame.height * 0.1))
+        
         super.init(frame: frame)
         
         finishRunButton.addTarget(self, action: "stopRun:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -44,6 +49,7 @@ class RunScreenView: UIView, MKMapViewDelegate{
         self.addSubview(speedLabel)
         self.addSubview(userRouteMapView)
         self.addSubview(currentRunStatsView)
+        self.addSubview(runWithFriendsLabel)
         self.backgroundColor = UIColor.whiteColor()
         userRouteMapView.delegate = self
         

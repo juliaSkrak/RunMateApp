@@ -29,16 +29,6 @@ class popupLoginViewController: UIViewController, testDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   /*     let screenRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenRect.size.width
-        let screenHeight = screenRect.size.height
-        if(popView.frame.size == CGSize(width: 0, height: 0)){
-            popView = popupView.init(frame:  CGRect(x: 30, y: 30, width: screenWidth-60, height: screenHeight-60))
-
-            self.view.addSubview(popView)
-            //popView.test()
-            print(self.view.subviews)
-        } */
         
     }
     
@@ -93,6 +83,7 @@ class popupLoginViewController: UIViewController, testDelegate {
                             }
                             user.saveInBackground()
                             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                            print(appDelegate)
                             appDelegate.saveInstalation()
                             //UIApplication.sharedApplication().saveInstalation()
                         }
@@ -101,10 +92,7 @@ class popupLoginViewController: UIViewController, testDelegate {
                     
                     
                     print("User signed up and logged in through Facebook!")
-                   // let popupLogin:popupLoginViewController = popupLoginViewController()
-                    //self.presentViewController(popupLogin, animated: true, completion: nil)
-                    //var myView = self.view.subviews[0] as! popupView
-                    //print(myView)
+      
                     self.popView.setAppearance()
                     
                 } else {
@@ -120,9 +108,6 @@ class popupLoginViewController: UIViewController, testDelegate {
                 
             }
         }
-        
-        
-        
     }
     
     func rejectButtonTapped(){

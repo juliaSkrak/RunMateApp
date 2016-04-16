@@ -66,7 +66,7 @@ class ProfileView: UIScrollView {
         suggestTrophyButton.setTitle("get suggested goal", forState: UIControlState.Normal)
         suggestTrophyButton.layer.cornerRadius = 10
         
-        createTrophyButton = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight, width: (frame.width - 25)/2, height: 40))
+        createTrophyButton = UIButton.init(frame: CGRect(x: 12 , y: personalInfoHeight, width: frame.width - 25, height: 40))
         createTrophyButton.layer.cornerRadius = 10
         createTrophyButton.backgroundColor = UIColor.whiteColor()
         createTrophyButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -74,7 +74,7 @@ class ProfileView: UIScrollView {
         createTrophyButton.layer.borderColor = UIColor.blackColor().CGColor
         createTrophyButton.setTitle("make your own goal", forState: UIControlState.Normal)
         
-        seeRunHistory = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight + 60, width: (frame.width - 25)/2, height: 40))
+        seeRunHistory = UIButton.init(frame: CGRect(x: frame.origin.x + 15 + (frame.width - 25)/2 , y: personalInfoHeight + 60, width: frame.width - 25, height: 40))
         seeRunHistory.setTitle("see your own run history", forState: UIControlState.Normal)//this should only be viewable from the current user's profile
         seeRunHistory.backgroundColor = UIColor.purpleColor()
     
@@ -88,10 +88,10 @@ class ProfileView: UIScrollView {
         self.addSubview(overviewLabel)
         self.addSubview(trophyView)
         self.addSubview(trophyCaseContainerView)
-        self.addSubview(suggestTrophyButton)
+       // self.addSubview(suggestTrophyButton)
         self.addSubview(createTrophyButton)
         self.addSubview(trophyLabel)
-        self.addSubview(seeRunHistory)
+        //self.addSubview(seeRunHistory)
         
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(UIViewAutoresizing.FlexibleHeight)

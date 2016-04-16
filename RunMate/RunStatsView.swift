@@ -52,6 +52,7 @@ class RunStatsView: UIView, MKMapViewDelegate { //can be used as a popup over ru
         trophyList.layer.cornerRadius = 9
         trophyList.clipsToBounds = true
         trophyList.numberOfLines = 0
+        trophyList.textAlignment = .Center
         
         lineSegments = [MKPolyline]()
         

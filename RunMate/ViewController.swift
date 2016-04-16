@@ -1,4 +1,5 @@
 
+
 //
 //  ViewController.swift
 //  RunMate
@@ -51,46 +52,7 @@ class ViewController: UIViewController {
             //let username = currentUser.username
             print(currentUser)
             
-            
-  /*          FBSDKGraphRequest.init(graphPath: "me", parameters:["fields": "email, friends, birthday"]).startWithCompletionHandler {
-                (connection:FBSDKGraphRequestConnection!,  result:AnyObject!, error:NSError!) -> Void in
-                print("result")
-                var resultdict = result as? NSDictionary
-                print(resultdict)
-                resultdict = resultdict?["friends"] as? NSDictionary
-                print("next level: \(resultdict)")
-                var mydata = resultdict?["data"]!
-                //mydata = mydata
-                print("next next level: \(mydata![0] as! NSDictionary)")
-                var myDictionary = mydata![0] as! NSDictionary
-                print("next next next level: \(myDictionary["id"]!)")
-                //print(mydata.type)
-                //var friends = resultdict?.valueForKey("friends") as? NSDictionary
-                //var data = friends?.valueForKey("data") as? NSArray
-                //for friend in data! {
-                    var query:PFQuery = PFUser.query()!
-                   // print("my frined is")
-                    //print(friend)
-                 var mystring = myDictionary["id"] as! String
-                    query.whereKey("facebookIdPublic", equalTo: mystring)
-                    //query.getObjectInBackgroundWithId(mystring) {
-                    query.findObjectsInBackgroundWithBlock {
-                        (objects: [PFObject]?, error: NSError?) -> Void in
-                        if error == nil {
-                            print("printing my names \(objects)")
-                            if let objects = objects {
-                                for object in objects {
-                                    print(object.objectId)
-                                }
-                            }
-                        } else {
-                            // Log details of the failure
-                            print("Error: \(error!) \(error!.userInfo)")
-                        }
-                    }
-                //}
-            }  */
-        } else {
+                   } else {
             //let btn = UIButton(type: UIButtonType.System) as UIButton
             //btn.frame = CGRectMake(100, 100, 200, 100)
             //btn.center = self.view.center

@@ -207,13 +207,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func saveInstalation(){
         if let currentUser = PFUser.currentUser() {
-            var currentInstallation = PFInstallation.currentInstallation()
-            currentInstallation.setDeviceTokenFromData(appDeviceToken!)
+            if let appToken = appDeviceToken as? NSData!{
+                var currentInstallation = PFInstallation.currentInstallation()
+                currentInstallation.setDeviceTokenFromData(appDeviceToken!)
        
-            currentInstallation["user"] = currentUser
+                currentInstallation["user"] = currentUser
        
-            currentInstallation.saveInBackground()
-        }
+                currentInstallation.saveInBackground()
+            }
+        } 
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
@@ -273,14 +275,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if let pendingRun = objects?.first {
                             print("\(pendingRun)")
                             var date = NSDate().timeIntervalSince1970
-                            date = date + 30
+                            date = date + 5
                             pendingRun["beginRunTime"] = date
                             pendingRun["accepted"] = 1
                             pendingRun["test"] = "blah blah blah"
                             print(pendingRun)
                             pendingRun.saveInBackground()
                             self.runCountDownView = CountDownView(frame: self.window!.rootViewController!.view.frame)
-                            self.runCountDownView!.timerLabel.text = "30"
+                            self.runCountDownView!.timerLabel.text = "5"
                             self.countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: "updateRunCountDown", userInfo: nil, repeats: true)
                             self.sentBy = pendingRun["sentBy"] as! PFUser
                             self.window!.rootViewController!.view.addSubview(self.runCountDownView!)
@@ -306,7 +308,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             countdownTimer?.invalidate()
             self.runCountDownView!.removeFromSuperview()
             var runScreenViewController = RunScreenViewController.init(friendObj: self.sentBy!)
-            window!.rootViewController!.presentViewController(runScreenViewController, animated: true, completion: nil)
+            if let user = PFUser.currentUser(){
+                runScreenViewController.runHash = (user["runNum"] as? NSNumber)!
+                runScreenViewController.runHash = NSNumber(integer: runScreenViewController.runHash.integerValue + 1)
+                window!.rootViewController!.presentViewController(runScreenViewController, animated: true, completion: nil)
+            }
+            
         } else {
             self.runCountDownView!.timerLabel.text = String(seconds)
         }

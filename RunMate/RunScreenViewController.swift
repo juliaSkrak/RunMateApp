@@ -25,10 +25,11 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     var timer: NSTimer
     var runWithFriendId : String
     var runStatsView: RunStatsView
+    
 
     required init(coder aDecoder: NSCoder) {
         runScreenView = RunScreenView()
-        runHash = 0
+        runHash = 99
         distance = -2
         last = RunLocation()
         last.distance = -2
@@ -45,7 +46,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         runScreenView = RunScreenView()
-        runHash = 0
+        runHash = 99
         distance = 0
         last = RunLocation()
         startTime = NSTimeInterval.init()
@@ -112,7 +113,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     func locationManager(manager: CLLocationManager,
         didUpdateLocations locations: [CLLocation]){
             for location in locations {
-                if (location.horizontalAccuracy < 20) {
+               // if (location.horizontalAccuracy < 20) {
                     let savedLocation = RunLocation()
                     if(distance >= -1){
                         if(distance >= 0){
@@ -155,7 +156,7 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                         distance = -1
                     }
                 
-                }
+              //  }
             }
     }
     
@@ -163,6 +164,9 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
         timerClock.invalidate()
         timer.invalidate()
         timerCoord.invalidate()
+        if(!runWithFriendId.isEmpty){
+            timerRunWithFriend.invalidate()
+        }
         finishRun()
     }
     
@@ -228,12 +232,16 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
                     var err: NSError
                     do {
                         let object:AnyObject? = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                        if let dictionaryObject = object!["error"]{
+                        print("this is the dict obj \(object)")
+                        if let dictionaryObject = object!["error"]!{
                             dispatch_async(dispatch_get_main_queue()) {
+                                print("this is the dict obj \(dictionaryObject)")
                                 self.updateTrophies("Awe shucks no trophies earned on this run!")
                             }
                         } else {
-                            self.updateTrophies("Check your trophy case for updated trophies!!")
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.updateTrophies("Check your trophy case for updated trophies!!")
+                            }
                         }
                     } catch let caught as ErrorType {
                     }
@@ -306,16 +314,22 @@ class RunScreenViewController: UIViewController, CLLocationManagerDelegate, runS
     }
     
     func updateFriendSpeed(){
-    /*    var query:PFQuery = PFUser.query()!
+        var query:PFQuery = PFUser.query()!
         query.getObjectInBackgroundWithId(runWithFriendId) {
             (user: PFObject?, error: NSError?) -> Void in
             if error != nil {
                 print(error)
             } else if let user = user {
-                print(user)
+                print("pringint users speee")
+                print(user["speed"]!)
+                if(user["speed"]! as! NSNumber == -1){
+                    self.runScreenView.runWithFriendsLabel.text = "0.0 mph"
+                } else {
+                    if let speed = user["speed"]! as? NSNumber {
+                        self.runScreenView.runWithFriendsLabel.text = String(round(Double(speed) * 100.0) / 100.0)
+                    }
+                }
             }
-        } */
-        //print(runWithFriendId)
+        }
     }
-
 }
